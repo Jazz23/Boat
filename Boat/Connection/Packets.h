@@ -12,11 +12,13 @@ namespace Packet
 		virtual void WriteData(PacketBuffer *pb) { return; }
 		virtual void ReadData(PacketBuffer *pb) { return; }
 	};
+
 	class IncomingPacket
 	{
 	public:
 		virtual void ReadData(PacketBuffer* pb) { return; }
 	};
+
 	class OutgoingPacket
 	{
 	public:
@@ -30,6 +32,7 @@ namespace Packet
 		int32_t accountListId;
 		std::vector<std::string> accountIds;
 		int32_t lookAction;
+
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
@@ -48,6 +51,7 @@ namespace Packet
 		int32_t ownerID;
 		int16_t containerType;
 		float angle;
+
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
@@ -99,6 +103,7 @@ namespace Packet
 		int32_t itemID;
 		int32_t quantity;
 		int32_t gold;
+
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
@@ -112,6 +117,7 @@ namespace Packet
 	public:
 		std::string name;
 		int32_t value;
+
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
@@ -124,6 +130,7 @@ namespace Packet
 	public:
 		int32_t objectID;
 		int32_t charID;
+
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
@@ -167,6 +174,7 @@ namespace Packet
 		uint16_t damage;
 		uint8_t numShots;
 		float angleInc;
+
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
@@ -193,6 +201,7 @@ namespace Packet
 	public:
 		int32_t errorID;
 		std::string errorDesc;
+
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
@@ -205,6 +214,7 @@ namespace Packet
 	public:
 		int32_t notificationType;
 		std::string text;
+
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
@@ -217,6 +227,7 @@ namespace Packet
 	public:
 		int32_t objectID;
 		WorldPosData pos;
+
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
@@ -229,6 +240,7 @@ namespace Packet
 	public:
 		bool success;
 		std::string lineBuilderJSON;
+
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
@@ -240,6 +252,7 @@ namespace Packet
 	{
 	public:
 		int32_t result;
+
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
@@ -250,6 +263,7 @@ namespace Packet
 	{
 	public:
 		std::string name, guildName;
+
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
@@ -261,6 +275,7 @@ namespace Packet
 	{
 	public:
 		std::string name, desc, creator;
+
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
@@ -280,6 +295,7 @@ namespace Packet
 		bool showDisplays;
 		std::vector<std::u32string> clientXML;
 		std::vector<std::u32string> extraXML;
+
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
@@ -307,12 +323,32 @@ namespace Packet
 	public:
 		bool success;
 		std::string errorText;
+
 		void ReadData(PacketBuffer *pb) override
 		{
 			if (!pb) return;
 			success = pb->ReadBoolean();
 			errorText = pb->ReadString();
 		}
+	};
+
+	class NewAbilityMessage : IncomingPacket
+	{
+	public:
+		int abilityType;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			abilityType = pb->ReadInt32();
+		}
+	};
+
+	class NewTickPacket : IncomingPacket
+	{
+		int tickId;
+		int tickTime;
+		ObjectStatusData statuses;
 	};
 
 #pragma endregion
