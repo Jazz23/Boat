@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Structures">
+      <UniqueIdentifier>{696045a2-442d-47cc-8d5f-7ad3514cd325}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Connection">
+      <UniqueIdentifier>{0e0ffe4e-e345-47b2-90ec-bc4ee509b293}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Structurers\accinfo.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structurers\classes.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structurers\enemy.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structurers\guildrank.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structurers\mapinfo.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structurers\object.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structurers\playerdata.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structurers\projectile.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structurers\proxy.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structurers\tile.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\PacketBuffer.h">
+      <Filter>Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\Packets.h">
+      <Filter>Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\PacketManager.h">
+      <Filter>Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Structurers\world_pos_data.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structurers\resource_manager.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structurers\condition_effects.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structurers\enumerations.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Connection\PacketManager.cpp">
+      <Filter>Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="Connection\PacketRouter.cpp">
+      <Filter>Connection</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

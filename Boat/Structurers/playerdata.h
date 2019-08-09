@@ -1,0 +1,48 @@
+#pragma once
+#include "world-pos-data.h"
+#include "guildrank.h"
+#include "classes.h"
+#include <string>
+#include <vector>
+
+struct PlayerData
+{
+	int objectId;
+	WorldPosData worldPos;
+	std::string name;
+	int level;
+	int exp;
+	int currentFame;
+	int stars;
+	int accountId;
+	int accountFame;
+	bool nameChosen;
+	std::string guildName;
+	GuildRank guildRank;
+	int gold;
+	Classes _class;
+	int maxHP;
+	int maxHPBoost;
+	int maxMP;
+	int maxMPBoost;
+	int hp;
+	int mp;
+	int atk;
+	int atkBoost;
+	int def;
+	int defBoost;
+	int spd;
+	int spdBoost;
+	int dex;
+	int dexBoost;
+	int wis;
+	int wisBoost;
+	int vit;
+	int vitBoost;
+	int condition;
+	int hpPots;
+	int mpPots;
+	int hasBackpack;
+	std::vector<int> inventory;
+	std::string server;
+};
