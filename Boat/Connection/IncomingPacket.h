@@ -1,6 +1,7 @@
 #include <vector>
 #include <string>
-#include "Packets.h
+
+#include "Packets.h"
 #include "PacketBuffer.h"
 #include "../Structurers/world_pos_data.h"
 #include "../Structurers/object_status_data.h"

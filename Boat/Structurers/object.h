@@ -2,7 +2,7 @@
 #include <string>
 #include "classes.h"
 #include <vector>
-
+#include <map>
 struct GameObject
 {
 	int type;
