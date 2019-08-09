@@ -9,70 +9,30 @@ namespace Packet
 	class BasePacket
 	{
 	public:
-		PacketBuffer *pb;
-		BasePacket(size_t size = 1024)
-		{
-			pb = new PacketBuffer(size);
-		}
-		BasePacket(char* buf, size_t size)
-		{
-			pb = new PacketBuffer(buf, size);
-		}
-		~BasePacket()
-		{
-			if (pb) delete pb;
-		}
-		virtual void WriteData() { return; }
-		virtual void ReadData() { return; }
+		virtual void WriteData(PacketBuffer *pb) { return; }
+		virtual void ReadData(PacketBuffer *pb) { return; }
 	};
-	class IncommingPacket
+	class IncomingPacket
 	{
 	public:
-		PacketBuffer* pb;
-		IncommingPacket(size_t size = 1024)
-		{
-			pb = new PacketBuffer(size);
-		}
-		IncommingPacket(char* buf, size_t size)
-		{
-			pb = new PacketBuffer(buf, size);
-		}
-		~IncommingPacket()
-		{
-			if (pb) delete pb;
-		}
-		virtual void ReadData() { return; }
+		virtual void ReadData(PacketBuffer* pb) { return; }
 	};
 	class OutgoingPacket
 	{
 	public:
-		PacketBuffer* pb;
-		OutgoingPacket(size_t size = 1024)
-		{
-			pb = new PacketBuffer(size);
-		}
-		OutgoingPacket(char* buf, size_t size)
-		{
-			pb = new PacketBuffer(buf, size);
-		}
-		~OutgoingPacket()
-		{
-			if (pb) delete pb;
-		}
-		virtual void WriteData() { return; }
+		virtual void WriteData(PacketBuffer* pb) { return; }
 	};
 
-	//incomming packets
-	class AccountListPacket : IncommingPacket
+#pragma region incomming
+	class AccountListPacket : IncomingPacket
 	{
 	public:
 		int32_t accountListId;
 		std::vector<std::string> accountIds;
 		int32_t lookAction;
-		AccountListPacket(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
-		void ReadData() override
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->ReadInt8(); //skip the packet id;
+			if (!pb) return;
 			accountListId = pb->ReadInt32();
 			auto accountIdsLen = pb->ReadInt16();
 			accountIds.resize(accountIdsLen);
@@ -81,24 +41,23 @@ namespace Packet
 			lookAction = pb->ReadInt32;
 		}
 	};
-	class AllyShootPacket : IncommingPacket
+	class AllyShootPacket : IncomingPacket
 	{
 	public:
 		uint8_t bulletID;
 		int32_t ownerID;
 		int16_t containerType;
 		float angle;
-		AllyShootPacket(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
-		void ReadData() override
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->ReadInt8();
+			if (!pb) return;
 			bulletID = pb->ReadUnsignedInt8();
 			ownerID = pb->ReadInt32();
 			containerType = pb->ReadInt16();
 			angle = pb->ReadFloat();
 		}
 	};
-	class AoePacket : IncommingPacket
+	class AoePacket : IncomingPacket
 	{
 	public:
 		WorldPosData pos;
@@ -108,11 +67,10 @@ namespace Packet
 		float duration;
 		uint16_t origType;
 		int32_t color;
-		AoePacket(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
 
-		void ReadData() override
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->ReadInt8();
+			if (!pb) return;
 			pos.Read(pb);
 			radius = pb->ReadFloat();
 			damage = pb->ReadUnsignedInt16();
@@ -122,62 +80,58 @@ namespace Packet
 			color == pb->ReadInt32();
 		}
 	};
-	class BuyResultPacket : IncommingPacket
+	class BuyResultPacket : IncomingPacket
 	{
 	public:
 		int32_t result;
 		std::string resultString;
-		BuyResultPacket(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
 
-		void ReadData() override
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->ReadInt8();
+			if (!pb) return;
 			result = pb->ReadInt32();
 			resultString = pb->ReadString();
 		}
 	};
-	class ClaimDailyRewardResponse : IncommingPacket
+	class ClaimDailyRewardResponse : IncomingPacket
 	{
 	public:
 		int32_t itemID;
 		int32_t quantity;
-		int32_t gold; 
-		ClaimDailyRewardResponse(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
-		void ReadData() override
+		int32_t gold;
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->ReadInt8();
+			if (!pb) return;
 			itemID = pb->ReadInt32();
 			quantity = pb->ReadInt32();
 			gold = pb->ReadInt32();
 		}
 	};
-	class ClientStatPacket : IncommingPacket
+	class ClientStatPacket : IncomingPacket
 	{
 	public:
 		std::string name;
 		int32_t value;
-		ClientStatPacket(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
-		void ReadData() override
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->ReadInt8();
+			if (!pb) return;
 			name = pb->ReadString();
 			value = pb->ReadInt32();
 		}
 	};
-	class CreateSuccessPacket : IncommingPacket
+	class CreateSuccessPacket : IncomingPacket
 	{
 	public:
 		int32_t objectID;
 		int32_t charID;
-		CreateSuccessPacket(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
-		void ReadData() override
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->ReadInt8();
+			if (!pb) return;
 			objectID = pb->ReadInt32();
 			charID = pb->ReadInt32();
 		}
 	};
-	class DamagePacket : IncommingPacket
+	class DamagePacket : IncomingPacket
 	{
 	public:
 		int32_t targetID;
@@ -186,10 +140,10 @@ namespace Packet
 		bool kill, armorPierce;
 		uint8_t bulletID;
 		int32_t objectID;
-		DamagePacket(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
-		void ReadData() override
+
+		void ReadData(PacketBuffer *pb) override
 		{
-			pb->ReadInt8();
+			if (!pb) return;
 			targetID = pb->ReadInt32();
 			size_t effectsLen = pb->ReadUnsignedInt8();
 			effects.resize(effectsLen);
@@ -202,7 +156,7 @@ namespace Packet
 			objectID = pb->ReadInt32();
 		}
 	};
-	class EnemyShootPacket : IncommingPacket
+	class EnemyShootPacket : IncomingPacket
 	{
 	public:
 		uint8_t bulletID;
@@ -213,10 +167,9 @@ namespace Packet
 		uint16_t damage;
 		uint8_t numShots;
 		float angleInc;
-		EnemyShootPacket(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
-		void ReadData() override
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->ReadInt8();
+			if (!pb) return;
 			bulletID = pb->ReadUnsignedInt8();
 			ownerID = pb->ReadInt32();
 			bulletType = pb->ReadUnsignedInt8();
@@ -235,95 +188,88 @@ namespace Packet
 			}
 		}
 	};
-	class FailurePacket : IncommingPacket
+	class FailurePacket : IncomingPacket
 	{
 	public:
 		int32_t errorID;
 		std::string errorDesc;
-		FailurePacket(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
-		void ReadData() override
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->ReadInt8();
+			if (!pb) return;
 			errorID = pb->ReadInt32();
 			errorDesc = pb->ReadString();
 		}
 	};
-	class GlobalNotificationPacket : IncommingPacket
+	class GlobalNotificationPacket : IncomingPacket
 	{
 	public:
 		int32_t notificationType;
 		std::string text;
-		GlobalNotificationPacket(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
-		void ReadData() override
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->ReadInt8();
+			if (!pb) return;
 			notificationType = pb->ReadInt32();
 			text = pb->ReadString();
 		}
 	};
-	class GotoPacket : IncommingPacket
+	class GotoPacket : IncomingPacket
 	{
 	public:
 		int32_t objectID;
 		WorldPosData pos;
-		GotoPacket(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
-		void ReadData() override
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->ReadInt8();
+			if (!pb) return;
 			pb->ReadInt32();
 			pos.Read(pb);
 		}
 	};
-	class GuildResultPacket : IncommingPacket
+	class GuildResultPacket : IncomingPacket
 	{
 	public:
 		bool success;
 		std::string lineBuilderJSON;
-		GuildResultPacket(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
-		void ReadData() override
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->ReadInt8();
+			if (!pb) return;
 			success = pb->ReadBoolean();
 			lineBuilderJSON = pb->ReadString();
 		}
 	};
-	class InviteResultPacket : IncommingPacket
+	class InviteResultPacket : IncomingPacket
 	{
 	public:
 		int32_t result;
-		InviteResultPacket(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
-		void ReadData() override
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->ReadInt8();
+			if (!pb) return;
 			result = pb->ReadInt32();
 		}
 	};
-	class InvitedToGuildPacket : IncommingPacket
+	class InvitedToGuildPacket : IncomingPacket
 	{
 	public:
 		std::string name, guildName;
-		InvitedToGuildPacket(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
-		void ReadData() override
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->ReadInt8();
+			if (!pb) return;
 			name = pb->ReadString();
 			guildName = pb->ReadString();
 		}
 	};
-	class KeyInfoResponsePacket : IncommingPacket
+	class KeyInfoResponsePacket : IncomingPacket
 	{
 	public:
 		std::string name, desc, creator;
-		KeyInfoResponsePacket(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
-		void ReadData() override
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->ReadInt8();
+			if (!pb) return;
 			name = pb->ReadString();
 			desc = pb->ReadString();
 			creator = pb->ReadString();
 		}
 	};
-	class MapInfoPacket : IncommingPacket
+	class MapInfoPacket : IncomingPacket
 	{
 	public:
 		int32_t width, height;
@@ -334,10 +280,9 @@ namespace Packet
 		bool showDisplays;
 		std::vector<std::u32string> clientXML;
 		std::vector<std::u32string> extraXML;
-		MapInfoPacket(char* pkt, size_t size) : IncommingPacket(pkt, size) { }
-		void ReadData() override
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->ReadInt8();
+			if (!pb) return;
 			width = pb->ReadInt32();
 			height = pb->ReadInt32();
 			name = pb->ReadString();
@@ -357,6 +302,36 @@ namespace Packet
 				extraXML.push_back(pb->ReadStringUTF32());
 		}
 	};
+	class NameResultPacket : IncomingPacket
+	{
+	public:
+		bool success;
+		std::string errorText;
+		void ReadData(PacketBuffer *pb) override
+		{
+			if (!pb) return;
+			success = pb->ReadBoolean();
+			errorText = pb->ReadString();
+		}
+	};
 
+#pragma endregion
 
+#pragma region outgoingpackets
+
+	class AcceptTradePacket : OutgoingPacket
+	{
+		std::vector<bool> partnerOffer, clientOffer;
+		void WriteData(PacketBuffer* pb) override
+		{
+			pb->WriteInt16(clientOffer.size());
+			for (auto c : clientOffer)
+				pb->WriteBoolean(c);
+			pb->WriteInt16(partnerOffer.size());
+			for (auto c : partnerOffer)
+				pb->WriteBoolean(c);
+		}
+	};
+
+#pragma endregion
 }

@@ -3,7 +3,6 @@
 #include <cstring>
 #include <utility>
 #include <string>
-
 namespace Packet
 {
 	inline constexpr size_t sz_INT32 = sizeof(int32_t);
@@ -35,7 +34,7 @@ namespace Packet
 			if (!CheckSizes())
 				this->~PacketBuffer();
 			buffer = new char[_size];
-			std::memcpy(buffer, data, _size);
+			memcpy(buffer, data, _size);
 			size = _size;
 			index = 0;
 		}
