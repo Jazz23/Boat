@@ -10,7 +10,8 @@ namespace Packet
 		EmailVerificationNeeded = 7,
 		TeleportRealmBlock = 8,
 	};
-	enum StatType {
+	enum StatType 
+	{
 		MAX_HP_STAT = 0,
 		HP_STAT = 1,
 		SIZE_STAT = 2,
