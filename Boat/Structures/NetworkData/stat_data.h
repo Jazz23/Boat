@@ -3,15 +3,16 @@
 #include "../enumerations.h"
 class StatData : Packet::BasePacket
 {
+public:
 	int8_t statType;
 	int32_t statValue;
-	std::string statStringValue;
+	std::string stringStatValue;
 
 	void ReadData(Packet::PacketBuffer* pb) override
 	{
 		statType = pb->ReadInt8();
 		if (isStringStat())
-			statStringValue = pb->ReadString();
+			stringStatValue = pb->ReadString();
 		else
 			statValue = pb->ReadInt32();
 	}
@@ -19,23 +20,19 @@ class StatData : Packet::BasePacket
 	{
 		pb->WriteInt8(statType);
 		if (isStringStat())
-			pb->WriteString(statStringValue);
+			pb->WriteString(stringStatValue);
 		else
 			pb->WriteInt32(statValue);
 	}
 	bool isStringStat()
 	{
-		switch (statType)
-		{
-		case Packet::StatType::NAME_STAT: [[fallthrough]];
-		case Packet::StatType::GUILD_NAME_STAT: [[fallthrough]];
-		case Packet::StatType::PET_NAME_STAT: [[fallthrough]];
-		case Packet::StatType::ACCOUNT_ID_STAT: [[fallthrough]];
-		case Packet::StatType::OWNER_ACCOUNT_ID_STAT: [[fallthrough]];
-			return true; break;
-		default:
-			return false; break;
-
-		}
+		if (statType == NAME_STAT || statType ==
+			GUILD_NAME_STAT || statType ==
+			PET_NAME_STAT || statType ==
+			ACCOUNT_Id_STAT || statType ==
+			OWNER_ACCOUNT_Id_STAT)
+			return true;
+		else
+			return false;
 	}
 };

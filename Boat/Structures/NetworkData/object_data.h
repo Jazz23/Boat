@@ -4,17 +4,19 @@
 class ObjectData : Packet::BasePacket
 {
 public:
-	int objectType;
+	uint32_t objectType;
 	ObjectStatusData status;
 
-	void read(Packet::PacketBuffer* pb)
+	void ReadData(Packet::PacketBuffer* pb) override
 	{
 		if (!pb) return;
+		objectType = pb->ReadUnsignedInt16();
+		status.ReadData(pb);
 	}
 
-	void write(Packet::PacketBuffer* pb)
+	void WriteData(Packet::PacketBuffer* pb) override
 	{
 		if (!pb) return;
-		pb->Write
+		status.WriteData(pb);
 	}
 };
