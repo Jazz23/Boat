@@ -31,16 +31,16 @@ namespace Packet
 	class AllyShootPacket : IncomingPacket
 	{
 	public:
-		uint8_t bulletID;
-		int32_t ownerID;
+		uint8_t bulletId;
+		int32_t ownerId;
 		int16_t containerType;
 		float angle;
 
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
-			bulletID = pb->ReadUnsignedInt8();
-			ownerID = pb->ReadInt32();
+			bulletId = pb->ReadUnsignedInt8();
+			ownerId = pb->ReadInt32();
 			containerType = pb->ReadInt16();
 			angle = pb->ReadFloat();
 		}
@@ -84,14 +84,14 @@ namespace Packet
 	class ClaimDailyRewardResponse : IncomingPacket
 	{
 	public:
-		int32_t itemID;
+		int32_t itemId;
 		int32_t quantity;
 		int32_t gold;
 
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
-			itemID = pb->ReadInt32();
+			itemId = pb->ReadInt32();
 			quantity = pb->ReadInt32();
 			gold = pb->ReadInt32();
 		}
@@ -112,30 +112,30 @@ namespace Packet
 	class CreateSuccessPacket : IncomingPacket
 	{
 	public:
-		int32_t objectID;
-		int32_t charID;
+		int32_t objectId;
+		int32_t charId;
 
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
-			objectID = pb->ReadInt32();
-			charID = pb->ReadInt32();
+			objectId = pb->ReadInt32();
+			charId = pb->ReadInt32();
 		}
 	};
 	class DamagePacket : IncomingPacket
 	{
 	public:
-		int32_t targetID;
+		int32_t targetId;
 		std::vector<uint8_t> effects;
 		uint16_t damageAmount;
 		bool kill, armorPierce;
-		uint8_t bulletID;
-		int32_t objectID;
+		uint8_t bulletId;
+		int32_t objectId;
 
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
-			targetID = pb->ReadInt32();
+			targetId = pb->ReadInt32();
 			size_t effectsLen = pb->ReadUnsignedInt8();
 			effects.resize(effectsLen);
 			for (int i = 0; i < effectsLen; i++)
@@ -143,15 +143,15 @@ namespace Packet
 			damageAmount = pb->ReadUnsignedInt16();
 			kill = pb->ReadBoolean();
 			armorPierce = pb->ReadBoolean();
-			bulletID = pb->ReadUnsignedInt8();
-			objectID = pb->ReadInt32();
+			bulletId = pb->ReadUnsignedInt8();
+			objectId = pb->ReadInt32();
 		}
 	};
 	class EnemyShootPacket : IncomingPacket
 	{
 	public:
-		uint8_t bulletID;
-		int32_t ownerID;
+		uint8_t bulletId;
+		int32_t ownerId;
 		uint8_t bulletType;
 		WorldPosData startingPos;
 		float angle;
@@ -162,8 +162,8 @@ namespace Packet
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
-			bulletID = pb->ReadUnsignedInt8();
-			ownerID = pb->ReadInt32();
+			bulletId = pb->ReadUnsignedInt8();
+			ownerId = pb->ReadInt32();
 			bulletType = pb->ReadUnsignedInt8();
 			startingPos.ReadData(pb);
 			angle = pb->ReadFloat();
@@ -183,13 +183,13 @@ namespace Packet
 	class FailurePacket : IncomingPacket
 	{
 	public:
-		int32_t errorID;
+		int32_t errorId;
 		std::string errorDesc;
 
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
-			errorID = pb->ReadInt32();
+			errorId = pb->ReadInt32();
 			errorDesc = pb->ReadString();
 		}
 	};
@@ -209,7 +209,7 @@ namespace Packet
 	class GotoPacket : IncomingPacket
 	{
 	public:
-		int32_t objectID;
+		int32_t objectId;
 		WorldPosData pos;
 
 		void ReadData(PacketBuffer* pb) override
@@ -330,26 +330,145 @@ namespace Packet
 
 	class NewTickPacket : IncomingPacket
 	{
+	public:
 		int32_t tickId;
 		int32_t tickTime;
 		std::vector<ObjectStatusData> statuses;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			tickId = pb->ReadInt32();
+			tickTime = pb->ReadInt32();
+			const size_t statusesLen = pb->ReadInt16();
+			statuses.resize(statusesLen);
+			for (int i = 0; i < statusesLen; i++)
+			{
+				ObjectStatusData osd;
+				osd.ReadData(pb);
+				statuses.push_back(osd);
+			}
+		}
 	};
 
-#pragma endregion
-
-#pragma region outgoingpackets
-
-	class AcceptTradePacket : OutgoingPacket
+	class NotificationPacket : IncomingPacket
 	{
-		std::vector<bool> partnerOffer, clientOffer;
-		void WriteData(PacketBuffer* pb) override
+	public:
+		int32_t objectId;
+		std::string message;
+		int32_t color;
+
+		void ReadData(PacketBuffer* pb) override
 		{
-			pb->WriteInt16(clientOffer.size());
-			for (auto c : clientOffer)
-				pb->WriteBoolean(c);
-			pb->WriteInt16(partnerOffer.size());
-			for (auto c : partnerOffer)
-				pb->WriteBoolean(c);
+			if (!pb) return;
+			objectId = pb->ReadInt32();
+			message = pb->ReadString();
+			color = pb->ReadInt32();
 		}
+	};
+
+	class PasswordPromptPacket : IncomingPacket
+	{
+		int32_t cleanPasswordStatus;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			cleanPasswordStatus = pb->ReadInt32();
+		}
+	};
+
+	class PingPacket : IncomingPacket
+	{
+		int32_t serial;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			serial = pb->ReadInt32();
+		}
+	};
+
+	class QuestObjectIdPacket : IncomingPacket
+	{
+		int32_t objectId;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			objectId = pb->ReadInt32();
+		}
+	};
+
+	class QuestRedeemResponsePacket : IncomingPacket
+	{
+		bool ok;
+		std::string message;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			ok = pb->ReadBoolean();
+			message = pb->ReadString();
+		}
+	};
+
+	class RealmHeroLeftMessage : IncomingPacket
+	{
+		int32_t realmHeroesLeft;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			realmHeroesLeft = pb->ReadInt32();
+		}
+	};
+
+	class ReconnectPacket : IncomingPacket
+	{
+		std::string name, host, stats;
+		int32_t port, gameId, keyTime;
+		std::vector<int32_t> key;
+		bool isFromArena;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			name = pb->ReadString();
+			host = pb->ReadString();
+			stats = pb->ReadString();
+			port = pb->ReadInt32();
+			gameId = pb->ReadInt32();
+			keyTime = pb->ReadInt32();
+			isFromArena = pb->ReadBoolean();
+			key = pb->ReadByteArray();
+		}
+	};
+
+	class ReskinUnlockPacket : IncomingPacket
+	{
+		int32_t skinId;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			skinId = pb->ReadInt32();
+		}
+	};
+
+	class ServerPlayerShootPacket : IncomingPacket
+	{
+		int32_t bulletId, ownerId, containerType;
+		WorldPosData startingPos;
+		int32_t angle, damage;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			bulletId = pb->ReadUnsignedInt8();
+			ownerId = pb->ReadInt32();
+			containerType = pb->ReadInt32();
+			WorldPosData startingPos;
+
 	};
 }

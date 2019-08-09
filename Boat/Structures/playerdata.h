@@ -1,5 +1,5 @@
 #pragma once
-#include "world_pos_data.h"
+#include "../Structures/NetworkData/world_pos_data.h"
 #include "guildrank.h"
 #include "classes.h"
 #include <string>
@@ -14,7 +14,7 @@ struct PlayerData
 	int exp;
 	int currentFame;
 	int stars;
-	int accountId;
+	std::string accountId;
 	int accountFame;
 	bool nameChosen;
 	std::string guildName;
@@ -42,7 +42,7 @@ struct PlayerData
 	int condition;
 	int hpPots;
 	int mpPots;
-	int hasBackpack;
+	bool hasBackpack;
 	std::vector<int> inventory;
 	std::string server;
 };
