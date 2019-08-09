@@ -3,8 +3,8 @@
 
 #include "Packets.h"
 #include "PacketBuffer.h"
-#include "../Structurers/world_pos_data.h"
-#include "../Structurers/object_status_data.h"
+#include "../Structures/NetworkData/world_pos_data.h"
+#include "../Structures/NetworkData/object_status_data.h"
 
 
 namespace Packet

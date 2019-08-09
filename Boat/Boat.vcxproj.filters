@@ -7,38 +7,11 @@
     <Filter Include="Connection">
       <UniqueIdentifier>{0e0ffe4e-e345-47b2-90ec-bc4ee509b293}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Structures\NetworkData">
+      <UniqueIdentifier>{186a4c1c-5d0e-4c31-9c2e-d1d1e4e3675e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Structurers\accinfo.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="Structurers\classes.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="Structurers\enemy.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="Structurers\guildrank.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="Structurers\mapinfo.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="Structurers\object.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="Structurers\playerdata.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="Structurers\projectile.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="Structurers\proxy.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="Structurers\tile.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
     <ClInclude Include="Connection\PacketBuffer.h">
       <Filter>Connection</Filter>
     </ClInclude>
@@ -48,29 +21,68 @@
     <ClInclude Include="Connection\PacketManager.h">
       <Filter>Connection</Filter>
     </ClInclude>
-    <ClInclude Include="Structurers\world_pos_data.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="Structurers\resource_manager.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="Structurers\condition_effects.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="Structurers\enumerations.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="Structurers\object_status_data.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="Structurers\object_data.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
     <ClInclude Include="Connection\IncomingPacket.h">
       <Filter>Connection</Filter>
     </ClInclude>
     <ClInclude Include="Connection\OutgoingPacket.h">
       <Filter>Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\accinfo.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\classes.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\condition_effects.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\enemy.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\enumerations.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\guildrank.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\mapinfo.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\object.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\playerdata.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\projectile.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\proxy.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\resource_manager.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\tile.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\NetworkData\move_record.h">
+      <Filter>Structures\NetworkData</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\NetworkData\object_data.h">
+      <Filter>Structures\NetworkData</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\NetworkData\object_status_data.h">
+      <Filter>Structures\NetworkData</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\NetworkData\slot_object_data.h">
+      <Filter>Structures\NetworkData</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\NetworkData\stat_data.h">
+      <Filter>Structures\NetworkData</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\NetworkData\world_pos_data.h">
+      <Filter>Structures\NetworkData</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
