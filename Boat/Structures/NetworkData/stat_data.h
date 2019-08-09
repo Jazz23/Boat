@@ -25,17 +25,13 @@ class StatData : Packet::BasePacket
 	}
 	bool isStringStat()
 	{
-		switch (statType)
-		{
-		case Packet::StatType::NAME_STAT: [[fallthrough]];
-		case Packet::StatType::GUILD_NAME_STAT: [[fallthrough]];
-		case Packet::StatType::PET_NAME_STAT: [[fallthrough]];
-		case Packet::StatType::ACCOUNT_ID_STAT: [[fallthrough]];
-		case Packet::StatType::OWNER_ACCOUNT_ID_STAT: [[fallthrough]];
-			return true; break;
-		default:
-			return false; break;
-
-		}
+		if (statType == Packet::StatType::NAME_STAT || statType ==
+			Packet::StatType::GUILD_NAME_STAT || statType ==
+			Packet::StatType::PET_NAME_STAT || statType ==
+			Packet::StatType::ACCOUNT_ID_STAT || statType ==
+			Packet::StatType::OWNER_ACCOUNT_ID_STAT)
+			return true;
+		else
+			return false;
 	}
 };

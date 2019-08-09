@@ -132,6 +132,12 @@
     <ClInclude Include="Connection\PacketBuffer.h" />
     <ClInclude Include="Connection\PacketManager.h" />
     <ClInclude Include="Connection\Packets.h" />
+    <ClInclude Include="Crypto\efgh\EUCLID.h" />
+    <ClInclude Include="Crypto\efgh\MPUINT.h" />
+    <ClInclude Include="Crypto\efgh\RANDOM.h" />
+    <ClInclude Include="Crypto\efgh\RSA.h" />
+    <ClInclude Include="Crypto\rc4.h" />
+    <ClInclude Include="Crypto\rsa.h" />
     <ClInclude Include="Structures\accinfo.h" />
     <ClInclude Include="Structures\classes.h" />
     <ClInclude Include="Structures\condition_effects.h" />
@@ -155,6 +161,10 @@
   <ItemGroup>
     <ClCompile Include="Connection\PacketManager.cpp" />
     <ClCompile Include="Connection\PacketRouter.cpp" />
+    <ClCompile Include="Crypto\efgh\EUCLID.cpp" />
+    <ClCompile Include="Crypto\efgh\MPUINT.cpp" />
+    <ClCompile Include="Crypto\efgh\RANDOM.cpp" />
+    <ClCompile Include="Crypto\efgh\RSA.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
