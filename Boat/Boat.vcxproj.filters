@@ -13,9 +13,6 @@
     <Filter Include="Crypto">
       <UniqueIdentifier>{b0c691b2-b113-49cc-b634-5c1ac93f4971}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Crypto\efgh">
-      <UniqueIdentifier>{eb1d8ec2-8ae1-4006-a55b-c558b585f024}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Connection\PacketBuffer.h">
@@ -90,24 +87,15 @@
     <ClInclude Include="Structures\NetworkData\world_pos_data.h">
       <Filter>Structures\NetworkData</Filter>
     </ClInclude>
-    <ClInclude Include="Crypto\efgh\EUCLID.h">
-      <Filter>Crypto\efgh</Filter>
-    </ClInclude>
-    <ClInclude Include="Crypto\efgh\MPUINT.h">
-      <Filter>Crypto\efgh</Filter>
-    </ClInclude>
-    <ClInclude Include="Crypto\efgh\RANDOM.h">
-      <Filter>Crypto\efgh</Filter>
-    </ClInclude>
-    <ClInclude Include="Crypto\efgh\RSA.h">
-      <Filter>Crypto\efgh</Filter>
-    </ClInclude>
     <ClInclude Include="Crypto\rc4.h">
       <Filter>Crypto</Filter>
     </ClInclude>
     <ClInclude Include="Crypto\rsa.h">
       <Filter>Crypto</Filter>
     </ClInclude>
+    <ClInclude Include="Structures\NetworkData\ground_tile_data.h" />
+    <ClInclude Include="Structures\NetworkData\trade_item.h" />
+    <ClInclude Include="Structures\trade_result.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -116,18 +104,6 @@
     </ClCompile>
     <ClCompile Include="Connection\PacketRouter.cpp">
       <Filter>Connection</Filter>
-    </ClCompile>
-    <ClCompile Include="Crypto\efgh\EUCLID.cpp">
-      <Filter>Crypto\efgh</Filter>
-    </ClCompile>
-    <ClCompile Include="Crypto\efgh\MPUINT.cpp">
-      <Filter>Crypto\efgh</Filter>
-    </ClCompile>
-    <ClCompile Include="Crypto\efgh\RANDOM.cpp">
-      <Filter>Crypto\efgh</Filter>
-    </ClCompile>
-    <ClCompile Include="Crypto\efgh\RSA.cpp">
-      <Filter>Crypto\efgh</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
