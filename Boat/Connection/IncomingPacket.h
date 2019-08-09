@@ -5,6 +5,9 @@
 #include "PacketBuffer.h"
 #include "../Structures/NetworkData/world_pos_data.h"
 #include "../Structures/NetworkData/object_status_data.h"
+#include "../Structures/trade_result.h"
+#include "../Structures/NetworkData/trade_item.h"
+#include "../Structures/NetworkData/ground_tile_data.h"
 
 
 namespace Packet
@@ -369,6 +372,7 @@ namespace Packet
 
 	class PasswordPromptPacket : IncomingPacket
 	{
+	public:
 		int32_t cleanPasswordStatus;
 
 		void ReadData(PacketBuffer* pb) override
@@ -380,6 +384,7 @@ namespace Packet
 
 	class PingPacket : IncomingPacket
 	{
+	public:
 		int32_t serial;
 
 		void ReadData(PacketBuffer* pb) override
@@ -391,6 +396,7 @@ namespace Packet
 
 	class QuestObjectIdPacket : IncomingPacket
 	{
+	public:
 		int32_t objectId;
 
 		void ReadData(PacketBuffer* pb) override
@@ -402,6 +408,7 @@ namespace Packet
 
 	class QuestRedeemResponsePacket : IncomingPacket
 	{
+	public:
 		bool ok;
 		std::string message;
 
@@ -415,6 +422,7 @@ namespace Packet
 
 	class RealmHeroLeftMessage : IncomingPacket
 	{
+	public:
 		int32_t realmHeroesLeft;
 
 		void ReadData(PacketBuffer* pb) override
@@ -426,9 +434,10 @@ namespace Packet
 
 	class ReconnectPacket : IncomingPacket
 	{
+	public:
 		std::string name, host, stats;
 		int32_t port, gameId, keyTime;
-		std::vector<int32_t> key;
+		std::vector<int8_t> key;
 		bool isFromArena;
 
 		void ReadData(PacketBuffer* pb) override
@@ -441,12 +450,13 @@ namespace Packet
 			gameId = pb->ReadInt32();
 			keyTime = pb->ReadInt32();
 			isFromArena = pb->ReadBoolean();
-			key = pb->ReadByteArray();
+			pb->ReadByteArrayEx(key);
 		}
 	};
 
 	class ReskinUnlockPacket : IncomingPacket
 	{
+	public:
 		int32_t skinId;
 
 		void ReadData(PacketBuffer* pb) override
@@ -458,7 +468,9 @@ namespace Packet
 
 	class ServerPlayerShootPacket : IncomingPacket
 	{
-		int32_t bulletId, ownerId, containerType;
+	public:
+		uint8_t bulletId;
+		int32_t ownerId, containerType;
 		WorldPosData startingPos;
 		int32_t angle, damage;
 
@@ -469,6 +481,185 @@ namespace Packet
 			ownerId = pb->ReadInt32();
 			containerType = pb->ReadInt32();
 			WorldPosData startingPos;
+			startingPos.ReadData(pb);
+		}
+	};
 
+	class ShowEffectPacket : IncomingPacket
+	{
+	public:
+		uint8_t effectType;
+		int32_t targetObjectId;
+		WorldPosData pos1, pos2;
+		int32_t color;
+		float_t duration;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			effectType = pb->ReadUnsignedInt8();
+			targetObjectId = pb->ReadInt32();
+			WorldPosData pos1, pos2;
+			pos1.ReadData(pb);
+			pos2.ReadData(pb);
+			color = pb->ReadInt32();
+			duration = pb->ReadFloat();
+		}
+	};
+
+	class TextPacket : IncomingPacket
+	{
+	public:
+		std::string name;
+		int32_t objectId, numStars;
+		uint8_t bubbleTime;
+		std::string recipient, text, cleanText;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			name = pb->ReadString();
+			objectId = pb->ReadInt32();
+			numStars = pb->ReadInt32();
+			bubbleTime = pb->ReadUnsignedInt8();
+			recipient = pb->ReadString();
+			text = pb->ReadString();
+			cleanText = pb->ReadString();
+		}
+	};
+
+	class TradeAcceptedPacket : IncomingPacket
+	{
+	public:
+		std::vector<bool> clientOffer, partnerOffer;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			const size_t clientOfferLen = pb->ReadInt16();
+			clientOffer.resize(clientOfferLen);
+			for (int i = 0; i < clientOfferLen; i++)
+				clientOffer.push_back(pb->ReadBoolean());
+			const size_t partnerOfferLen = pb->ReadInt16();
+			partnerOffer.resize(partnerOfferLen);
+			for (int i = 0; i < partnerOfferLen; i++)
+				partnerOffer.push_back(pb->ReadBoolean());
+		}
+	};
+
+	class TradeChangedPacket : IncomingPacket
+	{
+	public:
+		std::vector<bool> offer;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			const size_t offerLen = pb->ReadInt16();
+			offer.resize(offerLen);
+			for (int i = 0; i < offerLen; i++)
+				offer.push_back(pb->ReadBoolean());
+		}
+	};
+
+	class TradeDonePacket : IncomingPacket
+	{
+	public:
+		TradeResult code;
+		std::string description;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			code = (TradeResult)pb->ReadInt32();
+			description = pb->ReadString();
+		}
+	};
+
+	class TradeRequestedPacket : IncomingPacket
+	{
+	public:
+		std::string name;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			name = pb->ReadString();
+		}
+	};
+
+	class TradeStartPacket : IncomingPacket
+	{
+	public:
+		std::vector<TradeItem> clientItems;
+		std::string partnerName;
+		std::vector<TradeItem> partnerItems;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			const size_t clientItemsLen = pb->ReadInt16();
+			clientItems.resize(clientItemsLen);
+			for (int i = 0; i < clientItemsLen; i++)
+			{
+				TradeItem item;
+				item.ReadData(pb);
+				clientItems.push_back(item);
+			}
+			partnerName = pb->ReadString();
+			const size_t partnerItemsLen = pb->ReadInt16();
+			for (int i = 0; i < partnerItemsLen; i++)
+			{
+				TradeItem item;
+				item.ReadData(pb);
+				partnerItems.push_back(item);
+			}
+		}
+	};
+
+	class UpdatePacket : IncomingPacket
+	{
+	public:
+		std::vector<GroundTileData> tiles;
+		std::vector<ObjectData> newObjects;
+		std::vector<int32_t> drops;
+
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			const size_t tilesLen = pb->ReadInt16();
+			tiles.resize(tilesLen);
+			for (int i = 0; i < tilesLen; i++)
+			{
+				GroundTileData gd;
+				gd.ReadData(pb);
+				tiles.push_back(gd);
+			}
+
+			const size_t newObjectsLen = pb->ReadInt16();
+			newObjects.resize(newObjectsLen);
+			for (int i = 0; i < newObjectsLen; i++)
+			{
+				ObjectData od;
+				od.ReadData(pb);
+				newObjects.push_back(od);
+			}
+
+			const size_t dropsLen = pb->ReadInt16();
+			drops.resize(dropsLen);
+			for (int i = 0; i < dropsLen; i++)
+			{
+				drops.push_back(pb->ReadInt32());
+			}
+		}
+	};
+
+	class VerifyEmailPacket : IncomingPacket
+	{
+	public:
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+		}
 	};
 }

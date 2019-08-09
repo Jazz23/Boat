@@ -139,11 +139,13 @@
     <ClInclude Include="Structures\enumerations.h" />
     <ClInclude Include="Structures\guildrank.h" />
     <ClInclude Include="Structures\mapinfo.h" />
+    <ClInclude Include="Structures\NetworkData\ground_tile_data.h" />
     <ClInclude Include="Structures\NetworkData\move_record.h" />
     <ClInclude Include="Structures\NetworkData\object_data.h" />
     <ClInclude Include="Structures\NetworkData\object_status_data.h" />
     <ClInclude Include="Structures\NetworkData\slot_object_data.h" />
     <ClInclude Include="Structures\NetworkData\stat_data.h" />
+    <ClInclude Include="Structures\NetworkData\trade_item.h" />
     <ClInclude Include="Structures\NetworkData\world_pos_data.h" />
     <ClInclude Include="Structures\object.h" />
     <ClInclude Include="Structures\playerdata.h" />
@@ -151,6 +153,7 @@
     <ClInclude Include="Structures\proxy.h" />
     <ClInclude Include="Structures\resource_manager.h" />
     <ClInclude Include="Structures\tile.h" />
+    <ClInclude Include="Structures\trade_result.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Connection\PacketManager.cpp" />

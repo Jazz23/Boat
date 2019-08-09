@@ -84,6 +84,15 @@
     <ClInclude Include="Structures\NetworkData\world_pos_data.h">
       <Filter>Structures\NetworkData</Filter>
     </ClInclude>
+    <ClInclude Include="Structures\trade_result.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\NetworkData\trade_item.h">
+      <Filter>Structures\NetworkData</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\NetworkData\ground_tile_data.h">
+      <Filter>Structures\NetworkData</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
