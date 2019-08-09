@@ -127,6 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Connection\IncomingPacket.h" />
+    <ClInclude Include="Connection\OutgoingPacket.h" />
     <ClInclude Include="Connection\PacketBuffer.h" />
     <ClInclude Include="Connection\PacketManager.h" />
     <ClInclude Include="Connection\Packets.h" />
@@ -138,6 +140,8 @@
     <ClInclude Include="Structurers\guildrank.h" />
     <ClInclude Include="Structurers\mapinfo.h" />
     <ClInclude Include="Structurers\object.h" />
+    <ClInclude Include="Structurers\object_data.h" />
+    <ClInclude Include="Structurers\object_status_data.h" />
     <ClInclude Include="Structurers\playerdata.h" />
     <ClInclude Include="Structurers\projectile.h" />
     <ClInclude Include="Structurers\proxy.h" />

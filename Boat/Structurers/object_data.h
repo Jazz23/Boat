@@ -1,18 +1,18 @@
 #pragma once
 #include "../Connection/Packets.h"
 
-class ObjectData : BasePacket
+class ObjectData : Packet::BasePacket
 {
 public:
 	int objectType;
 	ObjectStatusData status;
 
-	void read(PacketBuffer* pb)
+	void read(Packet::PacketBuffer* pb)
 	{
 		if (!pb) return;
 	}
 
-	void write(PacketBuffer* pb)
+	void write(Packet::PacketBuffer* pb)
 	{
 		if (!pb) return;
 		pb->Write

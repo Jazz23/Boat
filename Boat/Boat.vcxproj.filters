@@ -60,6 +60,18 @@
     <ClInclude Include="Structurers\enumerations.h">
       <Filter>Structures</Filter>
     </ClInclude>
+    <ClInclude Include="Structurers\object_status_data.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Structurers\object_data.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\IncomingPacket.h">
+      <Filter>Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\OutgoingPacket.h">
+      <Filter>Connection</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
