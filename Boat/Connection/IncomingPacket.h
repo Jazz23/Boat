@@ -59,7 +59,7 @@ namespace Packet
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
-			pos.Read(pb);
+			pos.ReadData(pb);
 			radius = pb->ReadFloat();
 			damage = pb->ReadUnsignedInt16();
 			effect = pb->ReadUnsignedInt8();
@@ -165,7 +165,7 @@ namespace Packet
 			bulletID = pb->ReadUnsignedInt8();
 			ownerID = pb->ReadInt32();
 			bulletType = pb->ReadUnsignedInt8();
-			startingPos.Read(pb);
+			startingPos.ReadData(pb);
 			angle = pb->ReadFloat();
 			damage = pb->ReadInt16();
 			if (pb->index < pb->size)
@@ -216,7 +216,7 @@ namespace Packet
 		{
 			if (!pb) return;
 			pb->ReadInt32();
-			pos.Read(pb);
+			pos.ReadData(pb);
 		}
 	};
 	class GuildResultPacket : IncomingPacket
