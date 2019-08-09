@@ -224,6 +224,25 @@ namespace Packet
 			for (int i = 0; i < _size; i++, index++)
 				buffer[index] = arr[i];
 		}
+		[[nodiscard]] void ReadByteArrayEx(std::vector<int8_t> &v)
+		{
+			auto size = ReadInt16();
+			v.resize(size);
+			for (int i = 0; i < size; i++, index++)
+				v[i] = buffer[index];
+		}
+		void WriteByteArrayEx(const std::vector<int8_t>& v)
+		{
+			auto sz = v.size();
+			if (sz < 1)
+			{
+				WriteInt16(0);
+				return;
+			}
+			WriteInt16(sz);
+			for (int i = 0; i < sz; i++, index++)
+				buffer[index] = v[i];
+		}
 		[[nodiscard]] std::string& ReadString()
 		{
 			const auto len = ReadInt16();
