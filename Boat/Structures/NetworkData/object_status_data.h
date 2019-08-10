@@ -154,7 +154,7 @@ public:
 		}
 	}
 
-	void WriteData(Packet::PacketBuffer* pb) override
+	void WriteData(Packet::PacketBuffer* pb) const override
 	{
 		if (!pb) return;
 		pb->WriteInt32(objectId);

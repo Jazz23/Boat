@@ -16,7 +16,7 @@ public:
 		else
 			statValue = pb->ReadInt32();
 	}
-	void WriteData(Packet::PacketBuffer* pb) override
+	void WriteData(Packet::PacketBuffer* pb) const override
 	{
 		pb->WriteInt8(statType);
 		if (isStringStat())

@@ -100,6 +100,32 @@ namespace Packet
 			index = 0;
 			buffer = new char[_size];
 		}
+		/*template<typename T>
+		bool IsBasicType(T& __Val)
+		{
+			return (std::is_same_v(T, float) || std::is_same_v(T, int32_t) || std::is_same_v(T, int16_t) ||
+				std::is_same_v(T, int8_t) || std::is_same_v(T, uint8_t) || std::is_same_v(T, uint16_t) ||
+				std::is_same_v(T, uint8_t));
+		}
+
+		template<typename T>
+		void Read(T& __Out_To)
+		{
+			if (IsBasicType(__Out_To)
+			{
+				size_t size = sizeof(__Out_To);
+				memcpy(&__Out_To, &buffer[index], size);
+				index+= size;
+
+			}
+		}
+		template<typename T> 
+		void Write(T &__Out_To)
+		{
+
+		}*/
+
+
 		[[nodiscard]] int32_t ReadInt32()
 		{
 			int32_t ret = 0;

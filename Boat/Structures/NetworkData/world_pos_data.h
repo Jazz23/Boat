@@ -19,7 +19,7 @@ public:
 		x = pb->ReadFloat();
 		y = pb->ReadFloat();
 	}
-	void WriteData(Packet::PacketBuffer* pb) override
+	void WriteData(Packet::PacketBuffer* pb) const override
 	{
 		if (!pb) return;
 		pb->WriteFloat(x);

@@ -14,7 +14,7 @@ public:
 		status.ReadData(pb);
 	}
 
-	void WriteData(Packet::PacketBuffer* pb) override
+	void WriteData(Packet::PacketBuffer* pb) const override
 	{
 		if (!pb) return;
 		status.WriteData(pb);
