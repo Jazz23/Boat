@@ -13,6 +13,9 @@
     <Filter Include="Crypto">
       <UniqueIdentifier>{b0c691b2-b113-49cc-b634-5c1ac93f4971}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Connection\ThreadPool">
+      <UniqueIdentifier>{7acfab64-317e-4aa5-ac01-0f0a2e3d8888}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Connection\PacketBuffer.h">
@@ -96,6 +99,15 @@
     <ClInclude Include="Structures\NetworkData\ground_tile_data.h" />
     <ClInclude Include="Structures\NetworkData\trade_item.h" />
     <ClInclude Include="Structures\trade_result.h" />
+    <ClInclude Include="Structures\PacketIdManager.h">
+      <Filter>Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\PacketDeep.cpp">
+      <Filter>Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\ThreadPool\ThreadPool.h">
+      <Filter>Connection\ThreadPool</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -104,6 +116,9 @@
     </ClCompile>
     <ClCompile Include="Connection\PacketRouter.cpp">
       <Filter>Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="Connection\ThreadPool\ThreadPool.cpp">
+      <Filter>Connection\ThreadPool</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
