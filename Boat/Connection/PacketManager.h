@@ -35,7 +35,6 @@
 
 namespace PacketDeep
 {
-	
 	inline WSADATA wsaData;
 	inline SOCKET conSock = INVALID_SOCKET;
 	inline addrinfo* result = nullptr, * ptr = nullptr, hints;
