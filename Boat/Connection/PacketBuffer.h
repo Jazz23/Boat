@@ -44,8 +44,8 @@ namespace Packet
 		}
 		[[nodiscard]] bool CheckSizes() const
 		{
-			if (sz_INT32 != 4 || sz_INT16 != 2 || sz_INT8 != 1  || sz_FLOAT != 4)
-				return false;
+			//if (sz_INT32 != 4 || sz_INT16 != 2 || sz_INT8 != 1  || sz_FLOAT != 4)
+			//	return false;
 			return true;
 		}
 		[[nodiscard]] std::pair<char*, unsigned int> GetBuffer() const
