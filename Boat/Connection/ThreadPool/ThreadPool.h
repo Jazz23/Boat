@@ -10,6 +10,7 @@ namespace PktThreadPool
 {
 	class oThread
 	{
+		bool stop;
 		bool busy;
 		std::mutex	m;
 		char* pkt;
@@ -24,7 +25,7 @@ namespace PktThreadPool
 			memcpy(pkt, _pkt, sz);
 		}
 		bool getBusy() const { return busy; }
-		oThread() : busy(false)
+		oThread() : busy(false), stop(false)
 		{
 
 		}
@@ -32,6 +33,7 @@ namespace PktThreadPool
 		{
 			while (true)
 			{
+				if (stop) break;
 				if (busy && pkt && sz > 0)
 				{
 					std::lock_guard<std::mutex> g(m);
@@ -55,7 +57,7 @@ namespace PktThreadPool
 	public:
 		PacketThreadPool() : numOfThreads(std::thread::hardware_concurrency() - 1)
 		{
-			if (numOfThreads)
+			if (numOfThreads < 1)
 			{
 				std::cout << "COULD NOT DETECT CPU CORE COUNT BIG ERROR\n";
 				system("pause");

@@ -1,6 +1,5 @@
 #include "PacketManager.h"
 
-
 namespace PacketDeep
 {
 	bool badFlags(unsigned long flags)
@@ -12,7 +11,7 @@ namespace PacketDeep
 		std::lock_guard<std::mutex> g(packetMutex);
 		if (badFlags(flags))
 			return BAD_FLAGS;
-		if (!pkt)
+		if (!pkt && (flags & SEND_PACKET_NOW || flags & QUEUE_PACKET))
 			return BAD_PACKET_ARRAY;
 		
 		int status = ASSUMED_FAILURE;
@@ -24,6 +23,7 @@ namespace PacketDeep
 			iResult = send(conSock, pkt, sz, 0);
 			if (iResult == SOCKET_ERROR)
 				return SOCKET_ERROR;
+			status = ASSUMED_SUCCESS;
 		}
 		else if (flags & QUEUE_PACKET)
 		{
@@ -31,10 +31,14 @@ namespace PacketDeep
 			char* npkt = new char[sz]; 
 			memcpy(npkt, pkt, sz);
 			choked_packets.emplace_back(npkt, sz);
+			status = ASSUMED_SUCCESS;
 		}
 
 		if (flags & SEND_ENTIRE_QUEUE)
+		{
 			SendQueuedPackets();
+			status = ASSUMED_SUCCESS;
+		}
 
 		return status;
 	}

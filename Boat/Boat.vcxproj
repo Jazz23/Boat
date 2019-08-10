@@ -136,6 +136,7 @@
     <ClInclude Include="Connection\ThreadPool\ThreadPool.h" />
     <ClInclude Include="Crypto\rc4.h" />
     <ClInclude Include="Crypto\rsa.h" />
+    <ClInclude Include="Logger\Logger.h" />
     <ClInclude Include="Structures\accinfo.h" />
     <ClInclude Include="Structures\classes.h" />
     <ClInclude Include="Structures\condition_effects.h" />
@@ -163,7 +164,7 @@
   <ItemGroup>
     <ClCompile Include="Connection\PacketManager.cpp" />
     <ClCompile Include="Connection\PacketRouter.cpp" />
-    <ClCompile Include="Connection\ThreadPool\ThreadPool.cpp" />
+    <ClCompile Include="Logger\Logger.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

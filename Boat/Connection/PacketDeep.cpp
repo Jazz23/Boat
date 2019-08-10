@@ -6,7 +6,15 @@ namespace PacketDeep
 	{
 		for (int i = 0; i < MAXIMUM_PACKET_BUFFER; i++)
 			recvBuf[i] = 0;
+		tPool = new PktThreadPool::PacketThreadPool();
 		return WSAStartup(MAKEWORD(2, 2), &wsaData);
+	}
+	void StopWinSock()
+	{
+		delete tPool;
+		if (conSock != SOCKET_ERROR && conSock != INVALID_SOCKET)
+			closesocket(conSock);
+		WSACleanup();
 	}
 	void SetupHints()
 	{
@@ -48,11 +56,13 @@ namespace PacketDeep
 		{
 			iResult = recv(conSock, recvBuf, recvBufLen, 0);
 			if (iResult > 0)
-				printf("Bytes received: %d\n", iResult);
+			{
+				tPool->AddPacket(recvBuf, iResult);
+			}
 			else if (iResult == 0)
-				printf("Connection closed\n");
+				std::cout << "Connection closed\n";
 			else
-				printf("recv failed with error: %d\n", WSAGetLastError());
+				std::cout << "recv failed with error " << WSAGetLastError() << "\n";
 		}
 	}
 }

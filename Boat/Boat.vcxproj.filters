@@ -16,6 +16,9 @@
     <Filter Include="Connection\ThreadPool">
       <UniqueIdentifier>{7acfab64-317e-4aa5-ac01-0f0a2e3d8888}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Logger">
+      <UniqueIdentifier>{1960d23c-85b6-41ad-a533-f0336b7c2479}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Connection\PacketBuffer.h">
@@ -108,6 +111,9 @@
     <ClInclude Include="Connection\ThreadPool\ThreadPool.h">
       <Filter>Connection\ThreadPool</Filter>
     </ClInclude>
+    <ClInclude Include="Logger\Logger.h">
+      <Filter>Logger</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -117,8 +123,8 @@
     <ClCompile Include="Connection\PacketRouter.cpp">
       <Filter>Connection</Filter>
     </ClCompile>
-    <ClCompile Include="Connection\ThreadPool\ThreadPool.cpp">
-      <Filter>Connection\ThreadPool</Filter>
+    <ClCompile Include="Logger\Logger.cpp">
+      <Filter>Logger</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

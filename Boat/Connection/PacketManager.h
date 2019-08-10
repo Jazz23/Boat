@@ -15,6 +15,7 @@
 
 #include "Packets.h"
 #include "PacketBuffer.h"
+#include "ThreadPool/ThreadPool.h"
 
 // Need to link with Ws2_32.lib, Mswsock.lib, and Advapi32.lib
 #pragma comment (lib, "Ws2_32.lib")
@@ -45,6 +46,8 @@ namespace PacketDeep
 
 	inline std::vector<std::pair<char*, size_t> > choked_packets;
 	inline bool send_packets = true;
+	inline PktThreadPool::PacketThreadPool* tPool = nullptr;
+
 
 	bool badFlags(unsigned long flags);
 	int SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags);
@@ -52,6 +55,7 @@ namespace PacketDeep
 	void SendQueuedPackets();
 
 	int StartWinSock();
+	void StopWinSock();
 	void SetupHints();
 	//call cleanup if result is not 0
 	int FillAddrInfo(const char* serverIp);
