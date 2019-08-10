@@ -497,4 +497,43 @@ namespace Packet
 			pb->WriteInt32(objectId);
 		}
 	};
+
+	//arena stuff
+	class EnterArenaPacket : OutgoingPacket
+	{
+	public:
+		int32_t currency;
+		void WriteData(PacketBuffer* pb) const override
+		{
+			if (!pb) return;
+			pb->WriteInt32(currency);
+		}
+	};
+	class QuestRedeemPacket : OutgoingPacket
+	{
+	public:
+		std::string questId;
+		std::vector<SlotObjectData> slots;
+		void WriteData(PacketBuffer* pb) const override
+		{
+			if (!pb) return;
+			pb->WriteString(questId);
+			pb->WriteInt16(slots.size());
+			for (const auto& slot : slots)
+				slot.WriteData(pb);
+		}
+	};
+	//pet stuff
+	class ActivePetUpdateRequestPacket : OutgoingPacket
+	{
+	public:
+		int8_t commandType;
+		int32_t instanceId;
+		void WriteData(PacketBuffer* pb) const override
+		{
+			if (!pb) return;
+			pb->WriteInt16(commandType);
+			pb->WriteInt32(instanceId);
+		}
+	};
 }
