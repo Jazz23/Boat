@@ -1,29 +1,60 @@
 #include "PacketManager.h"
 
 
-namespace Packet
+namespace PacketDeep
 {
-	void SendPacket(char* pkt, size_t sz)
+	bool badFlags(unsigned long flags)
 	{
-		char* npkt = new char[sz];
-		memcpy(npkt, pkt, sz);
-		choked_packets.push_back({ npkt, sz });
-		Send();
+		return !(flags & SEND_PACKET_NOW && flags & QUEUE_PACKET);
 	}
-	void SendPacket(const PacketBuffer& pkt)
+	int SendPacket(char* pkt, size_t sz, unsigned long flags)
 	{
-		char* npkt = new char[pkt.index]; //maybe -1 idk
-		memcpy(npkt, pkt.buffer, pkt.index + 1);
-		choked_packets.push_back({ npkt, pkt.index });
-		Send();
+		std::lock_guard<std::mutex> g(packetMutex);
+		if (badFlags(flags))
+			return BAD_FLAGS;
+		if (!pkt)
+			return BAD_PACKET_ARRAY;
+		
+		int status = ASSUMED_FAILURE;
+
+		if (flags & SEND_PACKET_NOW)
+		{
+			if (conSock == INVALID_SOCKET)
+				return status;
+			iResult = send(conSock, pkt, sz, 0);
+			if (iResult == SOCKET_ERROR)
+				return SOCKET_ERROR;
+		}
+		else if (flags & QUEUE_PACKET)
+		{
+			//make our own copy so original packet buffer can be deleted
+			char* npkt = new char[sz]; 
+			memcpy(npkt, pkt, sz);
+			choked_packets.emplace_back(npkt, sz);
+		}
+
+		if (flags & SEND_ENTIRE_QUEUE)
+			SendQueuedPackets();
+
+		return status;
 	}
-	void Send()
+	int SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags)
+	{
+		SendPacket(pkt.buffer, pkt.index+1, flags);
+	}
+	void SendQueuedPackets()
 	{
 		if (send_packets)
 		{
 			for (const auto& pkt : choked_packets)
 			{
 				//send the packets
+				if (conSock == INVALID_SOCKET)
+					continue;
+				iResult = send(conSock, pkt.first, pkt.second, 0);
+				if (iResult == SOCKET_ERROR)
+					continue;
+				delete[] pkt.first;
 			}
 			choked_packets.clear();
 		}

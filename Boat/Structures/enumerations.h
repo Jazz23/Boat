@@ -106,3 +106,7 @@ enum StatType
 	NEW_CON_STAT = 96,
 	FORTUNE_TOKEN_STAT = 97,
 };
+enum PacketIdEnum
+{
+	
+};
