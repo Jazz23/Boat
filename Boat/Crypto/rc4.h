@@ -13,6 +13,9 @@ public:
 	}
 
 	void cipher()
+	{
+
+	}
 private:
 	byte state[256];
 	std::vector<byte> key;
