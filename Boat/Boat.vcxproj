@@ -160,6 +160,7 @@
     <ClInclude Include="Structures\resource_manager.h" />
     <ClInclude Include="Structures\tile.h" />
     <ClInclude Include="Structures\trade_result.h" />
+    <ClInclude Include="Utilities\ClientU.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Connection\PacketManager.cpp" />

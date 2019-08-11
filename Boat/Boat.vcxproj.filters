@@ -19,6 +19,9 @@
     <Filter Include="Logger">
       <UniqueIdentifier>{1960d23c-85b6-41ad-a533-f0336b7c2479}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{6b294e44-4a43-455f-bfe7-1499174782aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Connection\PacketBuffer.h">
@@ -113,6 +116,9 @@
     </ClInclude>
     <ClInclude Include="Logger\Logger.h">
       <Filter>Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\ClientU.h">
+      <Filter>Utilities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
