@@ -1,5 +1,6 @@
 #include "PacketManager.h"
 #include "../Logger/Logger.h"
+
 namespace PacketDeep
 {
 	bool badFlags(unsigned long flags)

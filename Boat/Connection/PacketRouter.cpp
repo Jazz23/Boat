@@ -6,6 +6,7 @@ namespace Packet
 	void PacketOut(OutgoingPacket& pkt)
 	{
 		PacketBuffer buf;
+		buf.WriteInt8(pkt.pktId);
 		pkt.WriteData(&buf);
 		PacketDeep::SendPacket(buf, SEND_PACKET_NOW);
 	}

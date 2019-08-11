@@ -17,6 +17,9 @@
 #include "PacketBuffer.h"
 #include "ThreadPool/ThreadPool.h"
 
+//IF WINSOCK DOES NOT WORK USE THIS, ITS A WINSOCK WRAPPER
+//https://github.com/pedro-vicente/lib_netsockets
+
 // Need to link with Ws2_32.lib, Mswsock.lib, and Advapi32.lib
 #pragma comment (lib, "Ws2_32.lib")
 #pragma comment (lib, "Mswsock.lib")
