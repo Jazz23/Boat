@@ -17,15 +17,15 @@ namespace Packet
 	class PacketBuffer
 	{
 	public:
-		char* buffer;
-		unsigned int  size;
-		unsigned int  index;
+		unsigned char* buffer;
+		size_t  size;
+		size_t  index;
 	public:
 		PacketBuffer(unsigned int _size = 1024)
 		{
 			if (!CheckSizes())
 				this->~PacketBuffer();
-			buffer = new char[_size];
+			buffer = new unsigned char[_size];
 			size = _size;
 			index = 0;
 		}
@@ -33,7 +33,7 @@ namespace Packet
 		{
 			if (!CheckSizes())
 				this->~PacketBuffer();
-			buffer = new char[_size];
+			buffer = new unsigned char[_size];
 			memcpy(buffer, data, _size);
 			size = _size;
 			index = 0;
@@ -48,16 +48,16 @@ namespace Packet
 			//	return false;
 			return true;
 		}
-		[[nodiscard]] std::pair<char*, unsigned int> GetBuffer() const
+		[[nodiscard]] std::pair<unsigned char*, size_t> GetBuffer() const
 		{
 			return { buffer, size };
 		}
-		[[nodiscard]] char* GetBuffer(int& _size)
+		[[nodiscard]] unsigned char* GetBuffer(int& _size)
 		{
 			_size = size;
 			return buffer;
 		}
-		[[nodiscard]] bool IsSpace(int bytes2add, bool make_space = true)
+		[[nodiscard]] bool __fastcall IsSpace(int bytes2add, bool make_space = true)
 		{
 			if (int newsize = index + bytes2add; newsize > size - 1)
 			{
@@ -76,15 +76,15 @@ namespace Packet
 		void Resize()
 		{
 			size_t newsize = size * 1.5;
-			char* tmp = new char[newsize];
+			unsigned char* tmp = new unsigned char[newsize];
 			memcpy(tmp, buffer, sizeof(buffer));
 			delete[] buffer;
 			buffer = tmp;
 			size = newsize;
 		}
-		void Resize(int newsize)
+		void __fastcall Resize(int newsize)
 		{
-			char* tmp = new char(newsize);
+			unsigned char* tmp = new unsigned char(newsize);
 			memcpy(tmp, buffer, newsize);
 			delete[] buffer;
 			buffer = tmp;
@@ -94,11 +94,11 @@ namespace Packet
 		{
 			Resize(index + 1);
 		}
-		void Reset(int _size = 1024)
+		void __fastcall Reset(int _size = 1024)
 		{
 			delete buffer;
 			index = 0;
-			buffer = new char[_size];
+			buffer = new unsigned char[_size];
 		}
 		/*template<typename T>
 		bool IsBasicType(T& __Val)
@@ -133,7 +133,7 @@ namespace Packet
 			index += sz_INT32;
 			return ret;
 		}
-		void WriteInt32(int32_t val)
+		void __fastcall WriteInt32(int32_t val)
 		{
 			if (!IsSpace(sz_INT32))
 				return;
@@ -147,7 +147,7 @@ namespace Packet
 			index += sz_UINT32;
 			return ret;
 		}
-		void WriteUnsignedInt32(uint32_t val)
+		void __fastcall WriteUnsignedInt32(uint32_t val)
 		{
 			if (!IsSpace(sz_UINT32))
 				return;
@@ -161,7 +161,7 @@ namespace Packet
 			index += sz_INT16;
 			return ret;
 		}
-		void WriteInt16(int16_t val)
+		void __fastcall WriteInt16(int16_t val)
 		{
 			if (!IsSpace(sz_INT16))
 				return;
@@ -175,7 +175,7 @@ namespace Packet
 			index += sz_UINT16;
 			return ret;
 		}
-		void WriteUnsignedInt16(uint16_t val)
+		void __fastcall WriteUnsignedInt16(uint16_t val)
 		{
 			if (!IsSpace(sz_UINT16))
 				return;
@@ -189,7 +189,7 @@ namespace Packet
 			index += sz_INT8;
 			return ret;
 		}
-		void WriteInt8(int8_t val)
+		void __fastcall WriteInt8(int8_t val)
 		{
 			if (!IsSpace(sz_INT8))
 				return;
@@ -202,7 +202,7 @@ namespace Packet
 			index += sz_UINT8;
 			return ret;
 		}
-		void WriteUnsignedInt8(uint8_t val)
+		void __fastcall WriteUnsignedInt8(uint8_t val)
 		{
 			if (!IsSpace(sz_UINT8))
 				return;
@@ -213,7 +213,7 @@ namespace Packet
 		{
 			return !!(ReadInt8() != 0);
 		}
-		void WriteBoolean(bool val)
+		void __fastcall WriteBoolean(bool val)
 		{
 			WriteInt8(!!(val ? 1 : 0));
 		}
@@ -224,14 +224,14 @@ namespace Packet
 			index += sz_FLOAT;
 			return ret;
 		}
-		void WriteFloat(float val)
+		void __fastcall WriteFloat(float val)
 		{
 			if (!IsSpace(sz_FLOAT))
 				return;
 			memcpy(&buffer[index], &val, sz_FLOAT);
 			index += sz_FLOAT;
 		}
-		[[nodiscard]] char* ReadByteArray(int16_t &_size)
+		[[nodiscard]] char* __fastcall ReadByteArray(int16_t &_size)
 		{
 			_size = ReadInt16();
 			char* arr = new char[_size];
@@ -239,7 +239,7 @@ namespace Packet
 				arr[i] = buffer[index];
 			return arr;
 		}
-		void WriteByteArray(char* arr, const int16_t _size)
+		void __fastcall WriteByteArray(unsigned char* arr, const int16_t _size)
 		{
 			if (!arr || _size == 0)
 			{
@@ -250,7 +250,7 @@ namespace Packet
 			for (int i = 0; i < _size; i++, index++)
 				buffer[index] = arr[i];
 		}
-		[[nodiscard]] void ReadByteArrayEx(std::vector<int8_t> &v)
+		[[nodiscard]] void ReadByteArrayEx(std::vector<unsigned char> &v)
 		{
 			auto size = ReadInt16();
 			v.resize(size);

@@ -1,4 +1,5 @@
 #include "PacketManager.h"
+#include "../Logger/Logger.h"
 
 namespace PacketDeep
 {
@@ -24,8 +25,6 @@ namespace PacketDeep
 		hints.ai_socktype = SOCK_STREAM;
 		hints.ai_protocol = IPPROTO_TCP;
 	}
-	//call cleanup if result is not 0
-
 	int Connect(const char* serverIp)
 	{
 		closesocket(conSock);
@@ -66,9 +65,9 @@ namespace PacketDeep
 				tPool->AddPacket(recvBuf, iResult);
 			}
 			else if (iResult == 0)
-				std::cout << "Connection closed\n";
+				Logger::Log("connection closed");
 			else
-				std::cout << "recv failed with error " << WSAGetLastError() << "\n";
+				Logger::Log("recv failed with error " + WSAGetLastError());
 			std::this_thread::sleep_for(std::chrono::milliseconds(1));
 		}
 	}
