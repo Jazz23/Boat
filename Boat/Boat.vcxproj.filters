@@ -132,5 +132,8 @@
     <ClCompile Include="Logger\Logger.cpp">
       <Filter>Logger</Filter>
     </ClCompile>
+    <ClCompile Include="Crypto\rc4.cpp">
+      <Filter>Crypto</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

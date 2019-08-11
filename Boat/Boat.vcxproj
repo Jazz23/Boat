@@ -165,6 +165,7 @@
   <ItemGroup>
     <ClCompile Include="Connection\PacketManager.cpp" />
     <ClCompile Include="Connection\PacketRouter.cpp" />
+    <ClCompile Include="Crypto\rc4.cpp" />
     <ClCompile Include="Logger\Logger.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
