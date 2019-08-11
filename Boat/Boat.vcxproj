@@ -130,10 +130,13 @@
     <ClInclude Include="Connection\IncomingPacket.h" />
     <ClInclude Include="Connection\OutgoingPacket.h" />
     <ClInclude Include="Connection\PacketBuffer.h" />
+    <ClInclude Include="Connection\PacketDeep.cpp" />
     <ClInclude Include="Connection\PacketManager.h" />
     <ClInclude Include="Connection\Packets.h" />
+    <ClInclude Include="Connection\ThreadPool\ThreadPool.h" />
     <ClInclude Include="Crypto\rc4.h" />
     <ClInclude Include="Crypto\rsa.h" />
+    <ClInclude Include="Logger\Logger.h" />
     <ClInclude Include="Structures\accinfo.h" />
     <ClInclude Include="Structures\classes.h" />
     <ClInclude Include="Structures\condition_effects.h" />
@@ -150,16 +153,19 @@
     <ClInclude Include="Structures\NetworkData\trade_item.h" />
     <ClInclude Include="Structures\NetworkData\world_pos_data.h" />
     <ClInclude Include="Structures\object.h" />
+    <ClInclude Include="Structures\PacketIdManager.h" />
     <ClInclude Include="Structures\playerdata.h" />
     <ClInclude Include="Structures\projectile.h" />
     <ClInclude Include="Structures\proxy.h" />
     <ClInclude Include="Structures\resource_manager.h" />
     <ClInclude Include="Structures\tile.h" />
     <ClInclude Include="Structures\trade_result.h" />
+    <ClInclude Include="Utilities\ClientU.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Connection\PacketManager.cpp" />
     <ClCompile Include="Connection\PacketRouter.cpp" />
+    <ClCompile Include="Logger\Logger.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

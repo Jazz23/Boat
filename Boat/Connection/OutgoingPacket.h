@@ -6,11 +6,14 @@
 #include "../Structures/NetworkData/world_pos_data.h"
 #include "../Structures/NetworkData/slot_object_data.h"
 #include "../Structures/NetworkData/move_record.h"
+#include "../Structures/PacketId.h"
 namespace Packet
 {
+	using namespace PacketId;
 	class AcceptTradePacket : OutgoingPacket
 	{
 	public:
+		AcceptTradePacket() { pktId = ACCEPTTRADE; }
 		std::vector<bool> clientOffer, partnerOffer;
 
 		void WriteData(PacketBuffer* pb) const override
@@ -28,6 +31,7 @@ namespace Packet
 	class AoeAckPacket : OutgoingPacket
 	{
 	public:
+		AoeAckPacket() { pktId = AOEACK; }
 		int32_t time;
 		WorldPosData pos;
 
@@ -41,6 +45,7 @@ namespace Packet
 	class BuyPacket : OutgoingPacket
 	{
 	public:
+		BuyPacket() { pktId = BUY; }
 		int32_t objectId, quantity;
 
 		void WriteData(PacketBuffer* pb) const override
@@ -53,6 +58,7 @@ namespace Packet
 	class CancelTradePacket : OutgoingPacket
 	{
 	public:
+		CancelTradePacket() { pktId = CANCELTRADE; }
 		int32_t objectId;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -62,6 +68,7 @@ namespace Packet
 	class ChangeGuildRankPacket : OutgoingPacket
 	{
 	public:
+		ChangeGuildRankPacket() { pktId = CHANGEGUILDRANK; }
 		std::string name;
 		int32_t guildRank;
 
@@ -75,6 +82,7 @@ namespace Packet
 	class ChangeTradePacket : OutgoingPacket
 	{
 	public:
+		ChangeTradePacket() { pktId = CHANGETRADE; }
 		std::vector<bool> offer;
 		
 		void WriteData(PacketBuffer* pb) const override
@@ -88,6 +96,7 @@ namespace Packet
 	class CheckCreditsPacket : OutgoingPacket
 	{
 	public:
+		CheckCreditsPacket() { pktId = CHECKCREDITS; }
 		void WriteData(PacketBuffer* pb) const override
 		{
 
@@ -96,6 +105,7 @@ namespace Packet
 	class ChooseNamePacket : OutgoingPacket
 	{
 	public:
+		ChooseNamePacket() { pktId = CHOOSENAME; }
 		std::string name;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -106,6 +116,7 @@ namespace Packet
 	class ClaimDailyRewardMessage : OutgoingPacket
 	{
 	public:
+		ClaimDailyRewardMessage() { pktId = CLAIMLOGIN_REWARD_MSG; }
 		std::string claimKey, claimType;
 		
 		void WriteData(PacketBuffer* pb) const override
@@ -118,6 +129,7 @@ namespace Packet
 	class CreateGuildPacket : OutgoingPacket
 	{
 	public:
+		CreateGuildPacket() { pktId = CREATEGUILD; }
 		std::string name;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -128,6 +140,7 @@ namespace Packet
 	class CreatePacket : OutgoingPacket
 	{
 	public:
+		CreatePacket() { pktId = CREATE; }
 		int16_t classType, skinType;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -139,6 +152,7 @@ namespace Packet
 	class EditAccountListPackket : OutgoingPacket
 	{
 	public:
+		EditAccountListPackket() { pktId = EDITACCOUNTLIST; }
 		int32_t accountListId;
 		bool add;
 		int32_t ObjectId;
@@ -153,6 +167,7 @@ namespace Packet
 	class EnemyHitPacket : OutgoingPacket
 	{
 	public:
+		EnemyHitPacket() { pktId = ENEMYHIT; }
 		int32_t time;
 		int8_t bulletId;
 		int32_t targetId;
@@ -169,6 +184,7 @@ namespace Packet
 	class EscapePacket : OutgoingPacket
 	{
 	public:
+		EscapePacket() { pktId = ESCAPE; }
 		void WriteData(PacketBuffer* pb) const override
 		{
 
@@ -177,6 +193,7 @@ namespace Packet
 	class GotoRequestRoomPacket : OutgoingPacket
 	{
 	public:
+		GotoRequestRoomPacket() { pktId = 0; }
 		void WriteData(PacketBuffer* pb) const override
 		{
 
@@ -185,6 +202,7 @@ namespace Packet
 	class GotoAckPacket : OutgoingPacket
 	{
 	public:
+		GotoAckPacket() { pktId = GOTOACK; }
 		int32_t time;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -195,6 +213,7 @@ namespace Packet
 	class GroundDamagePacket : OutgoingPacket
 	{
 	public:
+		GroundDamagePacket() { pktId = GROUNDDAMAGE; }
 		int32_t time;
 		WorldPosData pos;
 		void WriteData(PacketBuffer* pb) const override
@@ -207,6 +226,7 @@ namespace Packet
 	class GuildInvitePacket : OutgoingPacket
 	{
 	public:
+		GuildInvitePacket() { pktId = GUILDINVITE; }
 		std::string name;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -217,6 +237,7 @@ namespace Packet
 	class GuildRemovePacket : OutgoingPacket
 	{
 	public:
+		GuildRemovePacket() { pktId = GUILDREMOVE; }
 		std::string name;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -227,6 +248,7 @@ namespace Packet
 	class HelloPacket : OutgoingPacket
 	{
 	public:
+		HelloPacket() { pktId = HELLO; }
 		std::string buildVersion;
 		int32_t gameId;
 		std::string guid;
@@ -260,6 +282,7 @@ namespace Packet
 	class InvDropPacket : OutgoingPacket
 	{
 	public:
+		InvDropPacket() { pktId = INVDROP; }
 		SlotObjectData slotObject;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -270,6 +293,7 @@ namespace Packet
 	class InvSwapPacket : OutgoingPacket
 	{
 	public:
+		InvSwapPacket() { pktId = INVSWAP; }
 		int32_t time;
 		WorldPosData pos;
 		SlotObjectData slotObject1, slotObject2;
@@ -285,6 +309,7 @@ namespace Packet
 	class JoinGuildPacket : OutgoingPacket
 	{
 	public:
+		JoinGuildPacket() { pktId = JOINGUILD; }
 		std::string guildName;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -295,6 +320,7 @@ namespace Packet
 	class KeyInfoRequestPacket : OutgoingPacket
 	{
 	public:
+		KeyInfoRequestPacket() { pktId = KEYINFO_REQUEST; }
 		int32_t itemType;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -305,6 +331,7 @@ namespace Packet
 	class LoadPacket : OutgoingPacket
 	{
 	public:
+		LoadPacket() { pktId = LOAD; }
 		int32_t charId;
 		bool isFromArena;
 		void WriteData(PacketBuffer* pb) const override
@@ -317,6 +344,7 @@ namespace Packet
 	class MovePacket : OutgoingPacket
 	{
 	public:
+		MovePacket() { pktId = MOVE; }
 		int32_t tickId, time;
 		WorldPosData newPosition;
 		std::vector<MoveRecord> records;
@@ -334,6 +362,7 @@ namespace Packet
 	class OtherHitPacket : OutgoingPacket
 	{
 	public:
+		OtherHitPacket() { pktId = OTHERHIT; }
 		int32_t time;
 		int8_t bulletId;
 		int32_t objectId, targetId;
@@ -349,6 +378,7 @@ namespace Packet
 	class PlayerHitPacket : OutgoingPacket
 	{
 	public:
+		PlayerHitPacket() { pktId = PLAYERHIT; }
 		uint8_t bulletId;
 		int32_t objectId;
 		void WriteData(PacketBuffer* pb) const override
@@ -361,6 +391,7 @@ namespace Packet
 	class PlayerShootPacket : OutgoingPacket
 	{
 	public:
+		PlayerShootPacket() { pktId = PLAYERSHOOT; }
 		int32_t time;
 		int8_t bulletId;
 		int16_t containerType;
@@ -379,6 +410,7 @@ namespace Packet
 	class PlayerTextPacket : OutgoingPacket
 	{
 	public:
+		PlayerTextPacket() { pktId = PLAYERTEXT; }
 		std::string text;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -389,6 +421,7 @@ namespace Packet
 	class PongPacket : OutgoingPacket //likely
 	{
 	public:
+		PongPacket() { pktId = PONG; }
 		int32_t serial, time;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -400,6 +433,7 @@ namespace Packet
 	class RequestTradePacket : OutgoingPacket
 	{
 	public:
+		RequestTradePacket() { pktId = REQUESTTRADE; }
 		std::string name;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -410,6 +444,7 @@ namespace Packet
 	class ReskinPacket : OutgoingPacket
 	{
 	public:
+		ReskinPacket() { pktId = RESKIN; }
 		int32_t skinId;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -420,6 +455,7 @@ namespace Packet
 	class SetConditionPacket : OutgoingPacket
 	{
 	public:
+		SetConditionPacket() { pktId = SETCONDITION; }
 		int8_t effect;
 		float duration;
 		void WriteData(PacketBuffer* pb) const override
@@ -432,6 +468,7 @@ namespace Packet
 	class ShootAckPacket : OutgoingPacket
 	{
 	public:
+		ShootAckPacket() { pktId = SHOOTACK; }
 		int32_t time;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -442,6 +479,7 @@ namespace Packet
 	class SquareHitPacket : OutgoingPacket
 	{
 	public:
+		SquareHitPacket() { pktId = SQUAREHIT; }
 		int32_t time;
 		int8_t bulletId;
 		int32_t objectId;
@@ -456,6 +494,7 @@ namespace Packet
 	class TeleportPacket : OutgoingPacket
 	{
 	public:
+		TeleportPacket() { pktId = TELEPORT; }
 		int32_t objectId;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -466,6 +505,7 @@ namespace Packet
 	class UpdateAckPacket : OutgoingPacket
 	{
 	public:
+		UpdateAckPacket() { pktId = UPDATEACK; }
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
@@ -474,6 +514,7 @@ namespace Packet
 	class UseItemPacket : OutgoingPacket
 	{
 	public:
+		UseItemPacket() { pktId = USEITEM; }
 		int32_t time;
 		SlotObjectData slotObject;
 		WorldPosData itemUsePos;
@@ -490,6 +531,8 @@ namespace Packet
 	class UsePortalPacket : OutgoingPacket
 	{
 	public:
+		UsePortalPacket() { pktId = USEPORTAL; }
+
 		int32_t objectId;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -502,6 +545,8 @@ namespace Packet
 	class EnterArenaPacket : OutgoingPacket
 	{
 	public:
+		EnterArenaPacket() { pktId = ENTERARENA; }
+
 		int32_t currency;
 		void WriteData(PacketBuffer* pb) const override
 		{
@@ -512,6 +557,8 @@ namespace Packet
 	class QuestRedeemPacket : OutgoingPacket
 	{
 	public:
+		QuestRedeemPacket() { pktId = QUESTREDEEM; }
+
 		std::string questId;
 		std::vector<SlotObjectData> slots;
 		void WriteData(PacketBuffer* pb) const override
@@ -527,6 +574,8 @@ namespace Packet
 	class ActivePetUpdateRequestPacket : OutgoingPacket
 	{
 	public:
+		ActivePetUpdateRequestPacket() { pktId = ACTIVEPET_UPDATE_REQUEST; }
+
 		int8_t commandType;
 		int32_t instanceId;
 		void WriteData(PacketBuffer* pb) const override

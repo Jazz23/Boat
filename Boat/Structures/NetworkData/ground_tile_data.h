@@ -15,7 +15,7 @@ public:
 		type = pb->ReadUnsignedInt16();
 	}
 
-	void WriteData(Packet::PacketBuffer* pb) override
+	void WriteData(Packet::PacketBuffer* pb) const override
 	{
 		if (!pb) return;
 		pb->WriteInt16(x);
