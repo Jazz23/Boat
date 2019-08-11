@@ -1,6 +1,6 @@
 #include "PacketManager.h"
 #include "Packets.h"
-
+#include "../Logger/Logger.h"
 namespace Packet
 {
 	void PacketOut(OutgoingPacket& pkt)
@@ -13,7 +13,9 @@ namespace Packet
 	{
 		PacketBuffer packet(pkt, sz);
 		packet.index = 4;
-		switch (packet.ReadInt8())
+		int8_t packetId = packet.ReadInt8();
+		Logger::Log("recieved packet with id: " + std::to_string(packetId));
+		switch (packetId)
 		{
 			//use [[likely]] for stuff like update ping and pong
 		}

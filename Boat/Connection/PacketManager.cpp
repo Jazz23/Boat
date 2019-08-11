@@ -1,5 +1,5 @@
 #include "PacketManager.h"
-
+#include "../Logger/Logger.h"
 namespace PacketDeep
 {
 	bool badFlags(unsigned long flags)
@@ -13,54 +13,52 @@ namespace PacketDeep
 			return BAD_FLAGS;
 		if (!pkt && (flags & SEND_PACKET_NOW || flags & QUEUE_PACKET))
 			return BAD_PACKET_ARRAY;
-		
-		int status = ASSUMED_FAILURE;
 
 		if (flags & SEND_PACKET_NOW)
 		{
-			if (conSock == INVALID_SOCKET)
-				return status;
-			iResult = send(conSock, pkt, sz, 0);
-			if (iResult == SOCKET_ERROR)
-				return SOCKET_ERROR;
-			status = ASSUMED_SUCCESS;
+			if (conSock != INVALID_SOCKET)
+			{
+				if (send(conSock, pkt, sz, 0) != SOCKET_ERROR)
+					Logger::Log("packet sent");
+				else
+					Logger::Log("packet send failed!");
+			}
 		}
 		else if (flags & QUEUE_PACKET)
 		{
-			//make our own copy so original packet buffer can be deleted
 			char* npkt = new char[sz]; 
 			memcpy(npkt, pkt, sz);
 			choked_packets.emplace_back(npkt, sz);
-			status = ASSUMED_SUCCESS;
+			Logger::Log("queued packet for sending");
 		}
 
 		if (flags & SEND_ENTIRE_QUEUE)
 		{
-			SendQueuedPackets();
-			status = ASSUMED_SUCCESS;
+			if (SendQueuedPackets() != SOCKET_ERROR)
+				Logger::Log("sent entire packet queue");
+			else
+				Logger::Log("sending of queued packets failed");
 		}
-
-		return status;
+		return ASSUMED_SUCCESS;
 	}
 	int SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags)
 	{
 		SendPacket(pkt.buffer, pkt.index+1, flags);
 	}
-	void SendQueuedPackets()
+	int SendQueuedPackets()
 	{
 		if (send_packets)
 		{
 			for (const auto& pkt : choked_packets)
 			{
-				//send the packets
 				if (conSock == INVALID_SOCKET)
-					continue;
-				iResult = send(conSock, pkt.first, pkt.second, 0);
-				if (iResult == SOCKET_ERROR)
-					continue;
+					return SOCKET_ERROR;
+				if (send(conSock, pkt.first, pkt.second, 0) == SOCKET_ERROR)
+					return SOCKET_ERROR;
 				delete[] pkt.first;
 			}
 			choked_packets.clear();
 		}
+		return ASSUMED_SUCCESS;
 	}
 }

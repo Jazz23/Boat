@@ -47,19 +47,17 @@ namespace PacketDeep
 	inline std::vector<std::pair<char*, size_t> > choked_packets;
 	inline bool send_packets = true;
 	inline PktThreadPool::PacketThreadPool* tPool = nullptr;
-
+	inline bool shutdownListner = false;
 
 	bool badFlags(unsigned long flags);
 	int SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags);
 	int SendPacket(char* pkt, size_t sz, unsigned long flags);
-	void SendQueuedPackets();
+	int SendQueuedPackets();
 
 	int StartWinSock();
 	void StopWinSock();
 	void SetupHints();
-	//call cleanup if result is not 0
-	int FillAddrInfo(const char* serverIp);
-	int Connect();
+	int Connect(const char* serverIp);
 	void Listen();
 }
 namespace Packet

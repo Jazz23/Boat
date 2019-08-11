@@ -12,7 +12,8 @@ namespace PacketDeep
 	void StopWinSock()
 	{
 		delete tPool;
-		if (conSock != SOCKET_ERROR && conSock != INVALID_SOCKET)
+		shutdownListner = true;
+		if (conSock != INVALID_SOCKET)
 			closesocket(conSock);
 		WSACleanup();
 	}
@@ -24,12 +25,13 @@ namespace PacketDeep
 		hints.ai_protocol = IPPROTO_TCP;
 	}
 	//call cleanup if result is not 0
-	int FillAddrInfo(const char* serverIp)
+
+	int Connect(const char* serverIp)
 	{
-		return getaddrinfo(serverIp, DEFAULT_PORT, &hints, &result);
-	}
-	int Connect()
-	{
+		closesocket(conSock);
+		conSock = INVALID_SOCKET;
+		if (getaddrinfo(serverIp, DEFAULT_PORT, &hints, &result) != 0)
+			return SOCKET_ERROR;
 		for (auto ptr = result; ptr != nullptr; ptr = ptr->ai_next)
 		{
 			conSock = socket(ptr->ai_family, ptr->ai_socktype, ptr->ai_protocol);
@@ -54,6 +56,10 @@ namespace PacketDeep
 	{
 		while (true)
 		{
+			if (shutdownListner)
+				return;
+			if (conSock == INVALID_SOCKET) //postpone listner while our socket is invalid
+				continue;
 			iResult = recv(conSock, recvBuf, recvBufLen, 0);
 			if (iResult > 0)
 			{
@@ -63,6 +69,7 @@ namespace PacketDeep
 				std::cout << "Connection closed\n";
 			else
 				std::cout << "recv failed with error " << WSAGetLastError() << "\n";
+			std::this_thread::sleep_for(std::chrono::milliseconds(1));
 		}
 	}
 }
