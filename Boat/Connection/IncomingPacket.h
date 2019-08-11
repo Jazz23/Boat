@@ -437,7 +437,7 @@ namespace Packet
 	public:
 		std::string name, host, stats;
 		int32_t port, gameId, keyTime;
-		std::vector<int8_t> key;
+		std::vector<unsigned char> key;
 		bool isFromArena;
 
 		void ReadData(PacketBuffer* pb) override
@@ -527,7 +527,25 @@ namespace Packet
 			cleanText = pb->ReadString();
 		}
 	};
-
+	class DeathPacket : IncomingPacket
+	{
+	public:
+		std::string accountId;
+		int32_t charId;
+		std::string killedBy;
+		int32_t zombieType, zombieId;
+		bool isZombie;
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			accountId = pb->ReadString();
+			charId = pb->ReadInt32();
+			killedBy = pb->ReadString();
+			zombieType = pb->ReadInt32();
+			zombieId = pb->ReadInt32();
+			isZombie = !!(zombieId != -1);
+		}
+	};
 	class TradeAcceptedPacket : IncomingPacket
 	{
 	public:
@@ -660,6 +678,60 @@ namespace Packet
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
+		}
+	};
+	class DeletePetMessage : IncomingPacket
+	{
+	public:
+		int32_t petId;
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			petId = pb->ReadInt32();
+		}
+	};
+	class EvolvedPetMessage : IncomingPacket
+	{
+	public:
+		int32_t petId, initialSkin, finalSkin;
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			petId = pb->ReadInt32();
+			initialSkin = pb->ReadInt32();
+			finalSkin = pb->ReadInt32();
+		}
+	};
+	class HatchPetMessage : IncomingPacket
+	{
+	public:
+		std::string petName;
+		int32_t petSkin;
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			petName = pb->ReadString();
+			petSkin = pb->ReadInt32();
+		}
+	};
+	class ArenaDeathPacket : IncomingPacket
+	{
+	public:
+		int32_t cost;
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			cost = pb->ReadInt32();
+		}
+	};
+	class ImminentArenaWavePacket : IncomingPacket
+	{
+	public:
+		int32_t currentRunTime;
+		void ReadData(PacketBuffer* pb) override
+		{
+			if (!pb) return;
+			currentRunTime = pb->ReadInt32();
 		}
 	};
 }
