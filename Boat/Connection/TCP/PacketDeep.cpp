@@ -1,5 +1,6 @@
 #include "PacketManager.h"
-#include "../Logger/Logger.h"
+#include "../../Utilities/Logger/Logger.h"
+
 
 namespace PacketDeep
 {
@@ -12,7 +13,7 @@ namespace PacketDeep
 	}
 	void StopWinSock()
 	{
-		delete tPool;
+		if (tPool) delete tPool;
 		shutdownListner = true;
 		if (conSock != INVALID_SOCKET)
 			closesocket(conSock);

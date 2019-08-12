@@ -3,11 +3,11 @@
 
 #include "Packets.h"
 #include "PacketBuffer.h"
-#include "../Structures/NetworkData/world_pos_data.h"
-#include "../Structures/NetworkData/object_status_data.h"
-#include "../Structures/trade_result.h"
-#include "../Structures/NetworkData/trade_item.h"
-#include "../Structures/NetworkData/ground_tile_data.h"
+#include "../../Structures/NetworkData/world_pos_data.h"
+#include "../../Structures/NetworkData/object_status_data.h"
+#include "../../Structures/trade_result.h"
+#include "../../Structures/NetworkData/trade_item.h"
+#include "../../Structures/NetworkData/ground_tile_data.h"
 
 
 namespace Packet

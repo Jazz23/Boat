@@ -127,16 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Connection\IncomingPacket.h" />
-    <ClInclude Include="Connection\OutgoingPacket.h" />
-    <ClInclude Include="Connection\PacketBuffer.h" />
-    <ClInclude Include="Connection\PacketDeep.cpp" />
-    <ClInclude Include="Connection\PacketManager.h" />
-    <ClInclude Include="Connection\Packets.h" />
+    <ClInclude Include="Connection\Packet\IncomingPacket.h" />
+    <ClInclude Include="Connection\Packet\OutgoingPacket.h" />
+    <ClInclude Include="Connection\Packet\PacketBuffer.h" />
+    <ClInclude Include="Connection\Packet\Packets.h" />
+    <ClInclude Include="Connection\TCP\PacketManager.h" />
     <ClInclude Include="Connection\ThreadPool\ThreadPool.h" />
-    <ClInclude Include="Crypto\rc4.h" />
-    <ClInclude Include="Crypto\rsa.h" />
-    <ClInclude Include="Logger\Logger.h" />
     <ClInclude Include="Structures\accinfo.h" />
     <ClInclude Include="Structures\classes.h" />
     <ClInclude Include="Structures\condition_effects.h" />
@@ -161,13 +157,20 @@
     <ClInclude Include="Structures\tile.h" />
     <ClInclude Include="Structures\trade_result.h" />
     <ClInclude Include="Utilities\ClientU.h" />
+    <ClInclude Include="Utilities\Crypto\rc4.h" />
+    <ClInclude Include="Utilities\Crypto\rsa.h" />
+    <ClInclude Include="Utilities\Environment\Environment.h" />
+    <ClInclude Include="Utilities\HttpGet.h" />
+    <ClInclude Include="Utilities\Logger\Logger.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Connection\PacketManager.cpp" />
-    <ClCompile Include="Connection\PacketRouter.cpp" />
-    <ClCompile Include="Crypto\rc4.cpp" />
-    <ClCompile Include="Logger\Logger.cpp" />
+    <ClCompile Include="Connection\TCP\PacketDeep.cpp" />
+    <ClCompile Include="Connection\TCP\PacketManager.cpp" />
+    <ClCompile Include="Connection\TCP\PacketRouter.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Utilities\Crypto\rc4.cpp" />
+    <ClCompile Include="Utilities\Environment\Environment.cpp" />
+    <ClCompile Include="Utilities\Logger\Logger.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

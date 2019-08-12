@@ -13,9 +13,9 @@
 #include <thread>
 #include <mutex>
 
-#include "Packets.h"
-#include "PacketBuffer.h"
-#include "ThreadPool/ThreadPool.h"
+#include "../Packet/Packets.h"
+#include "../Packet/PacketBuffer.h"
+#include "../ThreadPool/ThreadPool.h"
 
 //IF WINSOCK DOES NOT WORK USE THIS, ITS A WINSOCK WRAPPER
 //https://github.com/pedro-vicente/lib_netsockets

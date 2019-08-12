@@ -1,11 +1,12 @@
 #include "PacketManager.h"
-#include "Packets.h"
-#include "../Logger/Logger.h"
-#include "../Structures/PacketId.h"
-#include "IncomingPacket.h"
+#include "../../Utilities/Logger/Logger.h"
+#include "../../Structures/PacketId.h"
+#include "../Packet/IncomingPacket.h"
+#include "../Packet/Packets.h"
+
 namespace Packet
 {
-	void PacketOut(OutgoingPacket& pkt)
+	void PacketOut(Packet::OutgoingPacket& pkt)
 	{
 		PacketBuffer buf;
 		buf.WriteInt8(pkt.pktId);

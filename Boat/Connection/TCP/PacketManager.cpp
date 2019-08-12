@@ -1,5 +1,5 @@
 #include "PacketManager.h"
-#include "../Logger/Logger.h"
+#include "../../Utilities/Logger/Logger.h"
 
 namespace PacketDeep
 {
@@ -7,7 +7,7 @@ namespace PacketDeep
 	{
 		return !(flags & SEND_PACKET_NOW && flags & QUEUE_PACKET);
 	}
-	int SendPacket(char* pkt, size_t sz, unsigned long flags)
+	int SendPacket(unsigned char* pkt, size_t sz, unsigned long flags)
 	{
 		std::lock_guard<std::mutex> g(packetMutex);
 		if (badFlags(flags))
@@ -19,7 +19,7 @@ namespace PacketDeep
 		{
 			if (conSock != INVALID_SOCKET)
 			{
-				if (send(conSock, pkt, sz, 0) != SOCKET_ERROR)
+				if (send(conSock, (char*)pkt, sz, 0) != SOCKET_ERROR)
 					Logger::Log("packet sent");
 				else
 					Logger::Log("packet send failed!");

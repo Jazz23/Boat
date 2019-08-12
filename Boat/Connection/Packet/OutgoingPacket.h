@@ -3,10 +3,10 @@
 
 #include "Packets.h"
 #include "PacketBuffer.h"
-#include "../Structures/NetworkData/world_pos_data.h"
-#include "../Structures/NetworkData/slot_object_data.h"
-#include "../Structures/NetworkData/move_record.h"
-#include "../Structures/PacketId.h"
+#include "../../Structures/NetworkData/world_pos_data.h"
+#include "../../Structures/NetworkData/slot_object_data.h"
+#include "../../Structures/NetworkData/move_record.h"
+#include "../../Structures/PacketId.h"
 namespace Packet
 {
 	using namespace PacketId;
@@ -116,7 +116,7 @@ namespace Packet
 	class ClaimDailyRewardMessage : OutgoingPacket
 	{
 	public:
-		ClaimDailyRewardMessage() { pktId = CLAIMLOGIN_REWARD_MSG; }
+		ClaimDailyRewardMessage() { pktId = CLAIMDAILY_REWARD_MSG; }
 		std::string claimKey, claimType;
 		
 		void WriteData(PacketBuffer* pb) const override

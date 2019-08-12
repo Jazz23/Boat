@@ -10,35 +10,29 @@
     <Filter Include="Structures\NetworkData">
       <UniqueIdentifier>{186a4c1c-5d0e-4c31-9c2e-d1d1e4e3675e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Crypto">
-      <UniqueIdentifier>{b0c691b2-b113-49cc-b634-5c1ac93f4971}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Connection\ThreadPool">
       <UniqueIdentifier>{7acfab64-317e-4aa5-ac01-0f0a2e3d8888}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Logger">
-      <UniqueIdentifier>{1960d23c-85b6-41ad-a533-f0336b7c2479}</UniqueIdentifier>
     </Filter>
     <Filter Include="Utilities">
       <UniqueIdentifier>{6b294e44-4a43-455f-bfe7-1499174782aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utilities\Environment">
+      <UniqueIdentifier>{29b0d190-ff32-4b01-aa79-d9e652aeab5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Connection\Packet">
+      <UniqueIdentifier>{b34fbcf3-1b97-4e0c-af46-dc90fc772b21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Connection\TCP">
+      <UniqueIdentifier>{d5e459b8-cb23-4f41-88cf-a6cbd54dafaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities\Logger">
+      <UniqueIdentifier>{bf862370-2eed-4ac9-9dbf-17b088a43575}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities\Crypto">
+      <UniqueIdentifier>{bdbba6af-f88d-4710-bba4-078ddcd7151b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Connection\PacketBuffer.h">
-      <Filter>Connection</Filter>
-    </ClInclude>
-    <ClInclude Include="Connection\Packets.h">
-      <Filter>Connection</Filter>
-    </ClInclude>
-    <ClInclude Include="Connection\PacketManager.h">
-      <Filter>Connection</Filter>
-    </ClInclude>
-    <ClInclude Include="Connection\IncomingPacket.h">
-      <Filter>Connection</Filter>
-    </ClInclude>
-    <ClInclude Include="Connection\OutgoingPacket.h">
-      <Filter>Connection</Filter>
-    </ClInclude>
     <ClInclude Include="Structures\accinfo.h">
       <Filter>Structures</Filter>
     </ClInclude>
@@ -96,44 +90,68 @@
     <ClInclude Include="Structures\NetworkData\world_pos_data.h">
       <Filter>Structures\NetworkData</Filter>
     </ClInclude>
-    <ClInclude Include="Crypto\rc4.h">
-      <Filter>Crypto</Filter>
-    </ClInclude>
-    <ClInclude Include="Crypto\rsa.h">
-      <Filter>Crypto</Filter>
-    </ClInclude>
     <ClInclude Include="Structures\NetworkData\ground_tile_data.h" />
     <ClInclude Include="Structures\NetworkData\trade_item.h" />
     <ClInclude Include="Structures\trade_result.h" />
     <ClInclude Include="Structures\PacketIdManager.h">
       <Filter>Structures</Filter>
     </ClInclude>
-    <ClInclude Include="Connection\PacketDeep.cpp">
-      <Filter>Connection</Filter>
-    </ClInclude>
     <ClInclude Include="Connection\ThreadPool\ThreadPool.h">
       <Filter>Connection\ThreadPool</Filter>
-    </ClInclude>
-    <ClInclude Include="Logger\Logger.h">
-      <Filter>Logger</Filter>
     </ClInclude>
     <ClInclude Include="Utilities\ClientU.h">
       <Filter>Utilities</Filter>
     </ClInclude>
+    <ClInclude Include="Utilities\HttpGet.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\Environment\Environment.h">
+      <Filter>Utilities\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\Packet\IncomingPacket.h">
+      <Filter>Connection\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\Packet\OutgoingPacket.h">
+      <Filter>Connection\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\Packet\PacketBuffer.h">
+      <Filter>Connection\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\Packet\Packets.h">
+      <Filter>Connection\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\TCP\PacketManager.h">
+      <Filter>Connection\TCP</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\Logger\Logger.h">
+      <Filter>Utilities\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\Crypto\rc4.h">
+      <Filter>Utilities\Crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\Crypto\rsa.h">
+      <Filter>Utilities\Crypto</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Connection\PacketManager.cpp">
-      <Filter>Connection</Filter>
+    <ClCompile Include="Connection\TCP\PacketDeep.cpp">
+      <Filter>Connection\TCP</Filter>
     </ClCompile>
-    <ClCompile Include="Connection\PacketRouter.cpp">
-      <Filter>Connection</Filter>
+    <ClCompile Include="Connection\TCP\PacketManager.cpp">
+      <Filter>Connection\TCP</Filter>
     </ClCompile>
-    <ClCompile Include="Logger\Logger.cpp">
-      <Filter>Logger</Filter>
+    <ClCompile Include="Connection\TCP\PacketRouter.cpp">
+      <Filter>Connection\TCP</Filter>
     </ClCompile>
-    <ClCompile Include="Crypto\rc4.cpp">
-      <Filter>Crypto</Filter>
+    <ClCompile Include="Utilities\Logger\Logger.cpp">
+      <Filter>Utilities\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities\Crypto\rc4.cpp">
+      <Filter>Utilities\Crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities\Environment\Environment.cpp">
+      <Filter>Utilities\Environment</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

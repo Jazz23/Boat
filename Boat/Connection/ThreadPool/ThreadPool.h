@@ -3,18 +3,20 @@
 #include <mutex>
 #include <chrono>
 
-#include "../PacketBuffer.h"
-#include "../PacketManager.h"
+#include "../Packet/PacketBuffer.h"
+#include "../TCP/PacketManager.h"
 
 namespace PktThreadPool
 {
 	class oThread
 	{
+	public:
 		bool stop;
+	private:
 		bool busy;
-		std::mutex	m;
 		char* pkt;
 		size_t sz;
+		std::mutex	m;
 	public:
 		void SetPacket(char* _pkt, size_t _sz)
 		{
@@ -43,7 +45,7 @@ namespace PktThreadPool
 					sz = 0;
 					busy = false;
 				}
-				std::this_thread::sleep_for(std::chrono::milliseconds(4));
+				std::this_thread::sleep_for(std::chrono::milliseconds(5));
 			}
 		}
 	};
@@ -53,7 +55,6 @@ namespace PktThreadPool
 	private:
 		const unsigned short numOfThreads;
 		std::vector<oThread> ourThreads;
-
 	public:
 		PacketThreadPool() : numOfThreads(std::thread::hardware_concurrency() - 1)
 		{
@@ -62,15 +63,21 @@ namespace PktThreadPool
 				std::cout << "COULD NOT DETECT CPU CORE COUNT BIG ERROR\n";
 				system("pause");
 			}
+			ourThreads.clear();
 			for (int i = 0; i < numOfThreads; i++)
 				ourThreads.emplace_back();
-			while (ourThreads.size() > numOfThreads)
-				ourThreads.pop_back();
-			for (const auto& c : ourThreads)
+			for (size_t s = 0; s < ourThreads.size(); s++)
 			{
-				std::thread t(c);
+				Logger::Log("starting incomming packet thread" + std::to_string(s));
+				std::thread t(ourThreads[s]);
 				t.detach();
 			}
+		}
+		~PacketThreadPool()
+		{
+			for (auto& c : ourThreads)
+				c.stop = true;
+			std::this_thread::sleep_for(std::chrono::milliseconds(300));
 		}
 		bool AddPacket(char* pkt, size_t sz)
 		{
@@ -86,7 +93,7 @@ namespace PktThreadPool
 						break;
 					}
 				}
-				std::this_thread::sleep_for(std::chrono::milliseconds(4));
+				std::this_thread::sleep_for(std::chrono::milliseconds(1));
 			}
 		}
 	};
