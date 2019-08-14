@@ -3,6 +3,7 @@
 #include "../../Structures/PacketId.h"
 #include "../Packet/IncomingPacket.h"
 #include "../Packet/Packets.h"
+#include "../../Utilities/Hook/Hook.h"
 
 namespace Packet
 {
@@ -19,177 +20,263 @@ namespace Packet
 		packet.index = 4;
 		int8_t packetId = packet.ReadInt8();
 		Logger::Log("recieved packet with id: " + std::to_string(packetId));
-		if (PacketId::NEWTICK)
+		if (packetId == PacketId::NEWTICK)
 		{
-		Packet::NewTickPacket pkt();
+			Packet::NewTickPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::PING)
+		else if (packetId == PacketId::PING)
 		{
-			Packet::PingPacket pkt();
+			Packet::PingPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::UPDATE)
+		else if (packetId == PacketId::UPDATE)
 		{
-			Packet::UpdatePacket pkt();
+			Packet::UpdatePacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::ALLYSHOOT)
+		else if (packetId == PacketId::ALLYSHOOT)
 		{
-			Packet::AllyShootPacket pkt();
+			Packet::AllyShootPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::AOE)
+		else if (packetId == PacketId::AOE)
 		{
-			Packet::AoePacket pkt();
+			Packet::AoePacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::DAMAGE)
+		else if (packetId == PacketId::DAMAGE)
 		{
-			Packet::DamagePacket pkt();
+			Packet::DamagePacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::ENEMYSHOOT)
+		else if (packetId == PacketId::ENEMYSHOOT)
 		{
-			Packet::EnemyShootPacket pkt();
+			Packet::EnemyShootPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::TEXT)
+		else if (packetId == PacketId::TEXT)
 		{
-			Packet::TextPacket pkt();
+			Packet::TextPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::GOTO)
+		else if (packetId == PacketId::GOTO)
 		{
-			Packet::GotoPacket pkt();
+			Packet::GotoPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::MAPINFO)
+		else if (packetId == PacketId::MAPINFO)
 		{
-			Packet::MapInfoPacket pkt();
+			Packet::MapInfoPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::RECONNECT)
+		else if (packetId == PacketId::RECONNECT)
 		{
-			Packet::ReconnectPacket pkt();
+			Packet::ReconnectPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::REALMHERO_LEFT_MSG)
+		else if (packetId == PacketId::REALMHERO_LEFT_MSG)
 		{
-			Packet::RealmHeroLeftMessage pkt();
+			Packet::RealmHeroLeftMessage pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::TRADEACCEPTED)
+		else if (packetId == PacketId::TRADEACCEPTED)
 		{
-			Packet::TradeAcceptedPacket pkt();
+			Packet::TradeAcceptedPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::TRADECHANGED)
+		else if (packetId == PacketId::TRADECHANGED)
 		{
-			Packet::TradeChangedPacket pkt();
+			Packet::TradeChangedPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::TRADEDONE)
+		else if (packetId == PacketId::TRADEDONE)
 		{
-			Packet::TradeDonePacket pkt();
+			Packet::TradeDonePacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::TRADEREQUESTED)
+		else if (packetId == PacketId::TRADEREQUESTED)
 		{
-			Packet::TradeRequestedPacket pkt();
+			Packet::TradeRequestedPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::TRADESTART)
+		else if (packetId == PacketId::TRADESTART)
 		{
-			Packet::TradeStartPacket pkt();
+			Packet::TradeStartPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::ARENADEATH)
+		else if (packetId == PacketId::ARENADEATH)
 		{
-			Packet::ArenaDeathPacket p();
+			Packet::ArenaDeathPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::IMMINENTARENA_WAVE)
+		else if (packetId == PacketId::IMMINENTARENA_WAVE)
 		{
-			Packet::ImminentArenaWavePacket();
+			Packet::ImminentArenaWavePacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::DELETEPET)
+		else if (packetId == PacketId::DELETEPET)
 		{
-			Packet::DeletePetMessage();
+			Packet::DeletePetMessage pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::PETCHANGE_FORM_MSG)
+		else if (packetId == PacketId::PETCHANGE_FORM_MSG)
 		{
-			Packet::EvolvedPetMessage();
+			Packet::EvolvedPetMessage pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::HATCHPET)
+		else if (packetId == PacketId::HATCHPET)
 		{
-			Packet::HatchPetMessage();
+			Packet::HatchPetMessage pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::ACCOUNTLIST)
+		else if (packetId == PacketId::ACCOUNTLIST)
 		{
-			Packet::AccountListPacket pkt();
+			Packet::AccountListPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::BUYRESULT)
+		else if (packetId == PacketId::BUYRESULT)
 		{
-			Packet::BuyResultPacket pkt();
+			Packet::BuyResultPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::CLIENTSTAT)
+		else if (packetId == PacketId::CLIENTSTAT)
 		{
-			Packet::ClientStatPacket pkt();
+			Packet::ClientStatPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::CREATESUCCESS)
+		else if (packetId == PacketId::CREATESUCCESS)
 		{
-			Packet::CreateSuccessPacket pkt();
+			Packet::CreateSuccessPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::DEATH)
+		else if (packetId == PacketId::DEATH)
 		{
-			Packet::DeathPacket pkt();
+			Packet::DeathPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::FAILURE)
+		else if (packetId == PacketId::FAILURE)
 		{
-			Packet::FailurePacket pkt();
+			Packet::FailurePacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::GLOBALNOTIFICATION)
+		else if (packetId == PacketId::GLOBALNOTIFICATION)
 		{
-			Packet::GlobalNotificationPacket pkt();
+			Packet::GlobalNotificationPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::GUILDRESULT)
+		else if (packetId == PacketId::GUILDRESULT)
 		{
-			Packet::GuildResultPacket pkt();
+			Packet::GuildResultPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::INVRESULT)
+		else if (packetId == PacketId::INVRESULT)
 		{
-			Packet::InviteResultPacket();
+			Packet::InviteResultPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::INVITEDTOGUILD)
+		else if (packetId == PacketId::INVITEDTOGUILD)
 		{
-			Packet::InvitedToGuildPacket pkt();
+			Packet::InvitedToGuildPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::KEYINFO_RESPONSE)
+		else if (packetId == PacketId::KEYINFO_RESPONSE)
 		{
-			Packet::KeyInfoResponsePacket pkt();
+			Packet::KeyInfoResponsePacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::NAMERESULT)
+		else if (packetId == PacketId::NAMERESULT)
 		{
-			Packet::NameResultPacket pkt();
+			Packet::NameResultPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::NEWABILITY)
+		else if (packetId == PacketId::NEWABILITY)
 		{
-			Packet::NewAbilityMessage pkt();
+			Packet::NewAbilityMessage pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::NOTIFICATION)
+		else if (packetId == PacketId::NOTIFICATION)
 		{
-			Packet::NotificationPacket pkt();
+			Packet::NotificationPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::PASSWORDPROMPT)
+		else if (packetId == PacketId::PASSWORDPROMPT)
 		{
-			Packet::PasswordPromptPacket pkt();
+			Packet::PasswordPromptPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::QUESTOBJID)
+		else if (packetId == PacketId::QUESTOBJID)
 		{
-			Packet::QuestObjectIdPacket pkt();
+			Packet::QuestObjectIdPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::QUESTREDEEM_RESPONSE)
+		else if (packetId == PacketId::QUESTREDEEM_RESPONSE)
 		{
-			Packet::QuestRedeemResponsePacket pkt();
+			Packet::QuestRedeemResponsePacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::RESKINUNLOCK)
+		else if (packetId == PacketId::RESKINUNLOCK)
 		{
-			Packet::ReskinUnlockPacket pkt();
+			Packet::ReskinUnlockPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::SERVERPLAYERSHOOT)
+		else if (packetId == PacketId::SERVERPLAYERSHOOT)
 		{
-			Packet::ServerPlayerShootPacket();
+			Packet::ServerPlayerShootPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::SHOWEFFECT)
+		else if (packetId == PacketId::SHOWEFFECT)
 		{
-			Packet::ShowEffectPacket pkt();
+			Packet::ShowEffectPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
-		else if (PacketId::VERIFYEMAIL)
+		else if (packetId == PacketId::VERIFYEMAIL)
 		{
-			Packet::VerifyEmailPacket pkt();
+			Packet::VerifyEmailPacket pkt;
+			pkt.ReadData(&packet);
+			Hook::Fire(packetId, reinterpret_cast<uintptr_t>(&pkt));
 		}
 	}
 }

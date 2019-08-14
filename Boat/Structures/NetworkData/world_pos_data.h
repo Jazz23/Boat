@@ -1,7 +1,7 @@
 #pragma once
 #include <math.h>
-#include "../Connection/PacketBuffer.h"
-#include "../../Connection/Packets.h"
+#include "../../Connection/Packet/PacketBuffer.h"
+#include "../../Connection/Packet/Packets.h"
 class WorldPosData : Packet::BasePacket
 {
 public:

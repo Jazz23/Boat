@@ -1,5 +1,6 @@
 #pragma once
-#include "../Connection/Packets.h"
+#include "../../Connection/Packet/Packets.h"
+#include "object_status_data.h"
 
 class ObjectData : Packet::BasePacket
 {

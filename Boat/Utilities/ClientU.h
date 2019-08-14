@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Logger/Logger.h"
+#include "../Utilities/Logger/Logger.h"
 #include "../Connection/TCP/PacketManager.h"
 namespace Boat
 {

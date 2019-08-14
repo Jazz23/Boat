@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../Connection/Packets.h"
+#include "../../Connection/Packet/Packets.h"
 
 class MoveRecord : Packet::BasePacket
 {

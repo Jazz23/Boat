@@ -31,6 +31,9 @@
     <Filter Include="Utilities\Crypto">
       <UniqueIdentifier>{bdbba6af-f88d-4710-bba4-078ddcd7151b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utilities\Hook">
+      <UniqueIdentifier>{28014a6b-1f50-4b82-9d1b-98be72a26295}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Structures\accinfo.h">
@@ -132,6 +135,9 @@
     <ClInclude Include="Utilities\Crypto\rsa.h">
       <Filter>Utilities\Crypto</Filter>
     </ClInclude>
+    <ClInclude Include="Utilities\Hook\Hook.h">
+      <Filter>Utilities\Hook</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -152,6 +158,9 @@
     </ClCompile>
     <ClCompile Include="Utilities\Environment\Environment.cpp">
       <Filter>Utilities\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities\Hook\Hook.cpp">
+      <Filter>Utilities\Hook</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

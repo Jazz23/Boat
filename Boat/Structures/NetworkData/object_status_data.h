@@ -1,10 +1,10 @@
 #pragma once
-#include "../Connection/Packets.h"
+#include "../../Connection/Packet/Packets.h"
 #include "../playerdata.h"
 #include "../object.h"
 #include "object_data.h"
 #include "stat_data.h"
-#include "../../Connection/PacketBuffer.h"
+#include "../../Connection/Packet/PacketBuffer.h"
 
 class ObjectStatusData : Packet::BasePacket
 {

@@ -1,5 +1,5 @@
 #pragma once
-#include "../../Connection/Packets.h"
+#include "../../Connection/Packet/Packets.h"
 #include "../enumerations.h"
 class StatData : Packet::BasePacket
 {
@@ -24,7 +24,7 @@ public:
 		else
 			pb->WriteInt32(statValue);
 	}
-	bool isStringStat()
+	bool isStringStat() const 
 	{
 		if (statType == NAME_STAT || statType ==
 			GUILD_NAME_STAT || statType ==

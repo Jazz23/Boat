@@ -4,6 +4,7 @@
 #include <chrono>
 
 #include "../Packet/PacketBuffer.h"
+#include "../../Utilities/Logger/Logger.h"
 #include "../TCP/PacketManager.h"
 
 namespace PktThreadPool

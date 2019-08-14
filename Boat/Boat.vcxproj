@@ -160,6 +160,7 @@
     <ClInclude Include="Utilities\Crypto\rc4.h" />
     <ClInclude Include="Utilities\Crypto\rsa.h" />
     <ClInclude Include="Utilities\Environment\Environment.h" />
+    <ClInclude Include="Utilities\Hook\Hook.h" />
     <ClInclude Include="Utilities\HttpGet.h" />
     <ClInclude Include="Utilities\Logger\Logger.h" />
   </ItemGroup>
@@ -170,6 +171,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Utilities\Crypto\rc4.cpp" />
     <ClCompile Include="Utilities\Environment\Environment.cpp" />
+    <ClCompile Include="Utilities\Hook\Hook.cpp" />
     <ClCompile Include="Utilities\Logger\Logger.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
