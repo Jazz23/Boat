@@ -285,7 +285,7 @@ namespace Packet
 				return;
 			}
 			const auto len = str.length();
-			WriteInt16((size_t)len);
+			WriteInt16(len);
 			for (size_t i = 0; i < len; i++, index++)
 				buffer[index] = (char)str[i];
 		}
