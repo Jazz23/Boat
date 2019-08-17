@@ -149,7 +149,7 @@
     <ClInclude Include="Structures\NetworkData\trade_item.h" />
     <ClInclude Include="Structures\NetworkData\world_pos_data.h" />
     <ClInclude Include="Structures\object.h" />
-    <ClInclude Include="Structures\PacketIdManager.h" />
+    <ClInclude Include="Structures\PacketId.h" />
     <ClInclude Include="Structures\playerdata.h" />
     <ClInclude Include="Structures\projectile.h" />
     <ClInclude Include="Structures\proxy.h" />

@@ -96,9 +96,6 @@
     <ClInclude Include="Structures\NetworkData\ground_tile_data.h" />
     <ClInclude Include="Structures\NetworkData\trade_item.h" />
     <ClInclude Include="Structures\trade_result.h" />
-    <ClInclude Include="Structures\PacketIdManager.h">
-      <Filter>Structures</Filter>
-    </ClInclude>
     <ClInclude Include="Connection\ThreadPool\ThreadPool.h">
       <Filter>Connection\ThreadPool</Filter>
     </ClInclude>
@@ -137,6 +134,9 @@
     </ClInclude>
     <ClInclude Include="Utilities\Hook\Hook.h">
       <Filter>Utilities\Hook</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures\PacketId.h">
+      <Filter>Structures</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
