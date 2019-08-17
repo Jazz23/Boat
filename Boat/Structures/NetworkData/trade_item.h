@@ -1,5 +1,6 @@
 #pragma once
-#include "../../Connection/Packets.h"
+#include "../../Connection/Packet/Packets.h"
+
 
 class TradeItem : Packet::BasePacket
 {

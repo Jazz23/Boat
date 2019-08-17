@@ -13,7 +13,6 @@ C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(288)
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(43): error C2039: 'HandlePacket': is not a member of 'Packet'
   C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\Packets.h(4): note: see declaration of 'Packet'
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(43): error C3861: 'HandlePacket': identifier not found
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\world_pos_data.h(10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\world_pos_data.h(14): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\object.h(20): error C2065: 'ProjectileInfo': undeclared identifier
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\object.h(20): error C2923: 'std::vector': 'ProjectileInfo' is not a valid template type argument for parameter '_Ty'
@@ -43,51 +42,30 @@ C:\Users\Lizerd\Documents\GitHub\Boat\Boat\main.cpp(7): warning C4244: 'argument
   rc4.cpp
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Crypto\rc4.h(3): fatal error C1083: Cannot open include file: '../Connection/PacketBuffer.h': No such file or directory
   Environment.cpp
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): error C2146: syntax error: missing ';' before identifier 'GetLastTickDelta'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(10): error C2086: 'int Env::int32_t': redefinition
-  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(10): error C2146: syntax error: missing ';' before identifier 'GetMsSinceLastTick'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(11): error C2086: 'int Env::int32_t': redefinition
-  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(11): error C2146: syntax error: missing ';' before identifier 'GetLastPingDelta'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(12): error C2086: 'int Env::int32_t': redefinition
-  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(12): error C2146: syntax error: missing ';' before identifier 'GetMsSinceLastPing'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(13): error C2086: 'int Env::int32_t': redefinition
-  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(13): error C2146: syntax error: missing ';' before identifier 'GetMsSinceStart'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(32): error C2086: 'int Env::int32_t': redefinition
-  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(32): error C2146: syntax error: missing ';' before identifier 'GetMsSinceLastTick'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(33): error C2143: syntax error: missing ';' before '{'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(33): error C2447: '{': missing function header (old-style formal list?)
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(36): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(36): error C2086: 'int Env::int32_t': redefinition
-  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(36): error C2146: syntax error: missing ';' before identifier 'GetMsSinceLastPing'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(37): error C2143: syntax error: missing ';' before '{'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(37): error C2447: '{': missing function header (old-style formal list?)
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(40): error C2086: 'int Env::int32_t': redefinition
-  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(40): error C2146: syntax error: missing ';' before identifier 'GetLastPingDelta'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(41): error C2143: syntax error: missing ';' before '{'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(41): error C2447: '{': missing function header (old-style formal list?)
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(44): error C2086: 'int Env::int32_t': redefinition
-  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(44): error C2146: syntax error: missing ';' before identifier 'GetLastTickDelta'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(45): error C2143: syntax error: missing ';' before '{'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(45): error C2447: '{': missing function header (old-style formal list?)
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(48): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(48): error C2086: 'int Env::int32_t': redefinition
-  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(48): error C2146: syntax error: missing ';' before identifier 'GetMsSinceStart'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(49): error C2143: syntax error: missing ';' before '{'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(49): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(34): warning C4244: 'return': conversion from '_Rep' to 'int32_t', possible loss of data
+          with
+          [
+              _Rep=__int64
+          ]
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(38): warning C4244: 'return': conversion from '_Rep' to 'int32_t', possible loss of data
+          with
+          [
+              _Rep=__int64
+          ]
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(42): warning C4244: 'return': conversion from '_Rep' to 'int32_t', possible loss of data
+          with
+          [
+              _Rep=__int64
+          ]
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(46): warning C4244: 'return': conversion from '_Rep' to 'int32_t', possible loss of data
+          with
+          [
+              _Rep=__int64
+          ]
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(50): warning C4244: 'return': conversion from '_Rep' to 'int32_t', possible loss of data
+          with
+          [
+              _Rep=__int64
+          ]
+  Hook.cpp
+  Logger.cpp
