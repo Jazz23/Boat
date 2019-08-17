@@ -54,7 +54,7 @@ namespace PacketDeep
 
 	bool badFlags(unsigned long flags);
 	int SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags);
-	int SendPacket(char* pkt, size_t sz, unsigned long flags);
+	int SendPacket(unsigned char* pkt, size_t sz, unsigned long flags);
 	int SendQueuedPackets();
 
 	int StartWinSock();

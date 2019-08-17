@@ -20,7 +20,7 @@ namespace Boat
 		//.
 		PacketDeep::StopWinSock();
 	}
-
+	
 	void Start()
 	{
 		Logger::SetNumToSaveOnCrash(30); //save the last 30 operations before program close
