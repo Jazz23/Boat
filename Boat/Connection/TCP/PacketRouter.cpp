@@ -12,11 +12,14 @@ namespace Packet
 		PacketBuffer buf;
 		buf.WriteInt8(pkt.pktId);
 		pkt.WriteData(&buf);
+		buf.ShrinkToFit();
+		//cipher here
 		PacketDeep::SendPacket(buf, SEND_PACKET_NOW);
 	}
 	void HandlePacket(char* pkt, size_t sz)
 	{
 		PacketBuffer packet(pkt, sz);
+		//cipher here
 		packet.index = 4;
 		int8_t packetId = packet.ReadInt8();
 		Logger::Log("recieved packet with id: " + std::to_string(packetId));

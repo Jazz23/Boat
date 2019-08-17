@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stdint.h>
 namespace Env
 {
 	void Init();
