@@ -4,7 +4,7 @@ usage:
 
 void HookUpdate(uintptr_t pkt)
 {
-	Update pkt = (Update *)pkt;
+	Update *pkt = (Update*)pkt;
 	//now you can edit the packet
 }
 EmplaceHook(UpdatePacketId, &HookUpdate);

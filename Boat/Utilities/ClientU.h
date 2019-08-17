@@ -2,6 +2,7 @@
 
 #include "../Utilities/Logger/Logger.h"
 #include "../Connection/TCP/PacketManager.h"
+#include "../Utilities/Hook/Hook.h"
 namespace Boat
 {
 	void Shutdown()
