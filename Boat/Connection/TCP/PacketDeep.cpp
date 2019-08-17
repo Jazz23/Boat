@@ -8,7 +8,7 @@ namespace PacketDeep
 	{
 		for (int i = 0; i < MAXIMUM_PACKET_BUFFER; i++)
 			recvBuf[i] = 0;
-		Packet::tPool = new PktThreadPool::PacketThreadPool();
+		Packet::tPool = new Packet::PacketThreadPool();
 		return WSAStartup(MAKEWORD(2, 2), &wsaData);
 	}
 	void StopWinSock()
