@@ -1,15 +1,12 @@
 ﻿  PacketDeep.cpp
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(288): warning C4267: 'argument': conversion from 'size_t' to 'int16_t', possible loss of data
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(42): error C2039: 'HandlePacket': is not a member of 'Packet'
   C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\Packets.h(4): note: see declaration of 'Packet'
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(42): error C3861: 'HandlePacket': identifier not found
   PacketManager.cpp
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(288): warning C4267: 'argument': conversion from 'size_t' to 'int16_t', possible loss of data
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(42): error C2039: 'HandlePacket': is not a member of 'Packet'
   C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\Packets.h(4): note: see declaration of 'Packet'
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(42): error C3861: 'HandlePacket': identifier not found
   PacketRouter.cpp
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(288): warning C4267: 'argument': conversion from 'size_t' to 'int16_t', possible loss of data
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(42): error C2039: 'HandlePacket': is not a member of 'Packet'
   C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\Packets.h(4): note: see declaration of 'Packet'
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(42): error C3861: 'HandlePacket': identifier not found
@@ -29,26 +26,7 @@ C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_status_
   C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(5): note: see declaration of 'ObjectData'
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_status_data.h(18): error C2789: 'playerData': an object of const-qualified type must be initialized
   C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_status_data.h(18): note: see declaration of 'playerData'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_status_data.h(150): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_status_data.h(162): warning C4267: 'argument': conversion from 'size_t' to 'int16_t', possible loss of data
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\IncomingPacket.h(29): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\IncomingPacket.h(31): error C3867: 'Packet::PacketBuffer::ReadInt32': non-standard syntax; use '&' to create a pointer to member
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\IncomingPacket.h(31): error C2440: '=': cannot convert from 'int32_t (__thiscall Packet::PacketBuffer::* )(void)' to 'int32_t'
-  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\IncomingPacket.h(31): note: There is no context in which this conversion is possible
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\IncomingPacket.h(71): warning C4553: '==': result of expression not used; did you intend '='?
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\IncomingPacket.h(144): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\IncomingPacket.h(221): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\IncomingPacket.h(348): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\IncomingPacket.h(559): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\IncomingPacket.h(563): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\IncomingPacket.h(578): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\IncomingPacket.h(621): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\IncomingPacket.h(629): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\IncomingPacket.h(650): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\IncomingPacket.h(659): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\IncomingPacket.h(668): warning C4018: '<': signed/unsigned mismatch
   main.cpp
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(288): warning C4267: 'argument': conversion from 'size_t' to 'int16_t', possible loss of data
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(42): error C2039: 'HandlePacket': is not a member of 'Packet'
   C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\Packets.h(4): note: see declaration of 'Packet'
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(42): error C3861: 'HandlePacket': identifier not found

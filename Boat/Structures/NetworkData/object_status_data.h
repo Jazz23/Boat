@@ -147,7 +147,7 @@ public:
 		pos.ReadData(pb);
 		const size_t statLen = pb->ReadInt16();
 		stats.resize(statLen);
-		for (int i = 0; i < statLen; i++) {
+		for (size_t i = 0; i < statLen; i++) {
 			StatData sd;
 			sd.ReadData(pb);
 			stats.push_back(sd);
@@ -159,7 +159,7 @@ public:
 		if (!pb) return;
 		pb->WriteInt32(objectId);
 		pos.WriteData(pb);
-		pb->WriteInt16(stats.size());
+		pb->WriteInt16((int16_t)stats.size());
 		for (auto &stat : stats)
 		{
 			stat.WriteData(pb);

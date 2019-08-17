@@ -26,9 +26,9 @@ namespace Packet
 			accountListId = pb->ReadInt32();
 			auto accountIdsLen = pb->ReadInt16();
 			accountIds.resize(accountIdsLen);
-			for (size_t i = 0; i < accountIdsLen; i++)
+			for (int16_t i = 0; i < accountIdsLen; i++)
 				accountIds.push_back(pb->ReadString());
-			lookAction = pb->ReadInt32;
+			lookAction = pb->ReadInt32();
 		}
 	};
 	class AllyShootPacket : IncomingPacket
@@ -68,7 +68,7 @@ namespace Packet
 			effect = pb->ReadUnsignedInt8();
 			duration = pb->ReadFloat();
 			origType = pb->ReadUnsignedInt16();
-			color == pb->ReadInt32();
+			color = pb->ReadInt32();
 		}
 	};
 	class BuyResultPacket : IncomingPacket
@@ -141,7 +141,7 @@ namespace Packet
 			targetId = pb->ReadInt32();
 			size_t effectsLen = pb->ReadUnsignedInt8();
 			effects.resize(effectsLen);
-			for (int i = 0; i < effectsLen; i++)
+			for (size_t i = 0; i < effectsLen; i++)
 				effects.push_back(pb->ReadUnsignedInt8());
 			damageAmount = pb->ReadUnsignedInt16();
 			kill = pb->ReadBoolean();
@@ -218,7 +218,7 @@ namespace Packet
 		void ReadData(PacketBuffer* pb) override
 		{
 			if (!pb) return;
-			pb->ReadInt32();
+			objectId = pb->ReadInt32();
 			pos.ReadData(pb);
 		}
 	};
@@ -345,7 +345,7 @@ namespace Packet
 			tickTime = pb->ReadInt32();
 			const size_t statusesLen = pb->ReadInt16();
 			statuses.resize(statusesLen);
-			for (int i = 0; i < statusesLen; i++)
+			for (size_t i = 0; i < statusesLen; i++)
 			{
 				ObjectStatusData osd;
 				osd.ReadData(pb);
@@ -556,11 +556,11 @@ namespace Packet
 			if (!pb) return;
 			const size_t clientOfferLen = pb->ReadInt16();
 			clientOffer.resize(clientOfferLen);
-			for (int i = 0; i < clientOfferLen; i++)
+			for (size_t i = 0; i < clientOfferLen; i++)
 				clientOffer.push_back(pb->ReadBoolean());
 			const size_t partnerOfferLen = pb->ReadInt16();
 			partnerOffer.resize(partnerOfferLen);
-			for (int i = 0; i < partnerOfferLen; i++)
+			for (size_t i = 0; i < partnerOfferLen; i++)
 				partnerOffer.push_back(pb->ReadBoolean());
 		}
 	};
@@ -575,7 +575,7 @@ namespace Packet
 			if (!pb) return;
 			const size_t offerLen = pb->ReadInt16();
 			offer.resize(offerLen);
-			for (int i = 0; i < offerLen; i++)
+			for (size_t i = 0; i < offerLen; i++)
 				offer.push_back(pb->ReadBoolean());
 		}
 	};
@@ -618,7 +618,7 @@ namespace Packet
 			if (!pb) return;
 			const size_t clientItemsLen = pb->ReadInt16();
 			clientItems.resize(clientItemsLen);
-			for (int i = 0; i < clientItemsLen; i++)
+			for (size_t i = 0; i < clientItemsLen; i++)
 			{
 				TradeItem item;
 				item.ReadData(pb);
@@ -626,7 +626,7 @@ namespace Packet
 			}
 			partnerName = pb->ReadString();
 			const size_t partnerItemsLen = pb->ReadInt16();
-			for (int i = 0; i < partnerItemsLen; i++)
+			for (size_t i = 0; i < partnerItemsLen; i++)
 			{
 				TradeItem item;
 				item.ReadData(pb);
@@ -647,7 +647,7 @@ namespace Packet
 			if (!pb) return;
 			const size_t tilesLen = pb->ReadInt16();
 			tiles.resize(tilesLen);
-			for (int i = 0; i < tilesLen; i++)
+			for (size_t i = 0; i < tilesLen; i++)
 			{
 				GroundTileData gd;
 				gd.ReadData(pb);
@@ -656,7 +656,7 @@ namespace Packet
 
 			const size_t newObjectsLen = pb->ReadInt16();
 			newObjects.resize(newObjectsLen);
-			for (int i = 0; i < newObjectsLen; i++)
+			for (size_t i = 0; i < newObjectsLen; i++)
 			{
 				ObjectData od;
 				od.ReadData(pb);
@@ -665,7 +665,7 @@ namespace Packet
 
 			const size_t dropsLen = pb->ReadInt16();
 			drops.resize(dropsLen);
-			for (int i = 0; i < dropsLen; i++)
+			for (size_t i = 0; i < dropsLen; i++)
 			{
 				drops.push_back(pb->ReadInt32());
 			}

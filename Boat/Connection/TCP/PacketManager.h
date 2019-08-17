@@ -37,6 +37,11 @@
 #define MAXIMUM_PACKET_BUFFER	1000000
 #define DEFAULT_PORT			"27015"
 
+namespace Packet
+{
+	void PacketOut(OutgoingPacket& pkt);
+	void HandlePacket(char* pkt, size_t sz);
+}
 namespace PacketDeep
 {
 	inline WSADATA wsaData;
@@ -62,9 +67,4 @@ namespace PacketDeep
 	void SetupHints();
 	int Connect(const char* serverIp);
 	void Listen();
-}
-namespace Packet
-{
-	void PacketOut(OutgoingPacket& pkt);
-	void HandlePacket(char* pkt, size_t sz);
 }
