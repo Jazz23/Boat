@@ -44,7 +44,7 @@ namespace PacketDeep
 	}
 	int SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags)
 	{
-		SendPacket(pkt.buffer, pkt.index+1, flags);
+		return SendPacket(pkt.buffer, pkt.index+1, flags);
 	}
 	int SendQueuedPackets()
 	{

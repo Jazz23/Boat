@@ -1,49 +1,5 @@
 ﻿  PacketDeep.cpp
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\memory(2115): error C2665: 'std::tuple<Packet::oThread>::tuple': none of the 2 overloads could convert all the argument types
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\tuple(330): note: could be 'std::tuple<Packet::oThread>::tuple(std::tuple<Packet::oThread> &&)'
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\tuple(329): note: or       'std::tuple<Packet::oThread>::tuple(const std::tuple<Packet::oThread> &)'
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\memory(2114): note: while trying to match the argument list '(_Ty)'
-          with
-          [
-              _Ty=Packet::oThread
-          ]
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\thread(52): note: see reference to function template instantiation 'std::unique_ptr<_Tuple,std::default_delete<_Ty>> std::make_unique<_Tuple,Packet::oThread&,0>(Packet::oThread &)' being compiled
-          with
-          [
-              _Ty=_Tuple
-          ]
-  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\TCP\PacketManager.h(104): note: see reference to function template instantiation 'std::thread::thread<_Ty&,,void>(_Fn)' being compiled
-          with
-          [
-              _Ty=Packet::oThread,
-              _Fn=Packet::oThread &
-          ]
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\chrono(595): note: see reference to class template instantiation 'std::chrono::duration<double,std::ratio<1,1>>' being compiled
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\chrono(172): note: see reference to class template instantiation 'std::chrono::duration<__int64,std::nano>' being compiled
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\chrono(574): note: see reference to class template instantiation 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' being compiled
   PacketManager.cpp
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\memory(2115): error C2665: 'std::tuple<Packet::oThread>::tuple': none of the 2 overloads could convert all the argument types
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\tuple(330): note: could be 'std::tuple<Packet::oThread>::tuple(std::tuple<Packet::oThread> &&)'
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\tuple(329): note: or       'std::tuple<Packet::oThread>::tuple(const std::tuple<Packet::oThread> &)'
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\memory(2114): note: while trying to match the argument list '(_Ty)'
-          with
-          [
-              _Ty=Packet::oThread
-          ]
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\thread(52): note: see reference to function template instantiation 'std::unique_ptr<_Tuple,std::default_delete<_Ty>> std::make_unique<_Tuple,Packet::oThread&,0>(Packet::oThread &)' being compiled
-          with
-          [
-              _Ty=_Tuple
-          ]
-  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\TCP\PacketManager.h(104): note: see reference to function template instantiation 'std::thread::thread<_Ty&,,void>(_Fn)' being compiled
-          with
-          [
-              _Ty=Packet::oThread,
-              _Fn=Packet::oThread &
-          ]
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\chrono(595): note: see reference to class template instantiation 'std::chrono::duration<double,std::ratio<1,1>>' being compiled
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\chrono(172): note: see reference to class template instantiation 'std::chrono::duration<__int64,std::nano>' being compiled
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\chrono(574): note: see reference to class template instantiation 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' being compiled
   PacketRouter.cpp
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(10): error C3646: 'status': unknown override specifier
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
@@ -55,28 +11,6 @@ C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_status_
   C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(6): note: see declaration of 'ObjectData'
   main.cpp
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\main.cpp(7): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\memory(2115): error C2665: 'std::tuple<Packet::oThread>::tuple': none of the 2 overloads could convert all the argument types
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\tuple(330): note: could be 'std::tuple<Packet::oThread>::tuple(std::tuple<Packet::oThread> &&)'
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\tuple(329): note: or       'std::tuple<Packet::oThread>::tuple(const std::tuple<Packet::oThread> &)'
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\memory(2114): note: while trying to match the argument list '(_Ty)'
-          with
-          [
-              _Ty=Packet::oThread
-          ]
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\thread(52): note: see reference to function template instantiation 'std::unique_ptr<_Tuple,std::default_delete<_Ty>> std::make_unique<_Tuple,Packet::oThread&,0>(Packet::oThread &)' being compiled
-          with
-          [
-              _Ty=_Tuple
-          ]
-  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\TCP\PacketManager.h(104): note: see reference to function template instantiation 'std::thread::thread<_Ty&,,void>(_Fn)' being compiled
-          with
-          [
-              _Ty=Packet::oThread,
-              _Fn=Packet::oThread &
-          ]
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\chrono(595): note: see reference to class template instantiation 'std::chrono::duration<double,std::ratio<1,1>>' being compiled
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\chrono(172): note: see reference to class template instantiation 'std::chrono::duration<__int64,std::nano>' being compiled
-  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\chrono(574): note: see reference to class template instantiation 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' being compiled
   Environment.cpp
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(34): warning C4244: 'return': conversion from '_Rep' to 'int32_t', possible loss of data
           with

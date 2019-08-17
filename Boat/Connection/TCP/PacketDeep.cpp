@@ -8,12 +8,12 @@ namespace PacketDeep
 	{
 		for (int i = 0; i < MAXIMUM_PACKET_BUFFER; i++)
 			recvBuf[i] = 0;
-		Packet::tPool = new Packet::PacketThreadPool();
+		//Packet::tPool = new Packet::PacketThreadPool();
 		return WSAStartup(MAKEWORD(2, 2), &wsaData);
 	}
 	void StopWinSock()
 	{
-		if (Packet::tPool) delete Packet::tPool;
+		//if (Packet::tPool) delete Packet::tPool;
 		shutdownListner = true;
 		if (conSock != INVALID_SOCKET)
 			closesocket(conSock);
@@ -62,9 +62,7 @@ namespace PacketDeep
 				continue;
 			iResult = recv(conSock, recvBuf, recvBufLen, 0);
 			if (iResult > 0)
-			{
-				Packet::tPool->AddPacket(recvBuf, iResult);
-			}
+				Packet::HandlePacket(recvBuf, recvBufLen);
 			else if (iResult == 0)
 				Logger::Log("connection closed");
 			else
