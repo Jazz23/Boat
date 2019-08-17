@@ -153,9 +153,6 @@
     <ClCompile Include="Utilities\Logger\Logger.cpp">
       <Filter>Utilities\Logger</Filter>
     </ClCompile>
-    <ClCompile Include="Utilities\Crypto\rc4.cpp">
-      <Filter>Utilities\Crypto</Filter>
-    </ClCompile>
     <ClCompile Include="Utilities\Environment\Environment.cpp">
       <Filter>Utilities\Environment</Filter>
     </ClCompile>
