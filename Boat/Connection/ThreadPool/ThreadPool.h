@@ -3,9 +3,9 @@
 #include <mutex>
 #include <chrono>
 
+#include "../TCP/PacketManager.h"
 #include "../Packet/PacketBuffer.h"
 #include "../../Utilities/Logger/Logger.h"
-#include "../TCP/PacketManager.h"
 
 namespace PktThreadPool
 {

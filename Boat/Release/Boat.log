@@ -1,0 +1,93 @@
+﻿  PacketDeep.cpp
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(288): warning C4267: 'argument': conversion from 'size_t' to 'int16_t', possible loss of data
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(43): error C2039: 'HandlePacket': is not a member of 'Packet'
+  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\Packets.h(4): note: see declaration of 'Packet'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(43): error C3861: 'HandlePacket': identifier not found
+  PacketManager.cpp
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(288): warning C4267: 'argument': conversion from 'size_t' to 'int16_t', possible loss of data
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(43): error C2039: 'HandlePacket': is not a member of 'Packet'
+  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\Packets.h(4): note: see declaration of 'Packet'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(43): error C3861: 'HandlePacket': identifier not found
+  PacketRouter.cpp
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(288): warning C4267: 'argument': conversion from 'size_t' to 'int16_t', possible loss of data
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(43): error C2039: 'HandlePacket': is not a member of 'Packet'
+  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\Packets.h(4): note: see declaration of 'Packet'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(43): error C3861: 'HandlePacket': identifier not found
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\world_pos_data.h(10): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\world_pos_data.h(14): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\object.h(20): error C2065: 'ProjectileInfo': undeclared identifier
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\object.h(20): error C2923: 'std::vector': 'ProjectileInfo' is not a valid template type argument for parameter '_Ty'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\object.h(20): error C2903: 'allocator': symbol is neither a class template nor a function template
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\object.h(20): error C3203: 'allocator': unspecialized class template can't be used as a template argument for template parameter '_Alloc', expected a real type
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\object.h(20): error C2955: 'std::vector': use of class template requires template argument list
+  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\include\vector(339): note: see declaration of 'std::vector'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\object.h(21): error C3646: 'projectile': unknown override specifier
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\object.h(21): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(9): error C3646: 'status': unknown override specifier
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(15): error C2065: 'status': undeclared identifier
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(21): error C2065: 'status': undeclared identifier
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_status_data.h(18): error C2039: 'status': is not a member of 'ObjectData'
+  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(5): note: see declaration of 'ObjectData'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_status_data.h(18): error C2789: 'playerData': an object of const-qualified type must be initialized
+  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_status_data.h(18): note: see declaration of 'playerData'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_status_data.h(150): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_status_data.h(162): warning C4267: 'argument': conversion from 'size_t' to 'int16_t', possible loss of data
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\trade_item.h(2): fatal error C1083: Cannot open include file: '../../Connection/Packets.h': No such file or directory
+  main.cpp
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(288): warning C4267: 'argument': conversion from 'size_t' to 'int16_t', possible loss of data
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(43): error C2039: 'HandlePacket': is not a member of 'Packet'
+  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\Packet\Packets.h(4): note: see declaration of 'Packet'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Connection\ThreadPool\ThreadPool.h(43): error C3861: 'HandlePacket': identifier not found
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\main.cpp(7): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  rc4.cpp
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Crypto\rc4.h(3): fatal error C1083: Cannot open include file: '../Connection/PacketBuffer.h': No such file or directory
+  Environment.cpp
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): error C2146: syntax error: missing ';' before identifier 'GetLastTickDelta'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(10): error C2086: 'int Env::int32_t': redefinition
+  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(10): error C2146: syntax error: missing ';' before identifier 'GetMsSinceLastTick'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(11): error C2086: 'int Env::int32_t': redefinition
+  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(11): error C2146: syntax error: missing ';' before identifier 'GetLastPingDelta'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(12): error C2086: 'int Env::int32_t': redefinition
+  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(12): error C2146: syntax error: missing ';' before identifier 'GetMsSinceLastPing'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(13): error C2086: 'int Env::int32_t': redefinition
+  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(13): error C2146: syntax error: missing ';' before identifier 'GetMsSinceStart'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(32): error C2086: 'int Env::int32_t': redefinition
+  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(32): error C2146: syntax error: missing ';' before identifier 'GetMsSinceLastTick'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(33): error C2143: syntax error: missing ';' before '{'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(33): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(36): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(36): error C2086: 'int Env::int32_t': redefinition
+  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(36): error C2146: syntax error: missing ';' before identifier 'GetMsSinceLastPing'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(37): error C2143: syntax error: missing ';' before '{'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(37): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(40): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(40): error C2086: 'int Env::int32_t': redefinition
+  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(40): error C2146: syntax error: missing ';' before identifier 'GetLastPingDelta'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(41): error C2143: syntax error: missing ';' before '{'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(41): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(44): error C2086: 'int Env::int32_t': redefinition
+  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(44): error C2146: syntax error: missing ';' before identifier 'GetLastTickDelta'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(45): error C2143: syntax error: missing ';' before '{'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(45): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(48): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(48): error C2086: 'int Env::int32_t': redefinition
+  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.h(9): note: see declaration of 'Env::int32_t'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(48): error C2146: syntax error: missing ';' before identifier 'GetMsSinceStart'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(49): error C2143: syntax error: missing ';' before '{'
+C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(49): error C2447: '{': missing function header (old-style formal list?)

@@ -52,14 +52,14 @@ namespace Packet
 		{
 			return { buffer, size };
 		}
-		[[nodiscard]] unsigned char* GetBuffer(int& _size)
+		[[nodiscard]] unsigned char* GetBuffer(size_t& _size)
 		{
 			_size = size;
 			return buffer;
 		}
 		[[nodiscard]] bool __fastcall IsSpace(int bytes2add, bool make_space = true)
 		{
-			if (int newsize = index + bytes2add; newsize > size - 1)
+			if (size_t newsize = index + bytes2add; newsize > size - 1)
 			{
 				if (make_space)
 				{
@@ -75,7 +75,7 @@ namespace Packet
 		}
 		void Resize()
 		{
-			size_t newsize = size * 1.5;
+			size_t newsize = size_t(floor(size * 1.5));
 			unsigned char* tmp = new unsigned char[newsize];
 			memcpy(tmp, buffer, sizeof(buffer));
 			delete[] buffer;
@@ -265,8 +265,8 @@ namespace Packet
 				WriteInt16(0);
 				return;
 			}
-			WriteInt16(sz);
-			for (int i = 0; i < sz; i++, index++)
+			WriteInt16((int16_t)sz);
+			for (size_t i = 0; i < sz; i++, index++)
 				buffer[index] = v[i];
 		}
 		[[nodiscard]] std::string& ReadString()
@@ -279,14 +279,14 @@ namespace Packet
 		}
 		void WriteString(const std::string &str)
 		{
-			if (str.length < 1 || str == "")
+			if (str.length() < 1 || str == "")
 			{
 				WriteInt16(0); 
 				return;
 			}
 			const auto len = str.length();
 			WriteInt16(len);
-			for (int i = 0; i < len; i++, index++)
+			for (size_t i = 0; i < len; i++, index++)
 				buffer[index] = (char)str[i];
 		}
 		[[nodiscard]] std::u32string& ReadStringUTF32()
@@ -303,14 +303,14 @@ namespace Packet
 		}
 		void WriteStringUTF32(const std::u32string &str)
 		{
-			if (str.length < 1)
+			if (str.length() < 1)
 			{
 				WriteInt32(0);
 				return;
 			}
 			const size_t len = str.length();
 			WriteInt32(len);
-			for (int i = 0; i < len; i+=4, index+=4)
+			for (size_t i = 0; i < len; i+=4, index+=4)
 				memcpy(&buffer[index], &str[i], 4);
 		}
 	};
