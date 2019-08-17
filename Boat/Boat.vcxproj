@@ -169,7 +169,6 @@
     <ClCompile Include="Connection\TCP\PacketManager.cpp" />
     <ClCompile Include="Connection\TCP\PacketRouter.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Utilities\Crypto\rc4.cpp" />
     <ClCompile Include="Utilities\Environment\Environment.cpp" />
     <ClCompile Include="Utilities\Hook\Hook.cpp" />
     <ClCompile Include="Utilities\Logger\Logger.cpp" />

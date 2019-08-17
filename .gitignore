@@ -35,3 +35,5 @@
 
 
 *.suo
+/Boat/x64/Debug/BoatClient.tlog
+/Boat/x64/Debug
