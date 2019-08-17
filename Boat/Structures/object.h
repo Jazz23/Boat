@@ -3,6 +3,28 @@
 #include "classes.h"
 #include <vector>
 #include <map>
+
+struct ProjectileInfo
+{
+	int id;
+	std::string objectId;
+	int damage;
+	int minDamage;
+	int maxDamage;
+	int speed;
+	int lifetimeMS;
+	bool parametric;
+	bool wavy;
+	bool boomerang;
+	bool multihit;
+	bool passesCover;
+	int amplitude;
+	int frequency;
+	int magnitude;
+	//std::string effectName, int duration
+	std::map<std::string, int> conditionEffects;
+};
+
 struct GameObject
 {
 	int type;
@@ -28,25 +50,4 @@ struct GameObject
 	int feedPower;
 	bool occupySquare;
 	bool fullOccupy;
-};
-
-struct ProjectileInfo
-{
-	int id;
-	std::string objectId;
-	int damage;
-	int minDamage;
-	int maxDamage;
-	int speed;
-	int lifetimeMS;
-	bool parametric;
-	bool wavy;
-	bool boomerang;
-	bool multihit;
-	bool passesCover;
-	int amplitude;
-	int frequency;
-	int magnitude;
-	//std::string effectName, int duration
-	std::map<std::string, int> conditionEffects;
 };

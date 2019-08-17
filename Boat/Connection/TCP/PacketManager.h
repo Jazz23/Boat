@@ -41,6 +41,7 @@ namespace Packet
 {
 	void PacketOut(OutgoingPacket& pkt);
 	void HandlePacket(char* pkt, size_t sz);
+	inline PktThreadPool::PacketThreadPool* tPool = nullptr;
 }
 namespace PacketDeep
 {
@@ -54,7 +55,6 @@ namespace PacketDeep
 
 	inline std::vector<std::pair<char*, size_t> > choked_packets;
 	inline bool send_packets = true;
-	inline PktThreadPool::PacketThreadPool* tPool = nullptr;
 	inline bool shutdownListner = false;
 
 	bool badFlags(unsigned long flags);

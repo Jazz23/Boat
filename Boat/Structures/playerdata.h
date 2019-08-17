@@ -20,7 +20,7 @@ struct PlayerData
 	std::string guildName;
 	GuildRank guildRank;
 	int gold;
-	Classes _class;
+	int32_t _class;
 	int maxHP;
 	int maxHPBoost;
 	int maxMP;
