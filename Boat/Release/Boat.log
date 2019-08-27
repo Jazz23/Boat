@@ -1,6 +1,4 @@
-﻿  PacketDeep.cpp
-  PacketManager.cpp
-  PacketRouter.cpp
+﻿  PacketRouter.cpp
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(10): error C3646: 'status': unknown override specifier
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(16): error C2039: 'status': is not a member of 'ObjectData'
@@ -9,33 +7,3 @@ C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(
   C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(6): note: see declaration of 'ObjectData'
 C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_status_data.h(175): error C2039: 'status': is not a member of 'ObjectData'
   C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(6): note: see declaration of 'ObjectData'
-  main.cpp
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\main.cpp(7): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Environment.cpp
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(34): warning C4244: 'return': conversion from '_Rep' to 'int32_t', possible loss of data
-          with
-          [
-              _Rep=__int64
-          ]
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(38): warning C4244: 'return': conversion from '_Rep' to 'int32_t', possible loss of data
-          with
-          [
-              _Rep=__int64
-          ]
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(42): warning C4244: 'return': conversion from '_Rep' to 'int32_t', possible loss of data
-          with
-          [
-              _Rep=__int64
-          ]
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(46): warning C4244: 'return': conversion from '_Rep' to 'int32_t', possible loss of data
-          with
-          [
-              _Rep=__int64
-          ]
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Utilities\Environment\Environment.cpp(50): warning C4244: 'return': conversion from '_Rep' to 'int32_t', possible loss of data
-          with
-          [
-              _Rep=__int64
-          ]
-  Hook.cpp
-  Logger.cpp

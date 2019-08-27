@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Functional\Mouse\Mouse.cpp">
+      <Filter>Functional\Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="Functional\Keyboard\Keyboard.cpp">
+      <Filter>Functional\Keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\MainLoop.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Functional\Pixels\Pixel.cpp">
+      <Filter>Functional\Pixels</Filter>
+    </ClCompile>
+    <ClCompile Include="Functional\Graphics\Graphics.cpp">
+      <Filter>Functional\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\Render.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls\Button.cpp">
+      <Filter>Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls\Dropbox.cpp">
+      <Filter>Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls\Label.cpp">
+      <Filter>Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls\Font\Font.cpp">
+      <Filter>Controls\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="Functional\Surface\Surface.cpp">
+      <Filter>Functional\Surface</Filter>
+    </ClCompile>
+    <ClCompile Include="Functional\Graphics\BasicShapes.cpp">
+      <Filter>Functional\Graphics</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Functional">
+      <UniqueIdentifier>{79cd58dc-3545-4006-bb20-d98ca47534b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Functional\Mouse">
+      <UniqueIdentifier>{5a863a70-48c4-4ea3-9207-fbe74f62345a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Functional\Keyboard">
+      <UniqueIdentifier>{af16ccd9-dda5-470b-9d48-0fc500a390cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{ec4fe9d3-84e1-492a-ac60-4cda31f7e7db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Functional\Dialog">
+      <UniqueIdentifier>{17e8e27f-d41a-4ece-93ff-d6ba7a36ad2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Functional\Pixels">
+      <UniqueIdentifier>{4ac56d35-5f57-4942-9db9-8f66ed787ee6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Functional\Graphics">
+      <UniqueIdentifier>{6904956f-05ce-420f-9026-a7391c843d85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controls">
+      <UniqueIdentifier>{e08b0127-3f81-49e4-a40a-c1a56ed8cec6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controls\Font">
+      <UniqueIdentifier>{658b88c6-769b-43bf-8489-b8ab189e0381}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Functional\Surface">
+      <UniqueIdentifier>{180c5c25-06a4-4959-8055-15e6858e29e1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Functional\Mouse\Mouse.h">
+      <Filter>Functional\Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="Functional\Keyboard\Keyboard.h">
+      <Filter>Functional\Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\MainLoop.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Functional\Dialog\BasicDialog.h">
+      <Filter>Functional\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="Functional\Settings.h">
+      <Filter>Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="Functional\Pixels\Pixel.h">
+      <Filter>Functional\Pixels</Filter>
+    </ClInclude>
+    <ClInclude Include="Functional\Graphics\Graphics.h">
+      <Filter>Functional\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Functional\Color.h">
+      <Filter>Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="Controls\Controls.h">
+      <Filter>Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="Controls\Font\Font.h">
+      <Filter>Controls\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Functional\Surface\Surface.h">
+      <Filter>Functional\Surface</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
