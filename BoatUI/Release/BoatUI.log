@@ -1,7 +1,7 @@
-﻿  Checkbox.cpp
+﻿  Render.cpp
   Generating code
-  8 of 570 functions ( 1.4%) were compiled, the rest were copied from previous compilation.
+  197 of 626 functions (31.5%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    38 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   BoatUI.vcxproj -> C:\Users\Lizerd\Documents\GitHub\Boat\Release\BoatUI.exe

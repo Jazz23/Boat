@@ -12,7 +12,7 @@ namespace G
 	void FrameEnd();
 	void FrameBegin();
 	inline std::mutex pixelMutex;
-	void PutPixel(int x, int y, Color c);
+	void PutPixel(int x, int y, const Color& c);
 	Color GetPixel(int x, int y);
 
 
