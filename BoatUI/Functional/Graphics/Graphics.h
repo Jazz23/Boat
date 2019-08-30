@@ -3,6 +3,7 @@
 #include <d3d11.h>
 #include <wrl.h>
 #include <cassert>
+#include <mutex>
 #include "../Color.h"
 
 namespace G
@@ -10,6 +11,7 @@ namespace G
 	void Setup();
 	void FrameEnd();
 	void FrameBegin();
+	inline std::mutex pixelMutex;
 	void PutPixel(int x, int y, Color c);
 	Color GetPixel(int x, int y);
 

@@ -33,8 +33,8 @@ void Font::PutText(const std::string_view& str, int ox, int oy, const Color& col
 			const int yGlyph = (glyphIndex / nColumns) * glyphHeight;
 			const int xGlyph = (glyphIndex % nColumns) * glyphWidth;
 
-			for (size_t y = 0; y < glyphHeight; y++)
-				for (size_t x = 0; x < glyphWidth; x++)
+			for (int y = 0; y < glyphHeight; y++)
+				for (int x = 0; x < glyphWidth; x++)
 				{
 					if (curX + x > 0 && curX + x < WINDOW_WIDTH && curY + y > 0 && curY + y < WINDOW_HEIGHT)
 					{

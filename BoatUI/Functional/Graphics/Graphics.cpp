@@ -265,7 +265,7 @@ namespace G
 	{
 		memset(pSysBuffer, 0u, sizeof(Color) * WINDOW_HEIGHT * WINDOW_WIDTH);
 	}
-
+	
 	void PutPixel(int x, int y, Color c)
 	{
 		assert(x >= 0);

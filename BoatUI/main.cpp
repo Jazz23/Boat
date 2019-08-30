@@ -18,13 +18,16 @@
 
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
-
+#pragma warning(disable : 28251)
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow) 
 {
 	AllocConsole();
+#pragma warning(push)
+#pragma warning(disable : 6031)
 	freopen("conin$", "r", stdin);
 	freopen("conout$", "w", stdout);
 	freopen("conout$", "w", stderr);
+#pragma warning(pop)
 	printf("Debugging Window:\n");
 
 	const wchar_t *wndClassName = L"BoatWindowClass";
@@ -35,7 +38,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow
 	wc.lpszClassName = (LPCSTR)wndClassName;
 	RegisterClass(&wc);
 
-	unsigned long styling = (WS_OVERLAPPED | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_MAXIMIZE | WS_MINIMIZE);
+	//unsigned long styling = (WS_OVERLAPPED | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_MAXIMIZE | WS_MINIMIZE);
 
 	HWND hWnd = CreateWindowEx(0, (LPCSTR)wndClassName, "The Boat", WS_OVERLAPPED,
 		CW_USEDEFAULT, CW_USEDEFAULT, WINDOW_WIDTH, WINDOW_HEIGHT, NULL, NULL, hInstance, NULL);
@@ -72,6 +75,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
+	size_t mx = 0, my = 0;
 	switch (msg)
 	{
 	case WM_MOUSEMOVE:

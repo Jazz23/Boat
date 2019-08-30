@@ -126,9 +126,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Controls\Button.cpp" />
+    <ClCompile Include="Controls\Checkbox.cpp" />
+    <ClCompile Include="Controls\Controls.cpp" />
     <ClCompile Include="Controls\Dropbox.cpp" />
     <ClCompile Include="Controls\Font\Font.cpp" />
     <ClCompile Include="Controls\Label.cpp" />
+    <ClCompile Include="Controls\Textbox.cpp" />
     <ClCompile Include="Functional\Graphics\BasicShapes.cpp" />
     <ClCompile Include="Functional\Graphics\Graphics.cpp" />
     <ClCompile Include="Functional\Keyboard\Keyboard.cpp" />

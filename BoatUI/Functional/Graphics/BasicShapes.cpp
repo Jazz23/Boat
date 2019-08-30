@@ -5,16 +5,19 @@ namespace G
 {
 	void __fastcall HorizontalLine(int x, int y, int w, const Color& c)
 	{
+		std::lock_guard<std::mutex> g(pixelMutex);
 		for (int i = x; i < x + w; i++)
 			PutPixel(i, y, c);
 	}
 	void __fastcall VerticalLine(int x, int y, int h, const Color& c)
 	{
+		std::lock_guard<std::mutex> g(pixelMutex);
 		for (int i = y; i < y + h; i++)
 			PutPixel(x, i, c);
 	}
 	void __fastcall FilledRect(int x, int y, int w, int h, const Color& c)
 	{
+		std::lock_guard<std::mutex> g(pixelMutex);
 		for (int i = y; i < y + h; i++)
 			for (int j = x; j < x + w; j++)
 				PutPixel(j, i, c);
@@ -28,6 +31,7 @@ namespace G
 	}
 	void __fastcall Circle(int x, int y, int r, const Color& c)
 	{
+		//std::lock_guard<std::mutex> g(pixelMutex);
 		//for (int i = y - r; i < y + r; i++)
 		//	for (int j = x - r; j < x + r; j++)
 		//	{

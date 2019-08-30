@@ -12,6 +12,7 @@
 #include "../Functional/Settings.h"
 #include "../Functional/Graphics/Graphics.h"
 #include "../Functional/Color.h"
+#include "../Controls/Controls.h"
 
 namespace BoatMain
 {
@@ -25,6 +26,7 @@ namespace BoatMain
 		{
 			start_t = std::chrono::steady_clock::now();
 			G::FrameBegin();
+			C::StartControls();
 			Render();
 			G::FrameEnd();
 			end_t = std::chrono::steady_clock::now();

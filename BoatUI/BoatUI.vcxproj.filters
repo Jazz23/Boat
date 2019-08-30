@@ -38,6 +38,15 @@
     <ClCompile Include="Functional\Graphics\BasicShapes.cpp">
       <Filter>Functional\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="Controls\Controls.cpp">
+      <Filter>Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls\Textbox.cpp">
+      <Filter>Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls\Checkbox.cpp">
+      <Filter>Controls</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Functional">
