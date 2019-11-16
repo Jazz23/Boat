@@ -35,5 +35,7 @@
 
 
 *.suo
+*.vcxproj
 /Boat/x64/Debug/BoatClient.tlog
 /Boat/x64/Debug
+/Boat/Debug/BoatClient.tlog
