@@ -13,12 +13,12 @@ public:
 	{
 		if (!pb) return;
 		objectType = pb->ReadUnsignedInt16();
-		this->status.ReadData(pb);
+		status.ReadData(pb);
 	}
 
 	void WriteData(Packet::PacketBuffer* pb) const override
 	{
 		if (!pb) return;
-		this->status.WriteData(pb);
+		status.WriteData(pb);
 	}
 };
