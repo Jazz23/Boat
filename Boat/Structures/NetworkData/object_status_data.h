@@ -4,7 +4,6 @@
 #include "../../Connection/Packet/PacketBuffer.h"
 #include "../playerdata.h"
 #include "../object.h"
-#include "object_data.h"
 #include "stat_data.h"
 #include "world_pos_data.h"
 
@@ -43,7 +42,6 @@ public:
 		}
 	}
 };
-
 
 static PlayerData processStatData(std::vector<StatData> stats, PlayerData* currentData = nullptr)
 {
@@ -170,12 +168,29 @@ PlayerData processObjectStatus(ObjectStatusData data, PlayerData* currentData = 
 	return p;
 }
 
+class ObjectData : Packet::BasePacket
+{
+public:
+	uint32_t objectType;
+	ObjectStatusData status;
+
+	void ReadData(Packet::PacketBuffer* pb) override
+	{
+		if (!pb) return;
+		objectType = pb->ReadUnsignedInt16();
+		this->status.ReadData(pb);
+	}
+
+	void WriteData(Packet::PacketBuffer* pb) const override
+	{
+		if (!pb) return;
+		this->status.WriteData(pb);
+	}
+};
+
 PlayerData processObject(ObjectData data)
 {
 	PlayerData p = processObjectStatus(data.status);
 	p._class = data.objectType;
 	return p;
 }
-
-
-//static processStatData(stats: StatData[], currentData?: PlayerData): PlayerData {
