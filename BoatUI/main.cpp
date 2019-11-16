@@ -9,12 +9,9 @@
 #include "Functional/Mouse/Mouse.h"
 #include "Functional/Settings.h"
 #include "Main/MainLoop.h"
-#include "Functional/Pixels/Pixel.h"
 #include "Functional/Graphics/Graphics.h"
 #include "Controls/Font/Font.h"
 #include "Controls/Controls.h"
-
-
 
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
@@ -38,8 +35,6 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow
 	wc.lpszClassName = (LPCSTR)wndClassName;
 	RegisterClass(&wc);
 
-	//unsigned long styling = (WS_OVERLAPPED | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_MAXIMIZE | WS_MINIMIZE);
-
 	HWND hWnd = CreateWindowEx(0, (LPCSTR)wndClassName, "The Boat", WS_OVERLAPPED,
 		CW_USEDEFAULT, CW_USEDEFAULT, WINDOW_WIDTH, WINDOW_HEIGHT, NULL, NULL, hInstance, NULL);
 
@@ -48,7 +43,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow
 
 	ShowWindow(hWnd, nCmdShow);
 
-	Font f("C:\\Users\\Lizerd\\AppData\\Roaming\\small.bmp", Colors::Black);
+	Font f("C:\\Users\\Iizerd\\Documents\\GitHub\\Boat\\small.bmp", Colors::Black);
 	
 	C::SetFontContext(&f);
 

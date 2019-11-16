@@ -1,9 +1,7 @@
 ﻿  PacketRouter.cpp
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(10): error C3646: 'status': unknown override specifier
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(16): error C2039: 'status': is not a member of 'ObjectData'
-  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(6): note: see declaration of 'ObjectData'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(22): error C2039: 'status': is not a member of 'ObjectData'
-  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(6): note: see declaration of 'ObjectData'
-C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_status_data.h(175): error C2039: 'status': is not a member of 'ObjectData'
-  C:\Users\Lizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(6): note: see declaration of 'ObjectData'
+C:\Users\Iizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(10,25): error C3646: 'status': unknown override specifier
+C:\Users\Iizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(10,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Iizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(16,3): error C2065: 'status': undeclared identifier
+C:\Users\Iizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(22,3): error C2065: 'status': undeclared identifier
+C:\Users\Iizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_status_data.h(175,48): error C2039: 'status': is not a member of 'ObjectData'
+C:\Users\Iizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(6): message : see declaration of 'ObjectData'

@@ -481,13 +481,9 @@ namespace G
 		if (FAILED(hr = pSwapChain->Present(1u, 0u)))
 		{
 			if (hr == DXGI_ERROR_DEVICE_REMOVED)
-			{
 				assert(0);
-			}
 			else
-			{
 				assert(0);
-			}
 		}
 	}
 }

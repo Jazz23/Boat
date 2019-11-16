@@ -25,7 +25,7 @@ namespace G
 	void __fastcall Rect(int x, int y, int w, int h, const Color& c)
 	{
 		HorizontalLine(x, y, w, c);
-		HorizontalLine(x, y + h, w, c);
+		HorizontalLine(x, y + h -1, w, c);
 		VerticalLine(x, y, h, c);
 		VerticalLine(x + w, y, h, c);
 	}
