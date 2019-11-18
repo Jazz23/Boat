@@ -46,6 +46,7 @@ namespace PacketDeep
 			else
 				Logger::Log("sending of queued packets failed");
 		}
+		return status;
 	}
 	int SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags)
 	{

@@ -1,7 +1,11 @@
-﻿  PacketRouter.cpp
-C:\Users\Iizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(10,25): error C3646: 'status': unknown override specifier
-C:\Users\Iizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(10,25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\Iizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(16,3): error C2065: 'status': undeclared identifier
-C:\Users\Iizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(22,3): error C2065: 'status': undeclared identifier
-C:\Users\Iizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_status_data.h(175,48): error C2039: 'status': is not a member of 'ObjectData'
-C:\Users\Iizerd\Documents\GitHub\Boat\Boat\Structures\NetworkData\object_data.h(6): message : see declaration of 'ObjectData'
+﻿  PacketDeep.cpp
+  PacketManager.cpp
+  PacketRouter.cpp
+  main.cpp
+C:\Users\Iizerd\Documents\GitHub\Boat\Boat\main.cpp(8,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating code
+  2 of 1142 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Boat.vcxproj -> C:\Users\Iizerd\Documents\GitHub\Boat\Release\BoatClient.exe
