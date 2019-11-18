@@ -34,6 +34,9 @@
     <Filter Include="Utilities\Hook">
       <UniqueIdentifier>{28014a6b-1f50-4b82-9d1b-98be72a26295}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Connection\TCP\Socket">
+      <UniqueIdentifier>{fb95cca6-37bd-4ee6-86df-b3145e286d8c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Structures\accinfo.h">
@@ -138,6 +141,9 @@
     <ClInclude Include="Structures\PacketId.h">
       <Filter>Structures</Filter>
     </ClInclude>
+    <ClInclude Include="Connection\TCP\Socket\socket.hpp">
+      <Filter>Connection\TCP\Socket</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -158,6 +164,9 @@
     </ClCompile>
     <ClCompile Include="Utilities\Hook\Hook.cpp">
       <Filter>Utilities\Hook</Filter>
+    </ClCompile>
+    <ClCompile Include="Connection\TCP\Socket\socket.cpp">
+      <Filter>Connection\TCP\Socket</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

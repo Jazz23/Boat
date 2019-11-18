@@ -59,7 +59,7 @@ namespace Packet
 		}
 		[[nodiscard]] bool __fastcall IsSpace(int bytes2add, bool make_space = true)
 		{
-			if (size_t newsize = index + bytes2add; newsize > size - 1)
+			if (size_t newsize = index + bytes2add; newsize > size)
 			{
 				if (make_space)
 				{
@@ -71,7 +71,6 @@ namespace Packet
 			}
 			else
 				return true;
-
 		}
 		void Resize()
 		{
@@ -92,7 +91,7 @@ namespace Packet
 		}
 		void ShrinkToFit()
 		{
-			Resize(index + 1);
+			Resize(index);
 		}
 		void __fastcall Reset(int _size = 1024)
 		{

@@ -9,20 +9,25 @@ namespace PacketDeep
 	}
 	int SendPacket(unsigned char* pkt, size_t sz, unsigned long flags)
 	{
-		std::lock_guard<std::mutex> g(packetMutex);
 		if (badFlags(flags))
 			return BAD_FLAGS;
 		if (!pkt && (flags & SEND_PACKET_NOW || flags & QUEUE_PACKET))
 			return BAD_PACKET_ARRAY;
+		if (!client)
+			return -69;
+
+		std::lock_guard<std::mutex> g(clientMutex);
+
+		int status = ASSUMED_SUCCESS;
 
 		if (flags & SEND_PACKET_NOW)
 		{
-			if (conSock != INVALID_SOCKET)
+			if (client->write_all(pkt, sz) > 0)
+				Logger::Log("packet sent");
+			else
 			{
-				if (send(conSock, (char*)pkt, sz, 0) != SOCKET_ERROR)
-					Logger::Log("packet sent");
-				else
-					Logger::Log("packet send failed!");
+				status = FAILED_PACKET_SEND;
+				Logger::Log("packet send failed!");
 			}
 		}
 		else if (flags & QUEUE_PACKET)
@@ -35,31 +40,31 @@ namespace PacketDeep
 
 		if (flags & SEND_ENTIRE_QUEUE)
 		{
-			if (SendQueuedPackets() != SOCKET_ERROR)
+			status = SendQueuedPackets();
+			if (status != FAILED_PACKET_SEND)
 				Logger::Log("sent entire packet queue");
 			else
 				Logger::Log("sending of queued packets failed");
 		}
-		return ASSUMED_SUCCESS;
 	}
 	int SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags)
 	{
-		return SendPacket(pkt.buffer, pkt.index+1, flags);
+		return SendPacket(pkt.buffer, pkt.size, flags);
 	}
 	int SendQueuedPackets()
 	{
-		if (send_packets)
+		int status = ASSUMED_SUCCESS;
+		for (const auto& pkt : choked_packets)
 		{
-			for (const auto& pkt : choked_packets)
+			if (pkt.first != NULL || pkt.second > 0)
 			{
-				if (conSock == INVALID_SOCKET)
-					return SOCKET_ERROR;
-				if (send(conSock, pkt.first, pkt.second, 0) == SOCKET_ERROR)
-					return SOCKET_ERROR;
-				delete[] pkt.first;
+				if (client->write_all(pkt.first, pkt.second) < 1)
+					status = FAILED_PACKET_SEND;
+				else
+					delete[] pkt.first;
 			}
-			choked_packets.clear();
 		}
-		return ASSUMED_SUCCESS;
+		choked_packets.clear();
+		return status;
 	}
 }

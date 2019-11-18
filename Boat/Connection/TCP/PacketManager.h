@@ -2,9 +2,6 @@
 
 #define WIN32_LEAN_AND_MEAN
 
-#include <windows.h>
-#include <winsock2.h>
-#include <ws2tcpip.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <chrono>
@@ -13,17 +10,13 @@
 #include <thread>
 #include <mutex>
 
+#include "Socket/socket.hpp"
 #include "../Packet/Packets.h"
 #include "../Packet/PacketBuffer.h"
 #include "../../Utilities/Logger/Logger.h"
 
-//IF WINSOCK DOES NOT WORK USE THIS, ITS A WINSOCK WRAPPER
 //https://github.com/pedro-vicente/lib_netsockets
 
-// Need to link with Ws2_32.lib, Mswsock.lib, and Advapi32.lib
-#pragma comment (lib, "Ws2_32.lib")
-#pragma comment (lib, "Mswsock.lib")
-#pragma comment (lib, "AdvApi32.lib")
 
 #define QUEUE_PACKET		(1<<0)
 #define SEND_PACKET_NOW		(1<<1)
@@ -33,37 +26,32 @@
 #define BAD_PACKET_ARRAY	2
 #define ASSUMED_FAILURE		3 //for if we dont get any code from tcp
 #define ASSUMED_SUCCESS		4
+#define FAILED_PACKET_SEND	5
 
 #define MAXIMUM_PACKET_BUFFER	1000000
-#define DEFAULT_PORT			"27015"
+#define DEFAULT_PORT			2050
 
 namespace Packet
 {
 	void PacketOut(OutgoingPacket& pkt);
-	void HandlePacket(char* pkt, size_t sz);
+	void HandlePacket(PacketBuffer* packet);
 }
 namespace PacketDeep
 {
-	inline WSADATA wsaData;
-	inline SOCKET conSock = INVALID_SOCKET;
-	inline addrinfo* result = nullptr, * ptr = nullptr, hints;
-	inline char recvBuf[MAXIMUM_PACKET_BUFFER];
-	inline size_t recvBufLen = MAXIMUM_PACKET_BUFFER;
-	inline int iResult = 0;
-	inline std::mutex packetMutex;
 
 	inline std::vector<std::pair<char*, size_t> > choked_packets;
-	inline bool send_packets = true;
 	inline bool shutdownListner = false;
+
+	inline std::mutex clientMutex;
+	inline tcp_client_t* client = nullptr;
 
 	bool badFlags(unsigned long flags);
 	int SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags);
 	int SendPacket(unsigned char* pkt, size_t sz, unsigned long flags);
 	int SendQueuedPackets();
 
-	int StartWinSock();
-	void StopWinSock();
-	void SetupHints();
+	int StartClient();
+	void StopClient();
 	int Connect(const char* serverIp);
 	void Listen();
 }

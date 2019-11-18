@@ -106,6 +106,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,6 +135,7 @@
     <ClInclude Include="Connection\Packet\PacketBuffer.h" />
     <ClInclude Include="Connection\Packet\Packets.h" />
     <ClInclude Include="Connection\TCP\PacketManager.h" />
+    <ClInclude Include="Connection\TCP\Socket\socket.hpp" />
     <ClInclude Include="Connection\ThreadPool\ThreadPool.h" />
     <ClInclude Include="Structures\accinfo.h" />
     <ClInclude Include="Structures\classes.h" />
@@ -170,6 +172,7 @@
     <ClCompile Include="Connection\TCP\PacketDeep.cpp" />
     <ClCompile Include="Connection\TCP\PacketManager.cpp" />
     <ClCompile Include="Connection\TCP\PacketRouter.cpp" />
+    <ClCompile Include="Connection\TCP\Socket\socket.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Utilities\Environment\Environment.cpp" />
     <ClCompile Include="Utilities\Hook\Hook.cpp" />

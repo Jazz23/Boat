@@ -1,5 +1,5 @@
 #include "Logger.h"
-
+#include <iostream>
 #define DEBUG_MODE
 
 namespace Logger
@@ -12,6 +12,7 @@ namespace Logger
 		saved.push(str);
 		while (saved.size() > numToSaveOnCrash)
 			saved.pop();
+		std::cout << str << "\n";
 #endif
 	}
 	void GenerateCrashFile()
