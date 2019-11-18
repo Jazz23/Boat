@@ -1,0 +1,49 @@
+﻿  database.cpp
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(8,26): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(9,26): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(10,26): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(11,26): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(12,26): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(13,26): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(14,26): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(45,5): warning C5051:  attribute 'nodiscard' requires at least '/std:c++17'; ignored
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(51,5): warning C5051:  attribute 'nodiscard' requires at least '/std:c++17'; ignored
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(55,5): warning C5051:  attribute 'nodiscard' requires at least '/std:c++17'; ignored
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(60,5): warning C5051:  attribute 'nodiscard' requires at least '/std:c++17'; ignored
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(129,5): warning C5051:  attribute 'nodiscard' requires at least '/std:c++17'; ignored
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(143,5): warning C5051:  attribute 'nodiscard' requires at least '/std:c++17'; ignored
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(157,5): warning C5051:  attribute 'nodiscard' requires at least '/std:c++17'; ignored
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(171,5): warning C5051:  attribute 'nodiscard' requires at least '/std:c++17'; ignored
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(185,5): warning C5051:  attribute 'nodiscard' requires at least '/std:c++17'; ignored
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(198,5): warning C5051:  attribute 'nodiscard' requires at least '/std:c++17'; ignored
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(212,5): warning C5051:  attribute 'nodiscard' requires at least '/std:c++17'; ignored
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(220,5): warning C5051:  attribute 'nodiscard' requires at least '/std:c++17'; ignored
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(234,5): warning C5051:  attribute 'nodiscard' requires at least '/std:c++17'; ignored
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(253,5): warning C5051:  attribute 'nodiscard' requires at least '/std:c++17'; ignored
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(253,43): error C2039:  'vector': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\string(19): message :  see declaration of 'std'
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(253,49): error C2061:  syntax error: identifier 'vector'
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(260,36): error C2039:  'vector': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\string(19): message :  see declaration of 'std'
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(260,42): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(260,42): error C2143:  syntax error: missing ',' before '<'
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(272,5): warning C5051:  attribute 'nodiscard' requires at least '/std:c++17'; ignored
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(292,5): warning C5051:  attribute 'nodiscard' requires at least '/std:c++17'; ignored
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(62,1): error C2429:  language feature 'init-statements in if/switch' requires compiler flag '/std:c++17'
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(256,4): error C2065:  'v': undeclared identifier
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(258,5): error C2065:  'v': undeclared identifier
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(262,14): error C2065:  'v': undeclared identifier
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(263,1): error C3536:  'sz': cannot be used before it is initialized
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(269,25): warning C4018:  '<': signed/unsigned mismatch
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(270,21): error C2065:  'v': undeclared identifier
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(270,21): error C2065: string_view is only available with C++17 or later.
+A:\GitHub\Boat\BoatServer\Database\database.h(39,28): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\string(19): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatServer\Database\database.h(39,40): error C2065:  'string_view': undeclared identifier
+A:\GitHub\Boat\BoatServer\Database\database.h(39,40): error C2146:  syntax error: missing ')' before identifier 'filepath'
+A:\GitHub\Boat\BoatServer\Database\database.cpp(12,28): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\vector(19): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatServer\Database\database.cpp(12,40): error C2065:  'string_view': undeclared identifier
+A:\GitHub\Boat\BoatServer\Database\database.cpp(12,40): error C2146:  syntax error: missing ')' before identifier 'filepath'
+A:\GitHub\Boat\BoatServer\Database\database.cpp(13,2): error C2143:  syntax error: missing ';' before '{'
+A:\GitHub\Boat\BoatServer\Database\database.cpp(13,2): error C2447:  '{': missing function header (old-style formal list?)

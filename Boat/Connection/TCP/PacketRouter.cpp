@@ -4,6 +4,7 @@
 #include "../../Utilities/Hook/Hook.h"
 #include "../Packet/IncomingPacket.h"
 #include "../Packet/Packets.h"
+#include "../../Utilities/Crypto/rc4.h"
 
 namespace Packet
 {
@@ -15,12 +16,12 @@ namespace Packet
 		pkt.WriteData(&buf);
 		buf.ShrinkToFit();
 		buf.index = 0;
-		buf.WriteInt32(buf.size);
 		PacketDeep::SendPacket(buf, SEND_PACKET_NOW);
 	}
-	void HandlePacket(PacketBuffer* packet)
+
+	void PacketIn(PacketBuffer* packet)
 	{
-		//cipher here
+		RC4::EncDec(packet->buffer, packet->size, true);
 		packet->index = 4;
 		int8_t packetId = packet->ReadInt8();
 		Logger::Log("recieved packet with id: " + std::to_string(packetId));

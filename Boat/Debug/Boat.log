@@ -1,1 +1,4 @@
-﻿
+﻿  PacketRouter.cpp
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(278): warning C4172:  returning address of local variable or temporary: ret
+A:\GitHub\Boat\Boat\Connection\Packet\PacketBuffer.h(302): warning C4172:  returning address of local variable or temporary: ret
+  Boat.vcxproj -> A:\GitHub\Boat\Debug\BoatClient.exe

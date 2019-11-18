@@ -1,0 +1,590 @@
+﻿  Button.cpp
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,21): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,2): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,32): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,22): error C2065:  'filename': undeclared identifier
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): error C2664:  'std::basic_ifstream<char,std::char_traits<char>>::basic_ifstream(const std::basic_ifstream<char,std::char_traits<char>> &)': cannot convert argument 1 from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path &'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  Reason: cannot convert from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  use of undefined type 'std::experimental::filesystem::v1::path'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\fstream(31,19): message :  see declaration of 'std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,18): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,77): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,29): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,26): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143: string_view is only available with C++17 or later.
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(8,15): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(9,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(10,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(11,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,53): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,38): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,20): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2065:  'string_view': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2146:  syntax error: missing ')' before identifier 'txt'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,67): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,78): error C2061:  syntax error: identifier 'string_view'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,41): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,80): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,74): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Graphics\Graphics.h(14,20): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Button.cpp(13,53): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\mutex(25): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Button.cpp(13,64): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Button.cpp(13,64): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Button.cpp(25,25): error C2065:  'str': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Button.cpp(26,56): error C2065:  'str': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Button.cpp(34,25): error C2065:  'str': undeclared identifier
+  Checkbox.cpp
+A:\GitHub\Boat\BoatUI\Controls\Button.cpp(35,56): error C2065:  'str': undeclared identifier
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,21): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,2): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,32): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,22): error C2065:  'filename': undeclared identifier
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): error C2664:  'std::basic_ifstream<char,std::char_traits<char>>::basic_ifstream(const std::basic_ifstream<char,std::char_traits<char>> &)': cannot convert argument 1 from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path &'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  Reason: cannot convert from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  use of undefined type 'std::experimental::filesystem::v1::path'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\fstream(31,19): message :  see declaration of 'std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,18): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,77): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,29): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,26): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143: string_view is only available with C++17 or later.
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(8,15): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(9,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(10,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(11,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,53): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,38): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,20): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2065:  'string_view': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2146:  syntax error: missing ')' before identifier 'txt'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,67): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,78): error C2061:  syntax error: identifier 'string_view'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,41): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,80): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,74): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Graphics\Graphics.h(14,20): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Checkbox.cpp(10,41): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\mutex(25): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Checkbox.cpp(10,52): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Checkbox.cpp(10,52): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Checkbox.cpp(16,48): error C2065:  'setting': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Checkbox.cpp(16,106): error C2660:  'G::FilledRect': function does not take 4 arguments
+A:\GitHub\Boat\BoatUI\Functional\Graphics\Graphics.h(23,18): message :  see declaration of 'G::FilledRect'
+A:\GitHub\Boat\BoatUI\Controls\Checkbox.cpp(17,24): error C2065:  'str': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Checkbox.cpp(24,65): error C2065:  'str': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Checkbox.cpp(26,7): error C2065:  'setting': undeclared identifier
+  Controls.cpp
+A:\GitHub\Boat\BoatUI\Controls\Checkbox.cpp(26,19): error C2065:  'setting': undeclared identifier
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,21): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,2): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,32): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,22): error C2065:  'filename': undeclared identifier
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): error C2664:  'std::basic_ifstream<char,std::char_traits<char>>::basic_ifstream(const std::basic_ifstream<char,std::char_traits<char>> &)': cannot convert argument 1 from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path &'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  Reason: cannot convert from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  use of undefined type 'std::experimental::filesystem::v1::path'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\fstream(31,19): message :  see declaration of 'std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,18): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,77): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,29): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,26): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143: string_view is only available with C++17 or later.
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(8,15): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(9,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(10,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(11,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,53): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,38): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,20): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2065:  'string_view': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2146:  syntax error: missing ')' before identifier 'txt'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,67): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,78): error C2061:  syntax error: identifier 'string_view'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,41): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,80): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,74): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+  Dropbox.cpp
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,21): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,2): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,32): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,22): error C2065:  'filename': undeclared identifier
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): error C2664:  'std::basic_ifstream<char,std::char_traits<char>>::basic_ifstream(const std::basic_ifstream<char,std::char_traits<char>> &)': cannot convert argument 1 from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path &'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  Reason: cannot convert from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  use of undefined type 'std::experimental::filesystem::v1::path'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\fstream(31,19): message :  see declaration of 'std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,18): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,77): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,29): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,26): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143: string_view is only available with C++17 or later.
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(8,15): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(9,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(10,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(11,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,53): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,38): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,20): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2065:  'string_view': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2146:  syntax error: missing ')' before identifier 'txt'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,67): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,78): error C2061:  syntax error: identifier 'string_view'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,41): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,80): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,74): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Graphics\Graphics.h(14,20): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Dropbox.cpp(23,67): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\mutex(25): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Dropbox.cpp(23,78): error C2061:  syntax error: identifier 'string_view'
+A:\GitHub\Boat\BoatUI\Controls\Dropbox.cpp(42,113): error C2660:  'Font::PutText': function does not take 4 arguments
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,7): message :  see declaration of 'Font::PutText'
+A:\GitHub\Boat\BoatUI\Controls\Dropbox.cpp(44,27): error C2065:  's': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Dropbox.cpp(44,116): error C2660:  'Font::PutText': function does not take 4 arguments
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,7): message :  see declaration of 'Font::PutText'
+A:\GitHub\Boat\BoatUI\Controls\Dropbox.cpp(53,9): error C2065:  'setting': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Dropbox.cpp(53,20): error C2065:  'setting': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Dropbox.cpp(57,8): error C2065:  'setting': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Dropbox.cpp(68,9): error C2065:  'setting': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Dropbox.cpp(70,25): error C2065:  's': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Dropbox.cpp(70,28): error C2065:  'setting': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Dropbox.cpp(70,113): error C2660:  'Font::PutText': function does not take 4 arguments
+  Font.cpp
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,7): message :  see declaration of 'Font::PutText'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,21): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,2): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,32): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,22): error C2065:  'filename': undeclared identifier
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): error C2664:  'std::basic_ifstream<char,std::char_traits<char>>::basic_ifstream(const std::basic_ifstream<char,std::char_traits<char>> &)': cannot convert argument 1 from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path &'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  Reason: cannot convert from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  use of undefined type 'std::experimental::filesystem::v1::path'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\fstream(31,19): message :  see declaration of 'std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,18): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,77): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,29): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,26): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Graphics\Graphics.h(14,20): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Functional\Settings.h(8,14): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Functional\Settings.h(9,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(8,23): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\mutex(25): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(8,34): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(8,34): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(10,10): error C2065:  'filename': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(19,31): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\mutex(25): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(19,42): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(19,42): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(21,13): error C2065:  'ox': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(21,24): error C2065:  'oy': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(22,16): error C2065:  'str': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(23,2): error C2672:  'begin': no matching overloaded function found
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(22,2): error C2893:  Failed to specialize function template 'unknown-type std::begin(_Container &)'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(22,2): message :  With the following template arguments:
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(22,2): message :  '_Container=unknown-type'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(22,2): error C2784:  'const _Elem *std::begin(std::initializer_list<_Elem>) noexcept': could not deduce template argument for 'std::initializer_list<_Elem>' from 'unknown-type'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\initializer_list(52): message :  see declaration of 'std::begin'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(23,2): error C2672:  'end': no matching overloaded function found
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(22,2): error C2893:  Failed to specialize function template 'unknown-type std::end(_Container &)'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(22,2): message :  With the following template arguments:
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(22,2): message :  '_Container=unknown-type'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(22,2): error C2784:  'const _Elem *std::end(std::initializer_list<_Elem>) noexcept': could not deduce template argument for 'std::initializer_list<_Elem>' from 'unknown-type'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\initializer_list(58): message :  see declaration of 'std::end'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(22,2): error C3536:  '<begin>$L0': cannot be used before it is initialized
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(22,2): error C3536:  '<end>$L0': cannot be used before it is initialized
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(22,2): error C2100:  illegal indirection
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(26,11): error C2065:  'ox': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(41,63): error C2429:  language feature 'init-statements in if/switch' requires compiler flag '/std:c++17'
+  Label.cpp
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.cpp(42,40): error C2065:  'color': undeclared identifier
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,21): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,2): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,32): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,22): error C2065:  'filename': undeclared identifier
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): error C2664:  'std::basic_ifstream<char,std::char_traits<char>>::basic_ifstream(const std::basic_ifstream<char,std::char_traits<char>> &)': cannot convert argument 1 from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path &'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  Reason: cannot convert from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  use of undefined type 'std::experimental::filesystem::v1::path'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\fstream(31,19): message :  see declaration of 'std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,18): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,77): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,29): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,26): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143: string_view is only available with C++17 or later.
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(8,15): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(9,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(10,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(11,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,53): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,38): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,20): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2065:  'string_view': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2146:  syntax error: missing ')' before identifier 'txt'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,67): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,78): error C2061:  syntax error: identifier 'string_view'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,41): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,80): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,74): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Label.cpp(5,38): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Label.cpp(5,49): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Label.cpp(5,49): error C2143:  syntax error: missing ',' before '&'
+  Textbox.cpp
+A:\GitHub\Boat\BoatUI\Controls\Label.cpp(8,24): error C2065:  'str': undeclared identifier
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,21): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,2): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,32): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,22): error C2065:  'filename': undeclared identifier
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): error C2664:  'std::basic_ifstream<char,std::char_traits<char>>::basic_ifstream(const std::basic_ifstream<char,std::char_traits<char>> &)': cannot convert argument 1 from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path &'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  Reason: cannot convert from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  use of undefined type 'std::experimental::filesystem::v1::path'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\fstream(31,19): message :  see declaration of 'std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,18): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,77): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,29): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,26): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143: string_view is only available with C++17 or later.
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(8,15): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(9,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(10,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(11,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,53): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,38): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,20): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2065:  'string_view': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2146:  syntax error: missing ')' before identifier 'txt'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,67): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,78): error C2061:  syntax error: identifier 'string_view'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,41): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,80): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,74): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Graphics\Graphics.h(14,20): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Textbox.cpp(21,20): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\mutex(25): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Textbox.cpp(21,32): error C2065:  'string_view': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Textbox.cpp(21,32): error C2146:  syntax error: missing ')' before identifier 'txt'
+A:\GitHub\Boat\BoatUI\Controls\Textbox.cpp(22,2): error C2143:  syntax error: missing ';' before '{'
+  BasicShapes.cpp
+A:\GitHub\Boat\BoatUI\Controls\Textbox.cpp(22,2): error C2447:  '{': missing function header (old-style formal list?)
+  Graphics.cpp
+A:\GitHub\Boat\BoatUI\Functional\Graphics\Graphics.h(14,20): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Functional\Graphics\Graphics.h(14,20): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Functional\Settings.h(8,14): error C7525:  inline variables require at least '/std:c++17'
+  Surface.cpp
+A:\GitHub\Boat\BoatUI\Functional\Settings.h(9,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,21): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,2): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,32): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,22): error C2065:  'filename': undeclared identifier
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): error C2664:  'std::basic_ifstream<char,std::char_traits<char>>::basic_ifstream(const std::basic_ifstream<char,std::char_traits<char>> &)': cannot convert argument 1 from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path &'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  Reason: cannot convert from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  use of undefined type 'std::experimental::filesystem::v1::path'
+  main.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\fstream(31,19): message :  see declaration of 'std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Functional\Settings.h(8,14): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Functional\Settings.h(9,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Functional\Graphics\Graphics.h(14,20): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,21): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,2): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,32): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,22): error C2065:  'filename': undeclared identifier
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): error C2664:  'std::basic_ifstream<char,std::char_traits<char>>::basic_ifstream(const std::basic_ifstream<char,std::char_traits<char>> &)': cannot convert argument 1 from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path &'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  Reason: cannot convert from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  use of undefined type 'std::experimental::filesystem::v1::path'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\fstream(31,19): message :  see declaration of 'std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,18): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,77): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,29): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,26): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143: string_view is only available with C++17 or later.
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(8,15): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(9,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(10,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(11,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,53): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,38): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,20): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2065:  'string_view': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2146:  syntax error: missing ')' before identifier 'txt'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,67): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,78): error C2061:  syntax error: identifier 'string_view'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,41): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,80): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,74): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\main.cpp(46,80): error C2661:  'Font::Font': no overloaded function takes 2 arguments
+A:\GitHub\Boat\BoatUI\main.cpp(24,1): error C4996:  'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(243): message :  see declaration of 'freopen'
+A:\GitHub\Boat\BoatUI\main.cpp(25,1): error C4996:  'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(243): message :  see declaration of 'freopen'
+A:\GitHub\Boat\BoatUI\main.cpp(26,1): error C4996:  'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  MainLoop.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(243): message :  see declaration of 'freopen'
+A:\GitHub\Boat\BoatUI\Functional\Settings.h(8,14): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Functional\Settings.h(9,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Functional\Graphics\Graphics.h(14,20): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,21): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,2): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,32): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,22): error C2065:  'filename': undeclared identifier
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): error C2664:  'std::basic_ifstream<char,std::char_traits<char>>::basic_ifstream(const std::basic_ifstream<char,std::char_traits<char>> &)': cannot convert argument 1 from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path &'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  Reason: cannot convert from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  use of undefined type 'std::experimental::filesystem::v1::path'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\fstream(31,19): message :  see declaration of 'std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,18): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,77): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,29): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,26): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143: string_view is only available with C++17 or later.
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(8,15): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(9,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(10,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(11,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,53): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,38): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,20): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2065:  'string_view': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2146:  syntax error: missing ')' before identifier 'txt'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,67): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,78): error C2061:  syntax error: identifier 'string_view'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,41): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,80): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,74): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\algorithm(23): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C2143:  syntax error: missing ',' before '&'
+  Render.cpp
+A:\GitHub\Boat\BoatUI\Main\MainLoop.cpp(34,22): error C2429:  language feature 'init-statements in if/switch' requires compiler flag '/std:c++17'
+A:\GitHub\Boat\BoatUI\Functional\Graphics\Graphics.h(14,20): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,21): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,2): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(22,32): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,22): error C2065:  'filename': undeclared identifier
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): error C2664:  'std::basic_ifstream<char,std::char_traits<char>>::basic_ifstream(const std::basic_ifstream<char,std::char_traits<char>> &)': cannot convert argument 1 from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path &'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  Reason: cannot convert from 'const std::_Iosb<int>::_Openmode' to 'const std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Functional\Surface\Surface.h(24,1): message :  use of undefined type 'std::experimental::filesystem::v1::path'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\fstream(31,19): message :  see declaration of 'std::experimental::filesystem::v1::path'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,18): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,77): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(22,29): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,26): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Font\Font.h(23,38): error C2143: string_view is only available with C++17 or later.
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(8,15): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(9,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(10,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(11,13): error C7525:  inline variables require at least '/std:c++17'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,53): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(41,64): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,38): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(42,49): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,20): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2065:  'string_view': undeclared identifier
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(43,32): error C2146:  syntax error: missing ')' before identifier 'txt'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,67): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(44,78): error C2061:  syntax error: identifier 'string_view'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,41): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(46,52): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,80): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(47,91): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,74): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Controls\Controls.h(48,85): error C2143:  syntax error: missing ',' before '&'
+A:\GitHub\Boat\BoatUI\Main\Render.cpp(8,7): error C2039:  'string_view': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\iostream(14): message :  see declaration of 'std'
+A:\GitHub\Boat\BoatUI\Main\Render.cpp(8,25): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+A:\GitHub\Boat\BoatUI\Main\Render.cpp(8,19): error C2146:  syntax error: missing ';' before identifier 'wWords'
+A:\GitHub\Boat\BoatUI\Main\Render.cpp(8,31): error C2143:  syntax error: missing ';' before '{'
+A:\GitHub\Boat\BoatUI\Main\Render.cpp(8,31): error C2447:  '{': missing function header (old-style formal list?)
+  Generating Code...
+A:\GitHub\Boat\BoatUI\Main\Render.cpp(14,34): error C2065:  'wWords': undeclared identifier

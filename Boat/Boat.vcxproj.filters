@@ -132,9 +132,6 @@
     <ClInclude Include="Utilities\Crypto\rc4.h">
       <Filter>Utilities\Crypto</Filter>
     </ClInclude>
-    <ClInclude Include="Utilities\Crypto\rsa.h">
-      <Filter>Utilities\Crypto</Filter>
-    </ClInclude>
     <ClInclude Include="Utilities\Hook\Hook.h">
       <Filter>Utilities\Hook</Filter>
     </ClInclude>
@@ -143,6 +140,9 @@
     </ClInclude>
     <ClInclude Include="Connection\TCP\Socket\socket.hpp">
       <Filter>Connection\TCP\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\Crypto\rsa.h">
+      <Filter>Utilities\Crypto</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

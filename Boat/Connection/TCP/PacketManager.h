@@ -34,7 +34,7 @@
 namespace Packet
 {
 	void PacketOut(OutgoingPacket& pkt);
-	void HandlePacket(PacketBuffer* packet);
+	void PacketIn(PacketBuffer* packet);
 }
 namespace PacketDeep
 {

@@ -33,10 +33,8 @@ namespace PacketDeep
 	}
 	void Listen()
 	{
-		while (true)
+		while (!shutdownListner)
 		{
-			if (shutdownListner) return;
-
 			std::lock_guard<std::mutex> g(clientMutex);
 
 			if (!client) continue;
@@ -44,7 +42,7 @@ namespace PacketDeep
 			client->read_all(&pktSize, sizeof(int));
 			Packet::PacketBuffer packet(pktSize);
 			client->read_all(packet.buffer, pktSize);
-			Packet::HandlePacket(&packet);
+			Packet::PacketIn(&packet);
 			std::this_thread::sleep_for(std::chrono::milliseconds(1));
 		}
 	}
