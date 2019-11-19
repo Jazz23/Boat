@@ -1,7 +1,7 @@
 #include "Logger.h"
 #include <iostream>
 
-namespace Logger
+namespace Log
 {
 	std::string msg;
 	void __printmsg(std::string_view s)

@@ -27,7 +27,7 @@ namespace RC4
 		j = 0;
 		i = 0;
 		std::string output;
-		for (int k = index; k < length; k++)
+		for (int k = index; k < (int)length; k++)
 		{
 			x = (char)data[k];
 			i = (i + 1) % 256;
