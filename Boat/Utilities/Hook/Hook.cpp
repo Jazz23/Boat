@@ -1,7 +1,7 @@
 #include <string>
 #include <stdint.h>
 #include "Hook.h"
-#include "../Logger/Logger.h"
+#include "../Logger/Log.h"
 
 
 namespace Hook

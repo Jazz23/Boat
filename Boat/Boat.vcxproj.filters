@@ -31,7 +31,7 @@
     <Filter Include="Connection\TCP\Socket">
       <UniqueIdentifier>{fb95cca6-37bd-4ee6-86df-b3145e286d8c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Utilities\Log">
+    <Filter Include="Utilities\Logger">
       <UniqueIdentifier>{bf862370-2eed-4ac9-9dbf-17b088a43575}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -136,7 +136,7 @@
       <Filter>Utilities\Crypto</Filter>
     </ClInclude>
     <ClInclude Include="Utilities\Logger\Log.h">
-      <Filter>Utilities\Log</Filter>
+      <Filter>Utilities\Logger</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -160,7 +160,7 @@
       <Filter>Connection\TCP\Socket</Filter>
     </ClCompile>
     <ClCompile Include="Utilities\Logger\Log.cpp">
-      <Filter>Utilities\Log</Filter>
+      <Filter>Utilities\Logger</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
