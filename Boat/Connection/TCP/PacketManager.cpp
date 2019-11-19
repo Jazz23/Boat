@@ -23,11 +23,13 @@ namespace PacketDeep
 		if (flags & SEND_PACKET_NOW)
 		{
 			if (client->write_all(pkt, sz) > 0)
-				Logger::Log("packet sent");
+			{
+				PrintAndLog("packet sent");
+			}
 			else
 			{
 				status = FAILED_PACKET_SEND;
-				Logger::Log("packet send failed!");
+				PrintAndLog("packet send failed!");
 			}
 		}
 		else if (flags & QUEUE_PACKET)
@@ -35,16 +37,20 @@ namespace PacketDeep
 			char* npkt = new char[sz]; 
 			memcpy(npkt, pkt, sz);
 			choked_packets.emplace_back(npkt, sz);
-			Logger::Log("queued packet for sending");
+			PrintAndLog("queued packet for sending");
 		}
 
 		if (flags & SEND_ENTIRE_QUEUE)
 		{
 			status = SendQueuedPackets();
 			if (status != FAILED_PACKET_SEND)
-				Logger::Log("sent entire packet queue");
+			{
+				PrintAndLog("sent entire packet queue");
+			}
 			else
-				Logger::Log("sending of queued packets failed");
+			{
+				PrintAndLog("sending of queued packets failed");
+			}
 		}
 		return status;
 	}

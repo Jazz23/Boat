@@ -10,9 +10,6 @@
     <Filter Include="Structures\NetworkData">
       <UniqueIdentifier>{186a4c1c-5d0e-4c31-9c2e-d1d1e4e3675e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Connection\ThreadPool">
-      <UniqueIdentifier>{7acfab64-317e-4aa5-ac01-0f0a2e3d8888}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Utilities">
       <UniqueIdentifier>{6b294e44-4a43-455f-bfe7-1499174782aa}</UniqueIdentifier>
     </Filter>
@@ -99,9 +96,6 @@
     <ClInclude Include="Structures\NetworkData\ground_tile_data.h" />
     <ClInclude Include="Structures\NetworkData\trade_item.h" />
     <ClInclude Include="Structures\trade_result.h" />
-    <ClInclude Include="Connection\ThreadPool\ThreadPool.h">
-      <Filter>Connection\ThreadPool</Filter>
-    </ClInclude>
     <ClInclude Include="Utilities\ClientU.h">
       <Filter>Utilities</Filter>
     </ClInclude>

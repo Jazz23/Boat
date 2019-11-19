@@ -5,7 +5,7 @@
 
 int main()
 {
-	srand(time(NULL));
+	srand((int)time(NULL));
 	Boat::Start();
 	system("pause");
 	while (true)

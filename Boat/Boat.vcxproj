@@ -136,7 +136,6 @@
     <ClInclude Include="Connection\Packet\Packets.h" />
     <ClInclude Include="Connection\TCP\PacketManager.h" />
     <ClInclude Include="Connection\TCP\Socket\socket.hpp" />
-    <ClInclude Include="Connection\ThreadPool\ThreadPool.h" />
     <ClInclude Include="Structures\accinfo.h" />
     <ClInclude Include="Structures\classes.h" />
     <ClInclude Include="Structures\condition_effects.h" />

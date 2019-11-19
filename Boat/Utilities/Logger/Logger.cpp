@@ -1,30 +1,19 @@
 #include "Logger.h"
 #include <iostream>
-#define DEBUG_MODE
 
 namespace Logger
 {
-	size_t numToSaveOnCrash;
-	std::queue<std::string_view> saved;
-	void Log(std::string_view str)
+	std::string msg;
+	void __printmsg(std::string_view s)
 	{
-#ifdef DEBUG_MODE
-		saved.push(str);
-		while (saved.size() > numToSaveOnCrash)
-			saved.pop();
-		std::cout << str << "\n";
-#endif
+		std::cout << s;
 	}
-	void GenerateCrashFile()
+	void __savemsg(std::string_view s)
 	{
-
+		msg = s;
 	}
-	void SetNumToSaveOnCrash(size_t s)
+	[[nodiscard]] std::string_view __getlastmsg()
 	{
-		numToSaveOnCrash = s;
-	}
-	[[nodiscard]] std::string_view GetLastString()
-	{
-		return saved.back();
+		return msg;
 	}
 }

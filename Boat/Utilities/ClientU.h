@@ -9,13 +9,11 @@ namespace Boat
 	{
 		PacketDeep::StopClient();
 
-		Logger::GenerateCrashFile();
 	}
 	//calls GenerateCrashFile before shutdown
 	//to capture the last executed stuff before error
 	void ShutdownWithError()
 	{
-		Logger::GenerateCrashFile();
 
 
 		//.
@@ -24,16 +22,16 @@ namespace Boat
 
 	void Start()
 	{
-		Logger::SetNumToSaveOnCrash(30); //save the last 30 operations before program close
-		Logger::Log("starting winsock");
+		PrintAndLog("starting winsock");
+		std::cout << "should have printed\n";
 		PacketDeep::StartClient();
-		Logger::Log("attempting connection");
+		PrintAndLog("attempting connection");
 		if (PacketDeep::Connect("3.88.196.105") != 0)
 		{
-			Logger::Log("faied to connect");
+			PrintAndLog("faied to connect");
 			PacketDeep::StopClient();
 		}
-		Logger::Log("starting listener");
+		PrintAndLog("starting listener");
 		std::thread t(PacketDeep::Listen);
 		t.detach();
 	}

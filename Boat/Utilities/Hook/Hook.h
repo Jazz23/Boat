@@ -18,4 +18,5 @@ namespace Hook
 
 	void __fastcall EmplaceHook(size_t pktId, void (*in_f)(uintptr_t));
 	void __fastcall Fire(size_t pktId, uintptr_t pkt);
+	bool __fastcall IsHooked(size_t pktId);
 }
