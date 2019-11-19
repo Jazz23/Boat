@@ -13,7 +13,7 @@
 #include "Socket/socket.hpp"
 #include "../Packet/Packets.h"
 #include "../Packet/PacketBuffer.h"
-#include "../../Utilities/Logger/Logger.h"
+#include "../../Utilities/Logger/Log.h"
 
 //https://github.com/pedro-vicente/lib_netsockets
 

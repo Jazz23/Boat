@@ -1,5 +1,5 @@
 #include "PacketManager.h"
-#include "../../Utilities/Logger/Logger.h"
+#include "../../Utilities/Logger/Log.h"
 #include "../../Structures/PacketId.h"
 #include "../../Utilities/Hook/Hook.h"
 #include "../Packet/IncomingPacket.h"

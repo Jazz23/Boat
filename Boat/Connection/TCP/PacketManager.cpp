@@ -1,5 +1,5 @@
 #include "PacketManager.h"
-#include "../../Utilities/Logger/Logger.h"
+#include "../../Utilities/Logger/Log.h"
 
 namespace PacketDeep
 {
