@@ -22,9 +22,6 @@
     <Filter Include="Connection\TCP">
       <UniqueIdentifier>{d5e459b8-cb23-4f41-88cf-a6cbd54dafaa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Utilities\Logger">
-      <UniqueIdentifier>{bf862370-2eed-4ac9-9dbf-17b088a43575}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Utilities\Crypto">
       <UniqueIdentifier>{bdbba6af-f88d-4710-bba4-078ddcd7151b}</UniqueIdentifier>
     </Filter>
@@ -33,6 +30,9 @@
     </Filter>
     <Filter Include="Connection\TCP\Socket">
       <UniqueIdentifier>{fb95cca6-37bd-4ee6-86df-b3145e286d8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities\Log">
+      <UniqueIdentifier>{bf862370-2eed-4ac9-9dbf-17b088a43575}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -120,9 +120,6 @@
     <ClInclude Include="Connection\TCP\PacketManager.h">
       <Filter>Connection\TCP</Filter>
     </ClInclude>
-    <ClInclude Include="Utilities\Logger\Logger.h">
-      <Filter>Utilities\Logger</Filter>
-    </ClInclude>
     <ClInclude Include="Utilities\Crypto\rc4.h">
       <Filter>Utilities\Crypto</Filter>
     </ClInclude>
@@ -138,6 +135,9 @@
     <ClInclude Include="Utilities\Crypto\rsa.h">
       <Filter>Utilities\Crypto</Filter>
     </ClInclude>
+    <ClInclude Include="Utilities\Logger\Log.h">
+      <Filter>Utilities\Log</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -150,9 +150,6 @@
     <ClCompile Include="Connection\TCP\PacketRouter.cpp">
       <Filter>Connection\TCP</Filter>
     </ClCompile>
-    <ClCompile Include="Utilities\Logger\Logger.cpp">
-      <Filter>Utilities\Logger</Filter>
-    </ClCompile>
     <ClCompile Include="Utilities\Environment\Environment.cpp">
       <Filter>Utilities\Environment</Filter>
     </ClCompile>
@@ -161,6 +158,9 @@
     </ClCompile>
     <ClCompile Include="Connection\TCP\Socket\socket.cpp">
       <Filter>Connection\TCP\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities\Logger\Log.cpp">
+      <Filter>Utilities\Log</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

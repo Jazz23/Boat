@@ -165,7 +165,7 @@
     <ClInclude Include="Utilities\Environment\Environment.h" />
     <ClInclude Include="Utilities\Hook\Hook.h" />
     <ClInclude Include="Utilities\HttpGet.h" />
-    <ClInclude Include="Utilities\Logger\Logger.h" />
+    <ClInclude Include="Utilities\Logger\Log.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Connection\TCP\PacketDeep.cpp" />
@@ -175,7 +175,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Utilities\Environment\Environment.cpp" />
     <ClCompile Include="Utilities\Hook\Hook.cpp" />
-    <ClCompile Include="Utilities\Logger\Logger.cpp" />
+    <ClCompile Include="Utilities\Logger\Log.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
