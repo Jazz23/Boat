@@ -27,7 +27,7 @@ namespace Packet
 			auto accountIdsLen = pb->ReadInt16();
 			accountIds.resize(accountIdsLen);
 			for (int16_t i = 0; i < accountIdsLen; i++)
-				accountIds.push_back(pb->ReadString());
+				accountIds[i] = pb->ReadString();
 			lookAction = pb->ReadInt32();
 		}
 	};
@@ -142,7 +142,7 @@ namespace Packet
 			size_t effectsLen = pb->ReadUnsignedInt8();
 			effects.resize(effectsLen);
 			for (size_t i = 0; i < effectsLen; i++)
-				effects.push_back(pb->ReadUnsignedInt8());
+				effects[i] = (pb->ReadUnsignedInt8());
 			damageAmount = pb->ReadUnsignedInt16();
 			kill = pb->ReadBoolean();
 			armorPierce = pb->ReadBoolean();
@@ -298,11 +298,11 @@ namespace Packet
 			size_t sz = pb->ReadInt16();
 			clientXML.resize(sz);
 			for (size_t i = 0; i < sz; i++)
-				clientXML.push_back(pb->ReadStringUTF32());
+				clientXML[i] = pb->ReadStringUTF32();
 			sz = pb->ReadInt16();
 			extraXML.resize(sz);
 			for (size_t i = 0; i < sz; i++)
-				extraXML.push_back(pb->ReadStringUTF32());
+				extraXML[i] = pb->ReadStringUTF32();
 		}
 	};
 	class NameResultPacket : IncomingPacket
@@ -349,7 +349,7 @@ namespace Packet
 			{
 				ObjectStatusData osd;
 				osd.ReadData(pb);
-				statuses.push_back(osd);
+				statuses[i] = osd;
 			}
 		}
 	};
@@ -557,11 +557,11 @@ namespace Packet
 			const size_t clientOfferLen = pb->ReadInt16();
 			clientOffer.resize(clientOfferLen);
 			for (size_t i = 0; i < clientOfferLen; i++)
-				clientOffer.push_back(pb->ReadBoolean());
+				clientOffer[i] = (pb->ReadBoolean());
 			const size_t partnerOfferLen = pb->ReadInt16();
 			partnerOffer.resize(partnerOfferLen);
 			for (size_t i = 0; i < partnerOfferLen; i++)
-				partnerOffer.push_back(pb->ReadBoolean());
+				partnerOffer[i] = (pb->ReadBoolean());
 		}
 	};
 
@@ -622,7 +622,7 @@ namespace Packet
 			{
 				TradeItem item;
 				item.ReadData(pb);
-				clientItems.push_back(item);
+				clientItems[i] = (item);
 			}
 			partnerName = pb->ReadString();
 			const size_t partnerItemsLen = pb->ReadInt16();
@@ -651,7 +651,7 @@ namespace Packet
 			{
 				GroundTileData gd;
 				gd.ReadData(pb);
-				tiles.push_back(gd);
+				tiles[i] = (gd);
 			}
 
 			const size_t newObjectsLen = pb->ReadInt16();
@@ -660,14 +660,14 @@ namespace Packet
 			{
 				ObjectData od;
 				od.ReadData(pb);
-				newObjects.push_back(od);
+				newObjects[i] = (od);
 			}
 
 			const size_t dropsLen = pb->ReadInt16();
 			drops.resize(dropsLen);
 			for (size_t i = 0; i < dropsLen; i++)
 			{
-				drops.push_back(pb->ReadInt32());
+				drops[i] = (pb->ReadInt32());
 			}
 		}
 	};
