@@ -24,7 +24,7 @@ namespace Boat
 	{
 		PrintAndLog("starting winsock");
 		std::cout << "should have printed\n";
-		PacketDeep::StartClient();
+		//PacketDeep::StartClient();
 		PrintAndLog("attempting connection");
 		if (PacketDeep::Connect("3.88.196.105") != 0)
 		{

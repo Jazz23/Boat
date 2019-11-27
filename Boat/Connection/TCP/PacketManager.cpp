@@ -5,13 +5,13 @@ namespace PacketDeep
 {
 	bool badFlags(unsigned long flags)
 	{
-		return !(flags & SEND_PACKET_NOW && flags & QUEUE_PACKET);
+		return (flags & SEND_PACKET_NOW && flags & QUEUE_PACKET);
 	}
 	int SendPacket(unsigned char* pkt, size_t sz, unsigned long flags)
 	{
 		if (badFlags(flags))
 			return BAD_FLAGS;
-		if (!pkt && (flags & SEND_PACKET_NOW || flags & QUEUE_PACKET))
+		if (!pkt)
 			return BAD_PACKET_ARRAY;
 		if (!client)
 			return -69;

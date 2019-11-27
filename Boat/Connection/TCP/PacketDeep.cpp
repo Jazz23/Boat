@@ -8,11 +8,12 @@ namespace PacketDeep
 	
 	int StartClient()
 	{
-		client = new tcp_client_t("", DEFAULT_PORT);
-		return client->connect();
+		//client = new tcp_client_t("", DEFAULT_PORT);
+		//return client->connect();
 	}
 	void StopClient()
 	{
+		std::lock_guard<std::mutex> g(clientMutex);
 		if (client)
 		{
 			client->close();

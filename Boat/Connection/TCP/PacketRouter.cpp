@@ -26,7 +26,7 @@ namespace Packet
 		int8_t pktId = packet->ReadInt8();
 		PrintAndLog("recieved packet with id: " + std::to_string(pktId));
 
-		if (!Hook::IsHooked(pktId)) //4000000iq plays right here
+		if (!Hook::IsHooked(pktId))
 			return;
 
 		if (pktId == PacketId::NEWTICK)
