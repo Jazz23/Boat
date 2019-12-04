@@ -20,7 +20,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt16(clientOffer.size());
 			for (auto c : clientOffer)
 				pb->WriteBoolean(c);
@@ -40,7 +39,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(time);
 			pos.WriteData(pb);
 		}
@@ -54,7 +52,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(objectId);
 			pb->WriteInt32(quantity);
 		}
@@ -67,7 +64,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 		}
 	};
 	class ChangeGuildRankPacket : OutgoingPacket
@@ -80,7 +76,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteString(name);
 			pb->WriteInt32(guildRank);
 		}
@@ -94,7 +89,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt16(offer.size());
 			for (bool c : offer)
 				pb->WriteBoolean(c);
@@ -107,7 +101,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 		}
 	};
 	class ChooseNamePacket : OutgoingPacket
@@ -118,7 +111,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteString(name);
 		}
 	};
@@ -131,7 +123,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteString(claimKey);
 			pb->WriteString(claimType);
 		}
@@ -144,7 +135,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteString(name);
 		}
 	};
@@ -156,7 +146,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt16(classType);
 			pb->WriteInt16(skinType);
 		}
@@ -171,7 +160,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(accountListId);
 			pb->WriteBoolean(add);
 			pb->WriteInt32(ObjectId);
@@ -188,7 +176,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(time);
 			pb->WriteInt8(bulletId);
 			pb->WriteInt32(targetId);
@@ -202,7 +189,7 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
+
 		}
 	};
 	class GotoRequestRoomPacket : OutgoingPacket
@@ -212,7 +199,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 		}
 	};
 	class GotoAckPacket : OutgoingPacket
@@ -223,7 +209,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(time);
 		}
 	};
@@ -236,7 +221,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(time);
 			pos.WriteData(pb);
 		}
@@ -249,7 +233,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteString(name);
 		}
 	};
@@ -261,7 +244,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteString(name);
 		}
 	};
@@ -281,7 +263,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteString(buildVersion);
 			pb->WriteInt32(gameId);
 			pb->WriteString(guid);
@@ -308,7 +289,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			slotObject.WriteData(pb);
 		}
 	};
@@ -322,7 +302,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(time);
 			pos.WriteData(pb);
 			slotObject1.WriteData(pb);
@@ -337,7 +316,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteString(guildName);
 		}
 	};
@@ -349,7 +327,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(itemType);
 		}
 	};
@@ -362,7 +339,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(charId);
 			pb->WriteBoolean(isFromArena);
 		}
@@ -377,7 +353,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(tickId);
 			pb->WriteInt32(time);
 			newPosition.WriteData(pb);
@@ -396,7 +371,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(time);
 			pb->WriteInt8(bulletId);
 			pb->WriteInt32(objectId);
@@ -412,7 +386,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt8(bulletId);
 			pb->WriteInt32(objectId);
 		}
@@ -429,7 +402,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(time);
 			pb->WriteInt8(bulletId);
 			pb->WriteInt16(containerType);
@@ -445,7 +417,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteString(text);
 		}
 	};
@@ -457,7 +428,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(serial);
 			pb->WriteInt32(time);
 		}
@@ -470,7 +440,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteString(name);
 		}
 	};
@@ -482,7 +451,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(skinId);
 		}
 	};
@@ -495,7 +463,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt8(effect);
 			pb->WriteFloat(duration);
 		}
@@ -508,7 +475,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(time);
 		}
 	};
@@ -522,7 +488,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(time);
 			pb->WriteInt8(bulletId);
 			pb->WriteInt32(objectId);
@@ -536,7 +501,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(objectId);
 		}
 	};
@@ -547,7 +511,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 		}
 	};
 	class UseItemPacket : OutgoingPacket
@@ -561,7 +524,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(time);
 			slotObject.WriteData(pb);
 			itemUsePos.WriteData(pb);
@@ -577,7 +539,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(objectId);
 		}
 	};
@@ -592,7 +553,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt32(currency);
 		}
 	};
@@ -606,7 +566,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteString(questId);
 			pb->WriteInt16(slots.size());
 			for (const auto& slot : slots)
@@ -624,7 +583,6 @@ namespace Packet
 		void WriteData(PacketBuffer* pb) const override
 		{
 			if (!pb) return;
-			Hook::Fire(pktId, reinterpret_cast<uintptr_t>(this));
 			pb->WriteInt16(commandType);
 			pb->WriteInt32(instanceId);
 		}

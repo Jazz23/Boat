@@ -3,15 +3,13 @@
 #include "../Packet/PacketBuffer.h"
 #include "Socket/socket.hpp"
 
-namespace PacketDeep
+namespace Client
 {
-	
-	int StartClient()
+	int __CLIENT::StartClient()
 	{
-		//client = new tcp_client_t("", DEFAULT_PORT);
-		//return client->connect();
+
 	}
-	void StopClient()
+	void __CLIENT::StopClient()
 	{
 		std::lock_guard<std::mutex> g(clientMutex);
 		if (client)
@@ -20,7 +18,7 @@ namespace PacketDeep
 			delete client;
 		}
 	}
-	int Connect(const char* serverIp)
+	int __CLIENT::Connect(const char* serverIp)
 	{
 		std::lock_guard<std::mutex> g(clientMutex);
 		if (client)
@@ -32,7 +30,7 @@ namespace PacketDeep
 		}
 		return -1;
 	}
-	void Listen()
+	[[noreturn]] void __CLIENT::operator()()
 	{
 		while (!shutdownListner)
 		{
@@ -43,7 +41,7 @@ namespace PacketDeep
 			client->read_all(&pktSize, sizeof(int));
 			Packet::PacketBuffer packet(pktSize);
 			client->read_all(packet.buffer, pktSize);
-			Packet::PacketIn(&packet);
+			PacketIn(&packet);
 			std::this_thread::sleep_for(std::chrono::milliseconds(1));
 		}
 	}

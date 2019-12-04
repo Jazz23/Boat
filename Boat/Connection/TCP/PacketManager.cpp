@@ -1,24 +1,22 @@
 #include "PacketManager.h"
 #include "../../Utilities/Logger/Log.h"
 
-namespace PacketDeep
+namespace Client
 {
-	bool badFlags(unsigned long flags)
+	bool __CLIENT::BadFlags(unsigned long flags)
 	{
 		return (flags & SEND_PACKET_NOW && flags & QUEUE_PACKET);
 	}
-	int SendPacket(unsigned char* pkt, size_t sz, unsigned long flags)
+	int __CLIENT::SendPacket(unsigned char* pkt, size_t sz, unsigned long flags)
 	{
-		if (badFlags(flags))
-			return BAD_FLAGS;
-		if (!pkt)
-			return BAD_PACKET_ARRAY;
+		if (BadFlags(flags) || !pkt)
+			return SEND_FAILURE;
 		if (!client)
 			return -69;
 
 		std::lock_guard<std::mutex> g(clientMutex);
 
-		int status = ASSUMED_SUCCESS;
+		int status = SEND_SUCCESS;
 
 		if (flags & SEND_PACKET_NOW)
 		{
@@ -28,7 +26,7 @@ namespace PacketDeep
 			}
 			else
 			{
-				status = FAILED_PACKET_SEND;
+				status = SEND_FAILURE;
 				PrintAndLog("packet send failed!");
 			}
 		}
@@ -43,7 +41,7 @@ namespace PacketDeep
 		if (flags & SEND_ENTIRE_QUEUE)
 		{
 			status = SendQueuedPackets();
-			if (status != FAILED_PACKET_SEND)
+			if (status != SEND_FAILURE)
 			{
 				PrintAndLog("sent entire packet queue");
 			}
@@ -54,19 +52,19 @@ namespace PacketDeep
 		}
 		return status;
 	}
-	int SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags)
+	int __CLIENT::SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags)
 	{
 		return SendPacket(pkt.buffer, pkt.size, flags);
 	}
-	int SendQueuedPackets()
+	int __CLIENT::SendQueuedPackets()
 	{
-		int status = ASSUMED_SUCCESS;
+		int status = SEND_SUCCESS;
 		for (const auto& pkt : choked_packets)
 		{
 			if (pkt.first != NULL || pkt.second > 0)
 			{
 				if (client->write_all(pkt.first, pkt.second) < 1)
-					status = FAILED_PACKET_SEND;
+					status = SEND_FAILURE;
 				else
 					delete[] pkt.first;
 			}

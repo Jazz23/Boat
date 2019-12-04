@@ -14,6 +14,7 @@
 #include "../Packet/Packets.h"
 #include "../Packet/PacketBuffer.h"
 #include "../../Utilities/Logger/Log.h"
+#include "../../Utilities/Hook/Hook.h"
 
 //https://github.com/pedro-vicente/lib_netsockets
 
@@ -22,36 +23,44 @@
 #define SEND_PACKET_NOW		(1<<1)
 #define SEND_ENTIRE_QUEUE	(1<<2)
 
-#define BAD_FLAGS			1
-#define BAD_PACKET_ARRAY	2
-#define ASSUMED_FAILURE		3 //for if we dont get any code from tcp
-#define ASSUMED_SUCCESS		4
-#define FAILED_PACKET_SEND	5
+#define SEND_FAILURE		-1
+#define SEND_SUCCESS		1
 
 #define MAXIMUM_PACKET_BUFFER	1000000
 #define DEFAULT_PORT			2050
 
-namespace Packet
+namespace Client
 {
-	void PacketOut(OutgoingPacket& pkt);
-	void PacketIn(PacketBuffer* packet);
-}
-namespace PacketDeep
-{
+	typedef class __CLIENT
+	{
+	private:
+		std::vector<std::pair<char*, size_t> > choked_packets;
+		bool shutdownListner = false;
 
-	inline std::vector<std::pair<char*, size_t> > choked_packets;
-	inline bool shutdownListner = false;
+		std::mutex clientMutex;
+		tcp_client_t* client;
+		Hook::pHooks hookContext;
+	public:
+		__CLIENT()
+		{
+			choked_packets.clear();
+			client = nullptr;
+			hookContext = new Hook::Hooks;
+		}
 
-	inline std::mutex clientMutex;
-	inline tcp_client_t* client = nullptr;
+		bool BadFlags(unsigned long flags);
+		int SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags);
+		int SendPacket(unsigned char* pkt, size_t sz, unsigned long flags);
+		int SendQueuedPackets();
 
-	bool badFlags(unsigned long flags);
-	int SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags);
-	int SendPacket(unsigned char* pkt, size_t sz, unsigned long flags);
-	int SendQueuedPackets();
+		int StartClient();
+		void StopClient();
+		int Connect(const char* serverIp);
+		[[noreturn]] void operator()();	//listener
 
-	int StartClient();
-	void StopClient();
-	int Connect(const char* serverIp);
-	void Listen();
+
+		void PacketOut(Packet::OutgoingPacket& pkt);
+		void PacketIn(Packet::PacketBuffer* packet);
+
+	}Client, * pClient;
 }
