@@ -3,6 +3,7 @@
 #include <cstring>
 #include <utility>
 #include <string>
+#include <intrin.h>
 namespace Packet
 {
 	inline constexpr size_t sz_INT32 = sizeof(int32_t);
@@ -38,6 +39,19 @@ namespace Packet
 		~PacketBuffer()
 		{
 			if (buffer) delete[] buffer;
+		}
+		float ReverseFloat(const float _in)
+		{
+			float ret;
+			char* floatToConvert = (char*)&_in;
+			char* returnFloat = (char*)&ret;
+
+			returnFloat[0] = floatToConvert[3];
+			returnFloat[1] = floatToConvert[2];
+			returnFloat[2] = floatToConvert[1];
+			returnFloat[3] = floatToConvert[0];
+
+			return ret;
 		}
 		[[nodiscard]] std::pair<unsigned char*, size_t> GetBuffer() const
 		{
@@ -99,12 +113,13 @@ namespace Packet
 			int32_t ret = 0;
 			memcpy(&ret, &buffer[index], sz_INT32);
 			index += sz_INT32;
-			return ret;
+			return _byteswap_ulong(ret);
 		}
 		void __fastcall WriteInt32(int32_t val)
 		{
 			if (!IsSpace(sz_INT32))
 				return;
+			val = _byteswap_ulong(val);
 			memcpy(&buffer[index], &val, sz_INT32);
 			index += sz_INT32;
 		}
@@ -113,12 +128,13 @@ namespace Packet
 			uint32_t ret = 0;
 			memcpy(&ret, &buffer[index], sz_UINT32);
 			index += sz_UINT32;
-			return ret;
+			return _byteswap_ulong(ret);
 		}
 		void __fastcall WriteUnsignedInt32(uint32_t val)
 		{
 			if (!IsSpace(sz_UINT32))
 				return;
+			val = _byteswap_ulong(val);
 			memcpy(&buffer[index], &val, sz_UINT32);
 			index += sz_UINT32;
 		}
@@ -127,12 +143,13 @@ namespace Packet
 			int16_t ret = 0;
 			memcpy(&ret, &buffer[index], sz_INT16);
 			index += sz_INT16;
-			return ret;
+			return _byteswap_ushort(ret);
 		}
 		void __fastcall WriteInt16(int16_t val)
 		{
 			if (!IsSpace(sz_INT16))
 				return;
+			val = _byteswap_ushort(val);
 			memcpy(&buffer[index], &val, sz_INT16);
 			index += sz_INT16;
 		}
@@ -141,12 +158,13 @@ namespace Packet
 			uint16_t ret = 0;
 			memcpy(&ret, &buffer[index], sz_UINT16);
 			index += sz_UINT16;
-			return ret;
+			return _byteswap_ushort(ret);
 		}
 		void __fastcall WriteUnsignedInt16(uint16_t val)
 		{
 			if (!IsSpace(sz_UINT16))
 				return;
+			val = _byteswap_ushort(val);
 			memcpy(&buffer[index], &val, sz_UINT16);
 			index += sz_UINT16;
 		}
@@ -190,7 +208,7 @@ namespace Packet
 			float ret = 0.f;
 			memcpy(&ret, &buffer[index], sz_FLOAT);
 			index += sz_FLOAT;
-			return ret;
+			return ReverseFloat(ret);
 		}
 		void __fastcall WriteFloat(float val)
 		{
