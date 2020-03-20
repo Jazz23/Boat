@@ -6,8 +6,8 @@
 
 namespace Mouse
 {
-	void __fastcall GetPos(size_t& x, size_t& y);
-	void __fastcall SetPos(const size_t& x, const size_t& y);
+	void  GetPos(size_t& x, size_t& y);
+	void  SetPos(const size_t& x, const size_t& y);
 
 	bool IsDown(short btn);
 	void LeftDown();

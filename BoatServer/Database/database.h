@@ -36,6 +36,6 @@ namespace DB
 		}
 	}PLAYER_PROFILE, *pPLAYER_PROFILE;
 
-	void __fastcall Load(std::string_view filepath);
-	void			Save();
+	void Load(std::string_view filepath);
+	void Save();
 }

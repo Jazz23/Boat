@@ -9,7 +9,7 @@ namespace DB
 	std::mutex dbLock;
 	std::vector<PLAYER_PROFILE> players;
 
-	void __fastcall Load(std::string_view filepath)
+	void Load(std::string_view filepath)
 	{
 		std::lock_guard<std::mutex> g(dbLock);
 		Packet::PacketBuffer* pb = new Packet::PacketBuffer();

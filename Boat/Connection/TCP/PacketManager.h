@@ -39,22 +39,26 @@ namespace Client
 
 		std::mutex clientMutex;
 		tcp_client_t* client;
-		Hook::pHooks hookContext;
+		Hook::PHOOKS hookContext;
 	public:
 		__CLIENT()
 		{
 			choked_packets.clear();
 			client = nullptr;
-			hookContext = new Hook::Hooks;
+			hookContext = new Hook::HOOKS();
+		}
+		~__CLIENT()
+		{
+			if (hookContext) delete hookContext;
 		}
 
 		bool BadFlags(unsigned long flags);
-		int SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags);
-		int SendPacket(unsigned char* pkt, size_t sz, unsigned long flags);
-		int SendQueuedPackets();
+		void SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags);
+		void SendPacket(unsigned char* pkt, size_t sz, unsigned long flags);
+		void SendQueuedPackets();
 
 		int StartClient();
-		void StopClient();
+		void Disconnect();
 		int Connect(const char* serverIp);
 		[[noreturn]] void operator()();	//listener
 

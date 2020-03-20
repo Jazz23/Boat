@@ -8,7 +8,7 @@ namespace Keyboard
 	size_t MAX_QUEUE_BUFFER = 1000;
 	std::queue<char> buffer;
 
-	void __fastcall SetMaxQueueBufferSize(size_t s)
+	void  SetMaxQueueBufferSize(size_t s)
 	{
 		MAX_QUEUE_BUFFER = s;
 	}
@@ -17,7 +17,7 @@ namespace Keyboard
 		while (buffer.size() > MAX_QUEUE_BUFFER)
 			buffer.pop();
 	}
-	void __fastcall ReportCharacter(char c)
+	void  ReportCharacter(char c)
 	{
 		buffer.push(c);
 		TrimBuffer();
@@ -46,11 +46,11 @@ namespace Keyboard
 
 	bool DownCharacters[256] = { false };
 
-	void __fastcall KeyDown(char c)
+	void  KeyDown(char c)
 	{
 		DownCharacters[c] = true;
 	}
-	void __fastcall KeyUp(char c)
+	void  KeyUp(char c)
 	{
 		DownCharacters[c] = false;
 	}

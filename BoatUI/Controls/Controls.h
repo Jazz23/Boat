@@ -10,7 +10,7 @@ namespace C
 	inline int dropBoxIndex = 0;
 	inline int textBoxIndex = 0;
 
-	void __fastcall SetFontContext(Font* f);
+	void SetFontContext(Font* f);
 	void StartControls();
 
 	constexpr Color BUTTON_OUTLINE_COLOR_CLICKED		= Color(255, 255, 255);

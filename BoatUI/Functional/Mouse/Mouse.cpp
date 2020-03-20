@@ -8,11 +8,11 @@ namespace Mouse
 	bool LeftKey, RightKey;
 	size_t __x = 0, __y = 0;
 	
-	void __fastcall GetPos(size_t& x, size_t& y)
+	void  GetPos(size_t& x, size_t& y)
 	{
 		x = __x; y = __y;
 	}
-	void __fastcall SetPos(const size_t& x, const size_t& y)
+	void  SetPos(const size_t& x, const size_t& y)
 	{
 		__x = x; __y = y;
 	}

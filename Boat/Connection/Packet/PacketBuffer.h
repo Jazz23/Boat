@@ -6,6 +6,7 @@
 #include <intrin.h>
 namespace Packet
 {
+	//check these sizes
 	inline constexpr size_t sz_INT32 = sizeof(int32_t);
 	inline constexpr size_t sz_INT16 = sizeof(int16_t);
 	inline constexpr size_t sz_INT8 = sizeof(int8_t);
@@ -53,6 +54,16 @@ namespace Packet
 
 			return ret;
 		}
+		void ReverseCopy(void* dst, void* src, size_t n)
+		{
+			__ReverseCopy((unsigned char*)dst, (unsigned char*)src, n;
+		}
+		void __ReverseCopy(unsigned char* dst, unsigned char* src, size_t n)
+		{
+			for (size_t i; i < n; ++i)
+				dst[n - 1 - i] = src[i];
+		}
+
 		[[nodiscard]] std::pair<unsigned char*, size_t> GetBuffer() const
 		{
 			return { buffer, size };
@@ -66,7 +77,7 @@ namespace Packet
 		{
 			return { buffer, size };
 		}
-		[[nodiscard]] bool __fastcall IsSpace(int bytes2add, bool make_space = true)
+		[[nodiscard]] bool IsSpace(int bytes2add, bool make_space = true)
 		{
 			if (size_t newsize = index + bytes2add; newsize > size)
 			{
@@ -83,14 +94,14 @@ namespace Packet
 		}
 		void Resize()
 		{
-			size_t newsize = size_t(floor(size * 1.5));
+			size_t newsize = size_t(size * 1.5f);
 			unsigned char* tmp = new unsigned char[newsize];
 			memcpy(tmp, buffer, sizeof(buffer));
 			delete[] buffer;
 			buffer = tmp;
 			size = newsize;
 		}
-		void __fastcall Resize(int newsize)
+		void Resize(int newsize)
 		{
 			unsigned char* tmp = new unsigned char(newsize);
 			memcpy(tmp, buffer, newsize);
@@ -102,7 +113,7 @@ namespace Packet
 		{
 			Resize(index);
 		}
-		void __fastcall Reset(int _size = 1024)
+		void Reset(int _size = 1024)
 		{
 			delete buffer;
 			index = 0;
@@ -111,61 +122,57 @@ namespace Packet
 		[[nodiscard]] int32_t ReadInt32()
 		{
 			int32_t ret = 0;
-			memcpy(&ret, &buffer[index], sz_INT32);
+			ReverseCopy(&ret, &buffer[index], sz_INT32);
 			index += sz_INT32;
-			return _byteswap_ulong(ret);
+			return ret;
 		}
-		void __fastcall WriteInt32(int32_t val)
+		void WriteInt32(int32_t val)
 		{
 			if (!IsSpace(sz_INT32))
 				return;
-			val = _byteswap_ulong(val);
-			memcpy(&buffer[index], &val, sz_INT32);
+			ReverseCopy(&buffer[index], &val, sz_INT32);
 			index += sz_INT32;
 		}
 		[[nodiscard]] uint32_t ReadUnsignedInt32()
 		{
 			uint32_t ret = 0;
-			memcpy(&ret, &buffer[index], sz_UINT32);
+			ReverseCopy(&ret, &buffer[index], sz_UINT32);
 			index += sz_UINT32;
-			return _byteswap_ulong(ret);
+			return ret;
 		}
-		void __fastcall WriteUnsignedInt32(uint32_t val)
+		void WriteUnsignedInt32(uint32_t val)
 		{
 			if (!IsSpace(sz_UINT32))
 				return;
-			val = _byteswap_ulong(val);
-			memcpy(&buffer[index], &val, sz_UINT32);
+			ReverseCopy(&buffer[index], &val, sz_UINT32);
 			index += sz_UINT32;
 		}
 		[[nodiscard]] int16_t ReadInt16()
 		{
 			int16_t ret = 0;
-			memcpy(&ret, &buffer[index], sz_INT16);
+			ReverseCopy(&ret, &buffer[index], sz_INT16);
 			index += sz_INT16;
-			return _byteswap_ushort(ret);
+			return ret;
 		}
-		void __fastcall WriteInt16(int16_t val)
+		void WriteInt16(int16_t val)
 		{
 			if (!IsSpace(sz_INT16))
 				return;
-			val = _byteswap_ushort(val);
-			memcpy(&buffer[index], &val, sz_INT16);
+			ReverseCopy(&buffer[index], &val, sz_INT16);
 			index += sz_INT16;
 		}
 		[[nodiscard]] uint16_t ReadUnsignedInt16()
 		{
 			uint16_t ret = 0;
-			memcpy(&ret, &buffer[index], sz_UINT16);
+			ReverseCopy(&ret, &buffer[index], sz_UINT16);
 			index += sz_UINT16;
-			return _byteswap_ushort(ret);
+			return ret;
 		}
-		void __fastcall WriteUnsignedInt16(uint16_t val)
+		void WriteUnsignedInt16(uint16_t val)
 		{
 			if (!IsSpace(sz_UINT16))
 				return;
-			val = _byteswap_ushort(val);
-			memcpy(&buffer[index], &val, sz_UINT16);
+			ReverseCopy(&buffer[index], &val, sz_UINT16);
 			index += sz_UINT16;
 		}
 		[[nodiscard]] int8_t ReadInt8()
@@ -175,7 +182,7 @@ namespace Packet
 			index += sz_INT8;
 			return ret;
 		}
-		void __fastcall WriteInt8(int8_t val)
+		void WriteInt8(int8_t val)
 		{
 			if (!IsSpace(sz_INT8))
 				return;
@@ -188,7 +195,7 @@ namespace Packet
 			index += sz_UINT8;
 			return ret;
 		}
-		void __fastcall WriteUnsignedInt8(uint8_t val)
+		void WriteUnsignedInt8(uint8_t val)
 		{
 			if (!IsSpace(sz_UINT8))
 				return;
@@ -197,11 +204,11 @@ namespace Packet
 		}
 		[[nodiscard]] bool ReadBoolean()
 		{
-			return !!(ReadInt8() != 0);
+			return (ReadInt8() != 0);
 		}
-		void __fastcall WriteBoolean(bool val)
+		void WriteBoolean(bool val)
 		{
-			WriteInt8(!!(val ? 1 : 0));
+			WriteInt8(val ? 1 : 0);
 		}
 		[[nodiscard]] float ReadFloat()
 		{
@@ -210,14 +217,15 @@ namespace Packet
 			index += sz_FLOAT;
 			return ReverseFloat(ret);
 		}
-		void __fastcall WriteFloat(float val)
+		void WriteFloat(float val)
 		{
 			if (!IsSpace(sz_FLOAT))
 				return;
+			val = ReverseFloat(val);
 			memcpy(&buffer[index], &val, sz_FLOAT);
 			index += sz_FLOAT;
 		}
-		[[nodiscard]] char* __fastcall ReadByteArray(int16_t &_size)
+		[[nodiscard]] char* ReadByteArray(int16_t &_size)
 		{
 			_size = ReadInt16();
 			char* arr = new char[_size];
@@ -225,7 +233,7 @@ namespace Packet
 				arr[i] = buffer[index];
 			return arr;
 		}
-		void __fastcall WriteByteArray(unsigned char* arr, const int16_t _size)
+		void WriteByteArray(unsigned char* arr, const int16_t _size)
 		{
 			if (!arr || _size == 0)
 			{

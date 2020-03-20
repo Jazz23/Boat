@@ -9,7 +9,7 @@ namespace Client
 	{
 
 	}
-	void __CLIENT::StopClient()
+	void __CLIENT::Disconnect()
 	{
 		std::lock_guard<std::mutex> g(clientMutex);
 		if (client)

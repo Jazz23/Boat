@@ -7,16 +7,12 @@ namespace Client
 	{
 		return (flags & SEND_PACKET_NOW && flags & QUEUE_PACKET);
 	}
-	int __CLIENT::SendPacket(unsigned char* pkt, size_t sz, unsigned long flags)
+	void __CLIENT::SendPacket(unsigned char* pkt, size_t sz, unsigned long flags)
 	{
-		if (BadFlags(flags) || !pkt)
-			return SEND_FAILURE;
-		if (!client)
-			return -69;
+		if (BadFlags(flags) || !pkt || !client)
+			return;
 
 		std::lock_guard<std::mutex> g(clientMutex);
-
-		int status = SEND_SUCCESS;
 
 		if (flags & SEND_PACKET_NOW)
 		{
@@ -26,7 +22,6 @@ namespace Client
 			}
 			else
 			{
-				status = SEND_FAILURE;
 				PrintAndLog("packet send failed!");
 			}
 		}
@@ -40,36 +35,24 @@ namespace Client
 
 		if (flags & SEND_ENTIRE_QUEUE)
 		{
-			status = SendQueuedPackets();
-			if (status != SEND_FAILURE)
-			{
-				PrintAndLog("sent entire packet queue");
-			}
-			else
-			{
-				PrintAndLog("sending of queued packets failed");
-			}
+			SendQueuedPackets();
 		}
-		return status;
 	}
-	int __CLIENT::SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags)
+	void __CLIENT::SendPacket(const Packet::PacketBuffer& pkt, unsigned long flags)
 	{
 		return SendPacket(pkt.buffer, pkt.size, flags);
 	}
-	int __CLIENT::SendQueuedPackets()
+	void __CLIENT::SendQueuedPackets()
 	{
-		int status = SEND_SUCCESS;
 		for (const auto& pkt : choked_packets)
 		{
-			if (pkt.first != NULL || pkt.second > 0)
+			if (pkt.first != nullptr || pkt.second > 0)
 			{
 				if (client->write_all(pkt.first, pkt.second) < 1)
-					status = SEND_FAILURE;
-				else
-					delete[] pkt.first;
+					PrintAndLog("failed when sending packet queue");
+				delete[] pkt.first;
 			}
 		}
 		choked_packets.clear();
-		return status;
 	}
 }

@@ -17,10 +17,10 @@ namespace G
 
 
 	//basic shapes
-	void __fastcall HorizontalLine(int x, int y, int w, const Color& c);
-	void __fastcall VerticalLine(int x, int y, int h, const Color& c);
+	void  HorizontalLine(int x, int y, int w, const Color& c);
+	void  VerticalLine(int x, int y, int h, const Color& c);
 
-	void __fastcall FilledRect(int x, int y, int w, int h, const Color& c);
-	void __fastcall Rect(int x, int y, int w, int h, const Color& c);
-	void __fastcall Circle(int x, int y, int r, const Color& c);
+	void  FilledRect(int x, int y, int w, int h, const Color& c);
+	void  Rect(int x, int y, int w, int h, const Color& c);
+	void  Circle(int x, int y, int r, const Color& c);
 }

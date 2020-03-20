@@ -2,7 +2,7 @@
 #include "../Functional/Keyboard/Keyboard.h"
 namespace C
 {
-	void __fastcall SetFontContext(Font* f) { fontContext = f; }
+	void SetFontContext(Font* f) { fontContext = f; }
 
 	void StartControls()
 	{

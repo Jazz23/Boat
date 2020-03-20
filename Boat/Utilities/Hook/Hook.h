@@ -23,11 +23,11 @@ namespace Hook
 		void (*f)(uintptr_t);
 	public:
 		__SINGLEHOOK(void (*in_f)(uintptr_t) = nullptr) : f(in_f) { }
-		void __fastcall SetFunction(void (*in_f)(uintptr_t) = nullptr)
+		void SetFunction(void (*in_f)(uintptr_t) = nullptr)
 		{
 			f = in_f;
 		}
-		void inline __fastcall Run(uintptr_t pkt)
+		void inline Run(uintptr_t pkt)
 		{
 			if (HasFunction())
 			{
@@ -41,12 +41,12 @@ namespace Hook
 		{
 			return (f != nullptr);
 		}
-	}SingleHook, *pSingleHook;
+	}SINGLEHOOK, *PSINGLEHOOK;
 
 	typedef class __MULTIHOOK
 	{
 	private:
-		std::vector<SingleHook> Hooks;
+		std::vector<SINGLEHOOK> Hooks;
 	public:
 		__MULTIHOOK()
 		{
@@ -65,26 +65,26 @@ namespace Hook
 		{
 			return Hooks.size() > 0;
 		}
-	}MultiHook, *pMultiHook;
+	}MULTIHOOK, *PMULTIHOOK;
 
 	typedef class __HOOKS
 	{
 	private:
 		const size_t setSize = 256;
-		pMultiHook set;
+		PMULTIHOOK set;
 	public:
 
 		__HOOKS(size_t ss = 256) : setSize(ss)
 		{
-			set = new MultiHook[setSize];
+			set = new MULTIHOOK[setSize];
 		}
 		~__HOOKS()
 		{
 			if (set) delete[] set;
 		}
-		void __fastcall EmplaceHook(size_t pktId, void (*in_f)(uintptr_t));
-		void __fastcall Fire(size_t pktId, uintptr_t pkt);
-		bool __fastcall IsHooked(size_t pktId);
+		void EmplaceHook(size_t pktId, void (*in_f)(uintptr_t));
+		void Fire(size_t pktId, uintptr_t pkt);
+		bool IsHooked(size_t pktId);
 
-	}Hooks, *pHooks;
+	}HOOKS, *PHOOKS;
 }
