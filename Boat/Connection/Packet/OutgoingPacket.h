@@ -11,7 +11,7 @@
 namespace Packet
 {
 	using namespace PacketId;
-	class AcceptTradePacket : OutgoingPacket
+	class AcceptTradePacket : public OutgoingPacket
 	{
 	public:
 		AcceptTradePacket() { pktId = ACCEPTTRADE; }
@@ -29,7 +29,7 @@ namespace Packet
 		}
 	};
 
-	class AoeAckPacket : OutgoingPacket
+	class AoeAckPacket : public OutgoingPacket
 	{
 	public:
 		AoeAckPacket() { pktId = AOEACK; }
@@ -43,7 +43,7 @@ namespace Packet
 			pos.WriteData(pb);
 		}
 	};
-	class BuyPacket : OutgoingPacket
+	class BuyPacket : public OutgoingPacket
 	{
 	public:
 		BuyPacket() { pktId = BUY; }
@@ -56,7 +56,7 @@ namespace Packet
 			pb->WriteInt32(quantity);
 		}
 	};
-	class CancelTradePacket : OutgoingPacket
+	class CancelTradePacket : public OutgoingPacket
 	{
 	public:
 		CancelTradePacket() { pktId = CANCELTRADE; }
@@ -66,7 +66,7 @@ namespace Packet
 
 		}
 	};
-	class ChangeGuildRankPacket : OutgoingPacket
+	class ChangeGuildRankPacket : public OutgoingPacket
 	{
 	public:
 		ChangeGuildRankPacket() { pktId = CHANGEGUILDRANK; }
@@ -80,7 +80,7 @@ namespace Packet
 			pb->WriteInt32(guildRank);
 		}
 	};
-	class ChangeTradePacket : OutgoingPacket
+	class ChangeTradePacket : public OutgoingPacket
 	{
 	public:
 		ChangeTradePacket() { pktId = CHANGETRADE; }
@@ -94,7 +94,7 @@ namespace Packet
 				pb->WriteBoolean(c);
 		}
 	};
-	class CheckCreditsPacket : OutgoingPacket
+	class CheckCreditsPacket : public OutgoingPacket
 	{
 	public:
 		CheckCreditsPacket() { pktId = CHECKCREDITS; }
@@ -103,7 +103,7 @@ namespace Packet
 
 		}
 	};
-	class ChooseNamePacket : OutgoingPacket
+	class ChooseNamePacket : public OutgoingPacket
 	{
 	public:
 		ChooseNamePacket() { pktId = CHOOSENAME; }
@@ -114,7 +114,7 @@ namespace Packet
 			pb->WriteString(name);
 		}
 	};
-	class ClaimDailyRewardMessage : OutgoingPacket
+	class ClaimDailyRewardMessage : public OutgoingPacket
 	{
 	public:
 		ClaimDailyRewardMessage() { pktId = CLAIMDAILY_REWARD_MSG; }
@@ -127,7 +127,7 @@ namespace Packet
 			pb->WriteString(claimType);
 		}
 	};
-	class CreateGuildPacket : OutgoingPacket
+	class CreateGuildPacket : public OutgoingPacket
 	{
 	public:
 		CreateGuildPacket() { pktId = CREATEGUILD; }
@@ -138,7 +138,7 @@ namespace Packet
 			pb->WriteString(name);
 		}
 	};
-	class CreatePacket : OutgoingPacket
+	class CreatePacket : public OutgoingPacket
 	{
 	public:
 		CreatePacket() { pktId = CREATE; }
@@ -150,7 +150,7 @@ namespace Packet
 			pb->WriteInt16(skinType);
 		}
 	};
-	class EditAccountListPackket : OutgoingPacket
+	class EditAccountListPackket : public OutgoingPacket
 	{
 	public:
 		EditAccountListPackket() { pktId = EDITACCOUNTLIST; }
@@ -165,7 +165,7 @@ namespace Packet
 			pb->WriteInt32(ObjectId);
 		}
 	};
-	class EnemyHitPacket : OutgoingPacket
+	class EnemyHitPacket : public OutgoingPacket
 	{
 	public:
 		EnemyHitPacket() { pktId = ENEMYHIT; }
@@ -182,7 +182,7 @@ namespace Packet
 			pb->WriteBoolean(kill);
 		}
 	};
-	class EscapePacket : OutgoingPacket
+	class EscapePacket : public OutgoingPacket
 	{
 	public:
 		EscapePacket() { pktId = ESCAPE; }
@@ -192,7 +192,7 @@ namespace Packet
 
 		}
 	};
-	class GotoRequestRoomPacket : OutgoingPacket
+	class GotoRequestRoomPacket : public OutgoingPacket
 	{
 	public:
 		GotoRequestRoomPacket() { pktId = 0; }
@@ -201,7 +201,7 @@ namespace Packet
 
 		}
 	};
-	class GotoAckPacket : OutgoingPacket
+	class GotoAckPacket : public OutgoingPacket
 	{
 	public:
 		GotoAckPacket() { pktId = GOTOACK; }
@@ -212,7 +212,7 @@ namespace Packet
 			pb->WriteInt32(time);
 		}
 	};
-	class GroundDamagePacket : OutgoingPacket
+	class GroundDamagePacket : public OutgoingPacket
 	{
 	public:
 		GroundDamagePacket() { pktId = GROUNDDAMAGE; }
@@ -225,7 +225,7 @@ namespace Packet
 			pos.WriteData(pb);
 		}
 	};
-	class GuildInvitePacket : OutgoingPacket
+	class GuildInvitePacket : public OutgoingPacket
 	{
 	public:
 		GuildInvitePacket() { pktId = GUILDINVITE; }
@@ -236,7 +236,7 @@ namespace Packet
 			pb->WriteString(name);
 		}
 	};
-	class GuildRemovePacket : OutgoingPacket
+	class GuildRemovePacket : public OutgoingPacket
 	{
 	public:
 		GuildRemovePacket() { pktId = GUILDREMOVE; }
@@ -247,7 +247,7 @@ namespace Packet
 			pb->WriteString(name);
 		}
 	};
-	class HelloPacket : OutgoingPacket
+	class HelloPacket : public OutgoingPacket
 	{
 	public:
 		HelloPacket() { pktId = HELLO; }
@@ -281,7 +281,7 @@ namespace Packet
 			pb->WriteString(userToken);
 		}
 	};
-	class InvDropPacket : OutgoingPacket
+	class InvDropPacket : public OutgoingPacket
 	{
 	public:
 		InvDropPacket() { pktId = INVDROP; }
@@ -292,7 +292,7 @@ namespace Packet
 			slotObject.WriteData(pb);
 		}
 	};
-	class InvSwapPacket : OutgoingPacket
+	class InvSwapPacket : public OutgoingPacket
 	{
 	public:
 		InvSwapPacket() { pktId = INVSWAP; }
@@ -308,7 +308,7 @@ namespace Packet
 			slotObject2.WriteData(pb);
 		}
 	};
-	class JoinGuildPacket : OutgoingPacket
+	class JoinGuildPacket : public OutgoingPacket
 	{
 	public:
 		JoinGuildPacket() { pktId = JOINGUILD; }
@@ -319,7 +319,7 @@ namespace Packet
 			pb->WriteString(guildName);
 		}
 	};
-	class KeyInfoRequestPacket : OutgoingPacket
+	class KeyInfoRequestPacket : public OutgoingPacket
 	{
 	public:
 		KeyInfoRequestPacket() { pktId = KEYINFO_REQUEST; }
@@ -330,7 +330,7 @@ namespace Packet
 			pb->WriteInt32(itemType);
 		}
 	};
-	class LoadPacket : OutgoingPacket
+	class LoadPacket : public OutgoingPacket
 	{
 	public:
 		LoadPacket() { pktId = LOAD; }
@@ -343,7 +343,7 @@ namespace Packet
 			pb->WriteBoolean(isFromArena);
 		}
 	};
-	class MovePacket : OutgoingPacket
+	class MovePacket : public OutgoingPacket
 	{
 	public:
 		MovePacket() { pktId = MOVE; }
@@ -361,7 +361,7 @@ namespace Packet
 				r.WriteData(pb);
 		}
 	};
-	class OtherHitPacket : OutgoingPacket
+	class OtherHitPacket : public OutgoingPacket
 	{
 	public:
 		OtherHitPacket() { pktId = OTHERHIT; }
@@ -377,7 +377,7 @@ namespace Packet
 			pb->WriteInt32(targetId);
 		}
 	};
-	class PlayerHitPacket : OutgoingPacket
+	class PlayerHitPacket : public OutgoingPacket
 	{
 	public:
 		PlayerHitPacket() { pktId = PLAYERHIT; }
@@ -390,7 +390,7 @@ namespace Packet
 			pb->WriteInt32(objectId);
 		}
 	};
-	class PlayerShootPacket : OutgoingPacket
+	class PlayerShootPacket : public OutgoingPacket
 	{
 	public:
 		PlayerShootPacket() { pktId = PLAYERSHOOT; }
@@ -409,7 +409,7 @@ namespace Packet
 			pb->WriteFloat(angle);
 		}
 	};
-	class PlayerTextPacket : OutgoingPacket
+	class PlayerTextPacket : public OutgoingPacket
 	{
 	public:
 		PlayerTextPacket() { pktId = PLAYERTEXT; }
@@ -420,7 +420,7 @@ namespace Packet
 			pb->WriteString(text);
 		}
 	};
-	class PongPacket : OutgoingPacket //likely
+	class PongPacket : public OutgoingPacket //likely
 	{
 	public:
 		PongPacket() { pktId = PONG; }
@@ -432,7 +432,7 @@ namespace Packet
 			pb->WriteInt32(time);
 		}
 	};
-	class RequestTradePacket : OutgoingPacket
+	class RequestTradePacket : public OutgoingPacket
 	{
 	public:
 		RequestTradePacket() { pktId = REQUESTTRADE; }
@@ -443,7 +443,7 @@ namespace Packet
 			pb->WriteString(name);
 		}
 	};
-	class ReskinPacket : OutgoingPacket
+	class ReskinPacket : public OutgoingPacket
 	{
 	public:
 		ReskinPacket() { pktId = RESKIN; }
@@ -454,7 +454,7 @@ namespace Packet
 			pb->WriteInt32(skinId);
 		}
 	};
-	class SetConditionPacket : OutgoingPacket
+	class SetConditionPacket : public OutgoingPacket
 	{
 	public:
 		SetConditionPacket() { pktId = SETCONDITION; }
@@ -467,7 +467,7 @@ namespace Packet
 			pb->WriteFloat(duration);
 		}
 	};
-	class ShootAckPacket : OutgoingPacket
+	class ShootAckPacket : public OutgoingPacket
 	{
 	public:
 		ShootAckPacket() { pktId = SHOOTACK; }
@@ -478,7 +478,7 @@ namespace Packet
 			pb->WriteInt32(time);
 		}
 	};
-	class SquareHitPacket : OutgoingPacket
+	class SquareHitPacket : public OutgoingPacket
 	{
 	public:
 		SquareHitPacket() { pktId = SQUAREHIT; }
@@ -493,7 +493,7 @@ namespace Packet
 			pb->WriteInt32(objectId);
 		}
 	};
-	class TeleportPacket : OutgoingPacket
+	class TeleportPacket : public OutgoingPacket
 	{
 	public:
 		TeleportPacket() { pktId = TELEPORT; }
@@ -504,7 +504,7 @@ namespace Packet
 			pb->WriteInt32(objectId);
 		}
 	};
-	class UpdateAckPacket : OutgoingPacket
+	class UpdateAckPacket : public OutgoingPacket
 	{
 	public:
 		UpdateAckPacket() { pktId = UPDATEACK; }
@@ -513,7 +513,7 @@ namespace Packet
 
 		}
 	};
-	class UseItemPacket : OutgoingPacket
+	class UseItemPacket : public OutgoingPacket
 	{
 	public:
 		UseItemPacket() { pktId = USEITEM; }
@@ -530,7 +530,7 @@ namespace Packet
 			pb->WriteInt8(useType);
 		}
 	};
-	class UsePortalPacket : OutgoingPacket
+	class UsePortalPacket : public OutgoingPacket
 	{
 	public:
 		UsePortalPacket() { pktId = USEPORTAL; }
@@ -544,7 +544,7 @@ namespace Packet
 	};
 
 	//arena stuff
-	class EnterArenaPacket : OutgoingPacket
+	class EnterArenaPacket : public OutgoingPacket
 	{
 	public:
 		EnterArenaPacket() { pktId = ENTERARENA; }
@@ -556,7 +556,7 @@ namespace Packet
 			pb->WriteInt32(currency);
 		}
 	};
-	class QuestRedeemPacket : OutgoingPacket
+	class QuestRedeemPacket : public OutgoingPacket
 	{
 	public:
 		QuestRedeemPacket() { pktId = QUESTREDEEM; }
@@ -573,7 +573,7 @@ namespace Packet
 		}
 	};
 	//pet stuff
-	class ActivePetUpdateRequestPacket : OutgoingPacket
+	class ActivePetUpdateRequestPacket : public OutgoingPacket
 	{
 	public:
 		ActivePetUpdateRequestPacket() { pktId = ACTIVEPET_UPDATE_REQUEST; }
