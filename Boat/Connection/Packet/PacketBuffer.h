@@ -56,11 +56,11 @@ namespace Packet
 		}
 		void ReverseCopy(void* dst, void* src, size_t n)
 		{
-			__ReverseCopy((unsigned char*)dst, (unsigned char*)src, n;
+			__ReverseCopy((unsigned char*)dst, (unsigned char*)src, n);
 		}
 		void __ReverseCopy(unsigned char* dst, unsigned char* src, size_t n)
 		{
-			for (size_t i; i < n; ++i)
+			for (size_t i = 0; i < n; ++i)
 				dst[n - 1 - i] = src[i];
 		}
 
@@ -96,7 +96,7 @@ namespace Packet
 		{
 			size_t newsize = size_t(size * 1.5f);
 			unsigned char* tmp = new unsigned char[newsize];
-			memcpy(tmp, buffer, sizeof(buffer));
+			memcpy(tmp, buffer, size);
 			delete[] buffer;
 			buffer = tmp;
 			size = newsize;

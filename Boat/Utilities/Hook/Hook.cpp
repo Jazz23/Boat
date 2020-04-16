@@ -6,14 +6,14 @@
 
 namespace Hook
 {
-	void __HOOKS::EmplaceHook(size_t pktId, void (*in_f)(uintptr_t))
+	void __HOOKS::EmplaceHook(size_t pktId, void (*in_f)(Packet::IncomingPacket*))
 	{
 		if (pktId < setSize && pktId)
 			set[pktId].AddFunction(in_f);
 		else
 			PrintAndLog("could not emplace hook at packet id: " + std::to_string(pktId));
 	}
-	void __HOOKS::Fire(size_t pktId, uintptr_t pkt)
+	void __HOOKS::Fire(size_t pktId, Packet::IncomingPacket* pkt)
 	{
 		if (pktId < setSize && pkt)
 			set[pktId].Run(pkt);

@@ -13,7 +13,7 @@
 namespace Packet
 {
 
-	class AccountListPacket : IncomingPacket
+	class AccountListPacket : public IncomingPacket
 	{
 	public:
 		int32_t accountListId;
@@ -31,7 +31,7 @@ namespace Packet
 			lookAction = pb->ReadInt32();
 		}
 	};
-	class AllyShootPacket : IncomingPacket
+	class AllyShootPacket : public IncomingPacket
 	{
 	public:
 		uint8_t bulletId;
@@ -48,7 +48,7 @@ namespace Packet
 			angle = pb->ReadFloat();
 		}
 	};
-	class AoePacket : IncomingPacket
+	class AoePacket : public IncomingPacket
 	{
 	public:
 		WorldPosData pos;
@@ -71,7 +71,7 @@ namespace Packet
 			color = pb->ReadInt32();
 		}
 	};
-	class BuyResultPacket : IncomingPacket
+	class BuyResultPacket : public IncomingPacket
 	{
 	public:
 		int32_t result;
@@ -84,7 +84,7 @@ namespace Packet
 			resultString = pb->ReadString();
 		}
 	};
-	class ClaimDailyRewardResponse : IncomingPacket
+	class ClaimDailyRewardResponse : public IncomingPacket
 	{
 	public:
 		int32_t itemId;
@@ -99,7 +99,7 @@ namespace Packet
 			gold = pb->ReadInt32();
 		}
 	};
-	class ClientStatPacket : IncomingPacket
+	class ClientStatPacket : public IncomingPacket
 	{
 	public:
 		std::string name;
@@ -112,7 +112,7 @@ namespace Packet
 			value = pb->ReadInt32();
 		}
 	};
-	class CreateSuccessPacket : IncomingPacket
+	class CreateSuccessPacket : public IncomingPacket
 	{
 	public:
 		int32_t objectId;
@@ -125,7 +125,7 @@ namespace Packet
 			charId = pb->ReadInt32();
 		}
 	};
-	class DamagePacket : IncomingPacket
+	class DamagePacket : public IncomingPacket
 	{
 	public:
 		int32_t targetId;
@@ -150,7 +150,7 @@ namespace Packet
 			objectId = pb->ReadInt32();
 		}
 	};
-	class EnemyShootPacket : IncomingPacket
+	class EnemyShootPacket : public IncomingPacket
 	{
 	public:
 		uint8_t bulletId;
@@ -183,7 +183,7 @@ namespace Packet
 			}
 		}
 	};
-	class FailurePacket : IncomingPacket
+	class FailurePacket : public IncomingPacket
 	{
 	public:
 		int32_t errorId;
@@ -196,7 +196,7 @@ namespace Packet
 			errorDesc = pb->ReadString();
 		}
 	};
-	class GlobalNotificationPacket : IncomingPacket
+	class GlobalNotificationPacket : public IncomingPacket
 	{
 	public:
 		int32_t notificationType;
@@ -209,7 +209,7 @@ namespace Packet
 			text = pb->ReadString();
 		}
 	};
-	class GotoPacket : IncomingPacket
+	class GotoPacket : public IncomingPacket
 	{
 	public:
 		int32_t objectId;
@@ -222,7 +222,7 @@ namespace Packet
 			pos.ReadData(pb);
 		}
 	};
-	class GuildResultPacket : IncomingPacket
+	class GuildResultPacket : public IncomingPacket
 	{
 	public:
 		bool success;
@@ -235,7 +235,7 @@ namespace Packet
 			lineBuilderJSON = pb->ReadString();
 		}
 	};
-	class InviteResultPacket : IncomingPacket
+	class InviteResultPacket : public IncomingPacket
 	{
 	public:
 		int32_t result;
@@ -246,7 +246,7 @@ namespace Packet
 			result = pb->ReadInt32();
 		}
 	};
-	class InvitedToGuildPacket : IncomingPacket
+	class InvitedToGuildPacket : public IncomingPacket
 	{
 	public:
 		std::string name, guildName;
@@ -258,7 +258,7 @@ namespace Packet
 			guildName = pb->ReadString();
 		}
 	};
-	class KeyInfoResponsePacket : IncomingPacket
+	class KeyInfoResponsePacket : public IncomingPacket
 	{
 	public:
 		std::string name, desc, creator;
@@ -271,7 +271,7 @@ namespace Packet
 			creator = pb->ReadString();
 		}
 	};
-	class MapInfoPacket : IncomingPacket
+	class MapInfoPacket : public IncomingPacket
 	{
 	public:
 		int32_t width, height;
@@ -305,7 +305,7 @@ namespace Packet
 				extraXML[i] = pb->ReadStringUTF32();
 		}
 	};
-	class NameResultPacket : IncomingPacket
+	class NameResultPacket : public IncomingPacket
 	{
 	public:
 		bool success;
@@ -319,7 +319,7 @@ namespace Packet
 		}
 	};
 
-	class NewAbilityMessage : IncomingPacket
+	class NewAbilityMessage : public IncomingPacket
 	{
 	public:
 		int32_t abilityType;
@@ -331,7 +331,7 @@ namespace Packet
 		}
 	};
 
-	class NewTickPacket : IncomingPacket
+	class NewTickPacket : public IncomingPacket
 	{
 	public:
 		int32_t tickId;
@@ -354,7 +354,7 @@ namespace Packet
 		}
 	};
 
-	class NotificationPacket : IncomingPacket
+	class NotificationPacket : public IncomingPacket
 	{
 	public:
 		int32_t objectId;
@@ -370,7 +370,7 @@ namespace Packet
 		}
 	};
 
-	class PasswordPromptPacket : IncomingPacket
+	class PasswordPromptPacket : public IncomingPacket
 	{
 	public:
 		int32_t cleanPasswordStatus;
@@ -382,7 +382,7 @@ namespace Packet
 		}
 	};
 
-	class PingPacket : IncomingPacket
+	class PingPacket : public IncomingPacket
 	{
 	public:
 		int32_t serial;
@@ -394,7 +394,7 @@ namespace Packet
 		}
 	};
 
-	class QuestObjectIdPacket : IncomingPacket
+	class QuestObjectIdPacket : public IncomingPacket
 	{
 	public:
 		int32_t objectId;
@@ -406,7 +406,7 @@ namespace Packet
 		}
 	};
 
-	class QuestRedeemResponsePacket : IncomingPacket
+	class QuestRedeemResponsePacket : public IncomingPacket
 	{
 	public:
 		bool ok;
@@ -420,7 +420,7 @@ namespace Packet
 		}
 	};
 
-	class RealmHeroLeftMessage : IncomingPacket
+	class RealmHeroLeftMessage : public IncomingPacket
 	{
 	public:
 		int32_t realmHeroesLeft;
@@ -432,7 +432,7 @@ namespace Packet
 		}
 	};
 
-	class ReconnectPacket : IncomingPacket
+	class ReconnectPacket : public IncomingPacket
 	{
 	public:
 		std::string name, host, stats;
@@ -454,7 +454,7 @@ namespace Packet
 		}
 	};
 
-	class ReskinUnlockPacket : IncomingPacket
+	class ReskinUnlockPacket : public IncomingPacket
 	{
 	public:
 		int32_t skinId;
@@ -466,7 +466,7 @@ namespace Packet
 		}
 	};
 
-	class ServerPlayerShootPacket : IncomingPacket
+	class ServerPlayerShootPacket : public IncomingPacket
 	{
 	public:
 		uint8_t bulletId;
@@ -485,7 +485,7 @@ namespace Packet
 		}
 	};
 
-	class ShowEffectPacket : IncomingPacket
+	class ShowEffectPacket : public IncomingPacket
 	{
 	public:
 		uint8_t effectType;
@@ -507,7 +507,7 @@ namespace Packet
 		}
 	};
 
-	class TextPacket : IncomingPacket
+	class TextPacket : public IncomingPacket
 	{
 	public:
 		std::string name;
@@ -527,7 +527,7 @@ namespace Packet
 			cleanText = pb->ReadString();
 		}
 	};
-	class DeathPacket : IncomingPacket
+	class DeathPacket : public IncomingPacket
 	{
 	public:
 		std::string accountId;
@@ -546,7 +546,7 @@ namespace Packet
 			isZombie = !!(zombieId != -1);
 		}
 	};
-	class TradeAcceptedPacket : IncomingPacket
+	class TradeAcceptedPacket : public IncomingPacket
 	{
 	public:
 		std::vector<bool> clientOffer, partnerOffer;
@@ -565,7 +565,7 @@ namespace Packet
 		}
 	};
 
-	class TradeChangedPacket : IncomingPacket
+	class TradeChangedPacket : public IncomingPacket
 	{
 	public:
 		std::vector<bool> offer;
@@ -580,7 +580,7 @@ namespace Packet
 		}
 	};
 
-	class TradeDonePacket : IncomingPacket
+	class TradeDonePacket : public IncomingPacket
 	{
 	public:
 		TradeResult code;
@@ -594,7 +594,7 @@ namespace Packet
 		}
 	};
 
-	class TradeRequestedPacket : IncomingPacket
+	class TradeRequestedPacket : public IncomingPacket
 	{
 	public:
 		std::string name;
@@ -606,7 +606,7 @@ namespace Packet
 		}
 	};
 
-	class TradeStartPacket : IncomingPacket
+	class TradeStartPacket : public IncomingPacket
 	{
 	public:
 		std::vector<TradeItem> clientItems;
@@ -635,7 +635,7 @@ namespace Packet
 		}
 	};
 
-	class UpdatePacket : IncomingPacket
+	class UpdatePacket : public IncomingPacket
 	{
 	public:
 		std::vector<GroundTileData> tiles;
@@ -672,7 +672,7 @@ namespace Packet
 		}
 	};
 
-	class VerifyEmailPacket : IncomingPacket
+	class VerifyEmailPacket : public IncomingPacket
 	{
 	public:
 		void ReadData(PacketBuffer* pb) override
@@ -680,7 +680,7 @@ namespace Packet
 			if (!pb) return;
 		}
 	};
-	class DeletePetMessage : IncomingPacket
+	class DeletePetMessage : public IncomingPacket
 	{
 	public:
 		int32_t petId;
@@ -690,7 +690,7 @@ namespace Packet
 			petId = pb->ReadInt32();
 		}
 	};
-	class EvolvedPetMessage : IncomingPacket
+	class EvolvedPetMessage : public IncomingPacket
 	{
 	public:
 		int32_t petId, initialSkin, finalSkin;
@@ -702,7 +702,7 @@ namespace Packet
 			finalSkin = pb->ReadInt32();
 		}
 	};
-	class HatchPetMessage : IncomingPacket
+	class HatchPetMessage : public IncomingPacket
 	{
 	public:
 		std::string petName;
@@ -714,7 +714,7 @@ namespace Packet
 			petSkin = pb->ReadInt32();
 		}
 	};
-	class ArenaDeathPacket : IncomingPacket
+	class ArenaDeathPacket : public IncomingPacket
 	{
 	public:
 		int32_t cost;
@@ -724,7 +724,7 @@ namespace Packet
 			cost = pb->ReadInt32();
 		}
 	};
-	class ImminentArenaWavePacket : IncomingPacket
+	class ImminentArenaWavePacket : public IncomingPacket
 	{
 	public:
 		int32_t currentRunTime;

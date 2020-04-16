@@ -1,6 +1,7 @@
 ﻿  PacketDeep.cpp
   PacketManager.cpp
   PacketRouter.cpp
+  Hook.cpp
   main.cpp
   Generating code
   0 of 165 functions ( 0.0%) were compiled, the rest were copied from previous compilation.

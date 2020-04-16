@@ -26,266 +26,104 @@ namespace Client
 		int8_t pktId = packet->ReadInt8();
 		PrintAndLog("recieved packet with id: " + std::to_string(pktId));
 
-		if (hookContext && hookContext->IsHooked(pktId))
+		if (hookContext && !hookContext->IsHooked(pktId))
 			return;
 
+		Packet::IncomingPacket* pkt = nullptr;
+
 		if (pktId == PacketId::NEWTICK)
-		{
-			Packet::NewTickPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::NewTickPacket();
 		else if (pktId == PacketId::PING)
-		{
-			Packet::PingPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::PingPacket();
 		else if (pktId == PacketId::UPDATE)
-		{
-			Packet::UpdatePacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::UpdatePacket();
 		else if (pktId == PacketId::ALLYSHOOT)
-		{
-			Packet::AllyShootPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::AllyShootPacket();
 		else if (pktId == PacketId::AOE)
-		{
-			Packet::AoePacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::AoePacket();
 		else if (pktId == PacketId::DAMAGE)
-		{
-			Packet::DamagePacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::DamagePacket();
 		else if (pktId == PacketId::ENEMYSHOOT)
-		{
-			Packet::EnemyShootPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::EnemyShootPacket();
 		else if (pktId == PacketId::TEXT)
-		{
-			Packet::TextPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::TextPacket();
 		else if (pktId == PacketId::GOTO)
-		{
-			Packet::GotoPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::GotoPacket();
 		else if (pktId == PacketId::MAPINFO)
-		{
-			Packet::MapInfoPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::MapInfoPacket();
 		else if (pktId == PacketId::RECONNECT)
-		{
-			Packet::ReconnectPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::ReconnectPacket();
 		else if (pktId == PacketId::REALMHERO_LEFT_MSG)
-		{
-			Packet::RealmHeroLeftMessage pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::RealmHeroLeftMessage();
 		else if (pktId == PacketId::TRADEACCEPTED)
-		{
-			Packet::TradeAcceptedPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::TradeAcceptedPacket();
 		else if (pktId == PacketId::TRADECHANGED)
-		{
-			Packet::TradeChangedPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::TradeChangedPacket();
 		else if (pktId == PacketId::TRADEDONE)
-		{
-			Packet::TradeDonePacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::TradeDonePacket();
 		else if (pktId == PacketId::TRADEREQUESTED)
-		{
-			Packet::TradeRequestedPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::TradeRequestedPacket();
 		else if (pktId == PacketId::TRADESTART)
-		{
-			Packet::TradeStartPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::TradeStartPacket();
 		else if (pktId == PacketId::ARENADEATH)
-		{
-			Packet::ArenaDeathPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::ArenaDeathPacket();
 		else if (pktId == PacketId::IMMINENTARENA_WAVE)
-		{
-			Packet::ImminentArenaWavePacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::ImminentArenaWavePacket();
 		else if (pktId == PacketId::DELETEPET)
-		{
-			Packet::DeletePetMessage pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::DeletePetMessage();
 		else if (pktId == PacketId::PETCHANGE_FORM_MSG)
-		{
-			Packet::EvolvedPetMessage pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::EvolvedPetMessage();
 		else if (pktId == PacketId::HATCHPET)
-		{
-			Packet::HatchPetMessage pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::HatchPetMessage();
 		else if (pktId == PacketId::ACCOUNTLIST)
-		{
-			Packet::AccountListPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::AccountListPacket();
 		else if (pktId == PacketId::BUYRESULT)
-		{
-			Packet::BuyResultPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::BuyResultPacket();
 		else if (pktId == PacketId::CLIENTSTAT)
-		{
-			Packet::ClientStatPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::ClientStatPacket();
 		else if (pktId == PacketId::CREATESUCCESS)
-		{
-			Packet::CreateSuccessPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::CreateSuccessPacket();
 		else if (pktId == PacketId::DEATH)
-		{
-			Packet::DeathPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::DeathPacket();
 		else if (pktId == PacketId::FAILURE)
-		{
-			Packet::FailurePacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::FailurePacket();
 		else if (pktId == PacketId::GLOBALNOTIFICATION)
-		{
-			Packet::GlobalNotificationPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::GlobalNotificationPacket();
 		else if (pktId == PacketId::GUILDRESULT)
-		{
-			Packet::GuildResultPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::GuildResultPacket();
 		else if (pktId == PacketId::INVRESULT)
-		{
-			Packet::InviteResultPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::InviteResultPacket();
 		else if (pktId == PacketId::INVITEDTOGUILD)
-		{
-			Packet::InvitedToGuildPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::InvitedToGuildPacket();
 		else if (pktId == PacketId::KEYINFO_RESPONSE)
-		{
-			Packet::KeyInfoResponsePacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::KeyInfoResponsePacket();
 		else if (pktId == PacketId::NAMERESULT)
-		{
-			Packet::NameResultPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::NameResultPacket();
 		else if (pktId == PacketId::NEWABILITY)
-		{
-			Packet::NewAbilityMessage pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::NewAbilityMessage();
 		else if (pktId == PacketId::NOTIFICATION)
-		{
-			Packet::NotificationPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::NotificationPacket();
 		else if (pktId == PacketId::PASSWORDPROMPT)
-		{
-			Packet::PasswordPromptPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::PasswordPromptPacket();
 		else if (pktId == PacketId::QUESTOBJID)
-		{
-			Packet::QuestObjectIdPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::QuestObjectIdPacket();
 		else if (pktId == PacketId::QUESTREDEEM_RESPONSE)
-		{
-			Packet::QuestRedeemResponsePacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::QuestRedeemResponsePacket();
 		else if (pktId == PacketId::RESKINUNLOCK)
-		{
-			Packet::ReskinUnlockPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::ReskinUnlockPacket();
 		else if (pktId == PacketId::SERVERPLAYERSHOOT)
-		{
-			Packet::ServerPlayerShootPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::ServerPlayerShootPacket();
 		else if (pktId == PacketId::SHOWEFFECT)
-		{
-			Packet::ShowEffectPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
-		}
+			pkt = new Packet::ShowEffectPacket();
 		else if (pktId == PacketId::VERIFYEMAIL)
+			pkt = new Packet::VerifyEmailPacket();
+
+
+		if (pkt)
 		{
-			Packet::VerifyEmailPacket pkt;
-			pkt.ReadData(packet);
-			hookContext->Fire(pktId, reinterpret_cast<uintptr_t>(&pkt));
+			pkt->ReadData(packet);
+			hookContext->Fire(pktId, pkt);
+			delete pkt;
 		}
 	}
 }
